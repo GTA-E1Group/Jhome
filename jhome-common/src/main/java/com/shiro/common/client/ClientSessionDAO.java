@@ -5,6 +5,7 @@ import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.SimpleSession;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
@@ -15,24 +16,35 @@ import java.util.Collection;
 
 /**
  * 关键一步实现调用服务器的RedisSessionDao 实现对统一数据源操作
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
 public class ClientSessionDAO extends CachingSessionDAO {
+
     private RemoteBaseInterface remoteService;
-    public void setRemoteService(RemoteBaseInterface remoteService) {
-        this.remoteService = remoteService;
-    }
+
     private String appKey;
+
     public void setAppKey(String appKey) {
         this.appKey = appKey;
     }
 
     @Override
     protected Serializable doCreate(Session session) {
-        ShiroSession shiroSession = (ShiroSession) session;
-        ResponResult responResult = remoteService.createSession((ShiroSession) session);
-        Serializable sessionId = (Serializable) responResult.getData();
+        ShiroSession shiroSession=null;
+        Serializable sessionId;
+        shiroSession= (ShiroSession) this.doGetSSoBySession();
+        //判断是否有单点登陆认证过来的Session
+        if(shiroSession!=null)
+        {
+            sessionId=shiroSession.getId();
+            session=shiroSession;
+        }else {
+            //远程生成
+            ResponResult responResult = remoteService.createSession((ShiroSession) session);
+            sessionId = (Serializable) responResult.getData();
+        }
         assignSessionId(session, sessionId);
         return sessionId;
     }
@@ -40,10 +52,8 @@ public class ClientSessionDAO extends CachingSessionDAO {
     @Override
     protected Session doReadSession(Serializable serializable) {
         String sessionId = (String) serializable;
-        String shiroSessionJson=remoteService.getSession("", sessionId);
-        ShiroSession shiroSession =JSON.parseObject(shiroSessionJson,ShiroSession.class);
-        System.out.println("12312");
-        //return  shiroSession;
+        String shiroSessionJson = remoteService.getSession("", sessionId);
+        ShiroSession shiroSession = JSON.parseObject(shiroSessionJson, ShiroSession.class);
         return SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
     }
 
@@ -66,9 +76,26 @@ public class ClientSessionDAO extends CachingSessionDAO {
         result.setData(session);
         remoteService.deleteSession("", result);
     }
+
     @Override
     public Collection<Session> getActiveSessions() {
         return null;
+    }
+
+    /**
+     * 分配Session
+     * @return
+     */
+    protected Session doGetSSoBySession() {
+        return null;
+    }
+
+    public RemoteBaseInterface getRemoteService() {
+        return remoteService;
+    }
+
+    public void setRemoteService(RemoteBaseInterface remoteService) {
+        this.remoteService = remoteService;
     }
 
 }

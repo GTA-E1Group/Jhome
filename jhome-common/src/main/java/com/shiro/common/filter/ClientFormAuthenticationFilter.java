@@ -1,5 +1,6 @@
 package com.shiro.common.filter;
 
+import com.shiro.common.client.TokenBySsoAuthorizing;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -25,11 +26,20 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        logger.info("ClientAuthenticationFilter----处理拦截URL："+httpServletRequest.getRequestURI());
+        logger.info("ClientAuthenticationFilter----处理拦截URL：" + httpServletRequest.getRequestURI());
         Subject subject = getSubject(request, response);
+        //单点登陆继承 获取token 给当前系统分配Session
+        String token = (String) request.getAttribute("token");
+        if (!token.isEmpty()&&!subject.isAuthenticated()) {
+            TokenBySsoAuthorizing tokenBySsoAuthorizing = new TokenBySsoAuthorizing();
+            tokenBySsoAuthorizing.setSsoToken(token);
+            Session session = subject.getSession();
+            return session != null ? true : false;
+        }
         //Subject subject = SecurityUtils.getSubject();
         return subject.isAuthenticated();
     }
+
     //拒绝访问
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
@@ -38,6 +48,7 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
         redirectToLogin(request, response);
         return false;
     }
+
     // 调用远程会话 将返回地址 存储到 Redis中
     protected void saveRequest(ServletRequest request, String backUrl, String fallbackUrl) {
         Subject subject = SecurityUtils.getSubject();
@@ -48,6 +59,7 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
 
         session.setAttribute(WebUtils.SAVED_REQUEST_KEY, savedRequest);
     }
+
     //获取登录成功后返回地址
     private String getDefaultBackUrl(HttpServletRequest request) {
         String scheme = request.getScheme();
@@ -57,9 +69,9 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
         StringBuilder backUrl = new StringBuilder(scheme);
         backUrl.append("://");
         backUrl.append(domain);
-        if("http".equalsIgnoreCase(scheme) && port != 80) {
+        if ("http".equalsIgnoreCase(scheme) && port != 80) {
             backUrl.append(":").append(String.valueOf(port));
-        } else if("https".equalsIgnoreCase(scheme) && port != 443) {
+        } else if ("https".equalsIgnoreCase(scheme) && port != 443) {
             backUrl.append(":").append(String.valueOf(port));
         }
         backUrl.append(contextPath);
