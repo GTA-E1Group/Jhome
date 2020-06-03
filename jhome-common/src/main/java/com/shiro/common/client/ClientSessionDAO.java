@@ -34,6 +34,7 @@ public class ClientSessionDAO extends CachingSessionDAO {
     protected Serializable doCreate(Session session) {
         ShiroSession shiroSession=null;
         Serializable sessionId;
+        /*执行模板方法，如果是单点登陆过来的直接获取缓存中的session，无需在创建*/
         shiroSession= (ShiroSession) this.doGetSSoBySession();
         //判断是否有单点登陆认证过来的Session
         if(shiroSession!=null)
