@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <verify name="Email">^[A-Za-z0-9\u4e00-\u9fa5]+[\.]{0,1}[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</verify>
+   <verify name="CardNo">^\d{17}[0-9x]{1}$</verify>
+   <verify name="Fixedphone">^($$\d{3,4}-)|\d{3.4}-)?\d{7,8}$</verify>
+   <verify name="Ip">^(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$</verify>
+   <verify name="LessThen10">^[\w\s\u4e00-\u9fa5]{0,10}$</verify>
+   <verify name="LessThen30">^[\w\s\u4e00-\u9fa5]{0,30}$</verify>
+   <verify name="LessThen500">^[\w\s\u4e00-\u9fa5]{0,500}$</verify>
+   <verify name="NotNull">^[\S]+$</verify>
+   <verify name="Telephone">^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</verify> 
+   <verify name="DateMonth">^(19|20)[0-9]{2}(0[1-9]|1[0-2])$</verify>
+   <verify name="DateDay">^(19|20)[0-9]{2}(0[1-9]|1[0-2])([0-2][1-9]|3[0-1])$</verify>
+   <verify name="DateYear">^(19|20)[0-9]{2}$</verify>  
+</data>

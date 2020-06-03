@@ -1,0 +1,524 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jhome-dataCenter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jhome_dataCenter_jar</output-path>
+    <root id="archive" name="jhome-dataCenter.jar">
+      <element id="module-output" name="jhome-dataCenter" />
+      <element id="module-output" name="jhome-common" />
+      <element id="module-output" name="jhome-sysAnnotation" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxjava-reactive-streams/1.2.1/rxjava-reactive-streams-1.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-handler/4.1.45.Final/netty-handler-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-aop/2.2.5.RELEASE/spring-boot-starter-aop-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/mysql/mysql-connector-java/8.0.19/mysql-connector-java-8.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-schema/2.9.2/springfox-schema-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/inject/guice/4.1.0/guice-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/github/openfeign/form/feign-form-spring/3.8.0/feign-form-spring-3.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-crypto-core/1.4.2/shiro-crypto-core-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/hystrix/hystrix-core/1.5.18/hystrix-core-1.5.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-commons/2.2.2.RELEASE/spring-cloud-commons-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/projectreactor/reactor-core/3.3.3.RELEASE/reactor-core-3.3.3.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/github/pagehelper/pagehelper/5.1.8/pagehelper-5.1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/jsonwebtoken/jjwt/0.6.0/jjwt-0.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/tomcat/embed/tomcat-embed-core/9.0.31/tomcat-embed-core-9.0.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-codec/4.1.45.Final/netty-codec-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.10.0.pr1/jackson-dataformat-xml-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/poi/poi/3.9/poi-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mengyun/tcc-transaction-core/1.2.12/tcc-transaction-core-1.2.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/rabbitmq/amqp-client/5.7.3/amqp-client-5.7.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/eureka/eureka-core/1.9.17/eureka-core-1.9.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/data/spring-data-commons/2.2.5.RELEASE/spring-data-commons-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/ant/ant/1.9.7/ant-1.9.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/imageio/imageio-metadata/3.4.1/imageio-metadata-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/thrift/libthrift/0.13.0/libthrift-0.13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mybatis/mybatis-spring/2.0.0/mybatis-spring-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/security/spring-security-crypto/5.2.2.RELEASE/spring-security-crypto-5.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/netflix-commons/netflix-statistics/0.1.1/netflix-statistics-0.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0.pr1/jackson-datatype-jdk8-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxnetty-servo/0.4.9/rxnetty-servo-0.4.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-jxpath/commons-jxpath/1.3/commons-jxpath-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/aspectj/aspectjrt/1.9.5/aspectjrt-1.9.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr1/jackson-dataformat-yaml-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-config-ogdl/1.4.2/shiro-config-ogdl-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/swagger/swagger-models/1.5.20/swagger-models-1.5.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/common/common-lang/3.4.1/common-lang-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/commons/commons-pool2/2.7.0/commons-pool2-2.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-resolver-dns/4.1.45.Final/netty-resolver-dns-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/redisson/redisson/3.12.0/redisson-3.12.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/commons/commons-text/1.3/commons-text-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon-eureka/2.3.0/ribbon-eureka-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/2.2.5.RELEASE/spring-boot-autoconfigure-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/alibaba/fastjson/1.2.61/fastjson-1.2.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/sun/jersey/jersey-core/1.19.1/jersey-core-1.19.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-spi/2.9.2/springfox-spi-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-netflix-hystrix/2.2.2.RELEASE/spring-cloud-netflix-hystrix-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-ehcache/1.4.2/shiro-ehcache-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/bladejava/blade-patchca/1.1.0/blade-patchca-1.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/tomcat/embed/tomcat-embed-el/9.0.31/tomcat-embed-el-9.0.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/eureka/eureka-client/1.9.17/eureka-client-1.9.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-core/2.9.2/springfox-core-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/netflix-commons/netflix-infix/0.3.0/netflix-infix-0.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/sun/mail/javax.mail/1.5.6/javax.mail-1.5.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-transport/4.1.45.Final/netty-transport-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/alibaba/druid/1.1.18/druid-1.1.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/commons/commons-email/1.5/commons-email-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-json/2.2.5.RELEASE/spring-boot-starter-json-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/woodstox/woodstox-core/6.0.0.pr2/woodstox-core-6.0.0.pr2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/thoughtworks/xstream/xstream/1.4.11.1/xstream-1.4.11.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/core/jackson-annotations/2.10.0.pr1/jackson-annotations-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/jodd/jodd-bean/5.0.13/jodd-bean-5.0.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/github/jai-imageio/jai-imageio-core/1.3.1/jai-imageio-core-1.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/github/openfeign/form/feign-form/3.8.0/feign-form-3.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/junit/junit/4.12/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/github/jsqlparser/jsqlparser/1.2/jsqlparser-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/imageio/imageio-jpeg/3.4.1/imageio-jpeg-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-web/5.2.4.RELEASE/spring-web-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-config-core/1.4.2/shiro-config-core-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter/2.2.2.RELEASE/spring-cloud-starter-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-io/commons-io/2.6/commons-io-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-validation/2.2.5.RELEASE/spring-boot-starter-validation-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/jaxen/jaxen/1.2.0/jaxen-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon/2.3.0/ribbon-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/net/coobird/thumbnailator/0.4.8/thumbnailator-0.4.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-netflix-ribbon/2.2.2.RELEASE/spring-cloud-netflix-ribbon-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxnetty/0.4.9/rxnetty-0.4.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/net/sf/dozer/dozer/5.5.1/dozer-5.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/zxing/core/3.3.2/core-3.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.10.0.pr1/jackson-module-jaxb-annotations-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.2.10/pagehelper-spring-boot-autoconfigure-1.2.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-web/2.2.5.RELEASE/spring-boot-starter-web-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/github/pagehelper/pagehelper-spring-boot-starter/1.2.10/pagehelper-spring-boot-starter-1.2.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-core/1.4.2/shiro-core-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/yaml/snakeyaml/1.25/snakeyaml-1.25.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxnetty-contexts/0.4.9/rxnetty-contexts-0.4.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mapstruct/mapstruct/1.2.0.Final/mapstruct-1.2.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.31/tomcat-embed-websocket-9.0.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-spring/1.4.2/shiro-spring-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/alibaba/druid-spring-boot-starter/1.1.18/druid-spring-boot-starter-1.1.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/beust/jcommander/1.72/jcommander-1.72.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/bouncycastle/bcpkix-jdk15on/1.64/bcpkix-jdk15on-1.64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mybatis/mybatis/3.5.0/mybatis-3.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-codec-dns/4.1.45.Final/netty-codec-dns-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-expression/5.2.4.RELEASE/spring-expression-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/net/bytebuddy/byte-buddy/1.10.8/byte-buddy-1.10.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-loadbalancer/2.2.2.RELEASE/spring-cloud-starter-loadbalancer-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/common/common-image/3.4.1/common-image-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/zxing/javase/3.3.2/javase-3.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxjava2/rxjava/2.2.18/rxjava-2.2.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/sun/jersey/contribs/jersey-apache-client4/1.19.1/jersey-apache-client4-1.19.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-web/1.4.2/shiro-web-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-jdbc/5.2.4.RELEASE/spring-jdbc-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/module/jackson-module-afterburner/2.10.0.pr1/jackson-module-afterburner-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-context/2.2.2.RELEASE/spring-cloud-context-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/github/openfeign/feign-core/10.7.4/feign-core-10.7.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-openfeign-core/2.2.2.RELEASE/spring-cloud-openfeign-core-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mengyun/tcc-transaction-api/1.2.12/tcc-transaction-api-1.2.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/stoyanr/evictor/1.0.0/evictor-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.10.0.pr1/jackson-module-parameter-names-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/redis/clients/jedis/3.1.0/jedis-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-aspectj/1.4.2/shiro-aspectj-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-netflix-eureka-client/2.2.2.RELEASE/spring-cloud-starter-netflix-eureka-client-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-core/5.2.4.RELEASE/spring-core-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/projectreactor/addons/reactor-extra/3.3.2.RELEASE/reactor-extra-3.3.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/belerweb/pinyin4j/2.5.1/pinyin4j-2.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mengyun/tcc-transaction-spring/1.2.12/tcc-transaction-spring-1.2.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-loadbalancer/2.2.2.RELEASE/spring-cloud-loadbalancer-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.0.0/mybatis-spring-boot-autoconfigure-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-swagger-ui/2.9.2/springfox-swagger-ui-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.0.0/mybatis-spring-boot-starter-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-netflix-ribbon/2.2.2.RELEASE/spring-cloud-starter-netflix-ribbon-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter/2.2.5.RELEASE/spring-boot-starter-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-buffer/4.1.45.Final/netty-buffer-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-lang/1.4.2/shiro-lang-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/data/spring-data-redis/2.2.5.RELEASE/spring-data-redis-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-webmvc/5.2.4.RELEASE/spring-webmvc-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-configuration-processor/2.2.5.RELEASE/spring-boot-configuration-processor-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/slf4j/log4j-over-slf4j/1.7.30/log4j-over-slf4j-1.7.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot/2.2.5.RELEASE/spring-boot-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-openfeign/2.2.2.RELEASE/spring-cloud-starter-openfeign-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-jdbc/2.2.5.RELEASE/spring-boot-starter-jdbc-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-context-support/5.2.4.RELEASE/spring-context-support-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-netflix-hystrix/2.2.2.RELEASE/spring-cloud-starter-netflix-hystrix-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-netflix-archaius/2.2.2.RELEASE/spring-cloud-netflix-archaius-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/antlr/antlr/2.7.7/antlr-2.7.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/github/openfeign/feign-hystrix/10.7.4/feign-hystrix-10.7.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-tomcat/2.2.5.RELEASE/spring-boot-starter-tomcat-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/de/ruedigermoeller/fst/2.57/fst-2.57.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-event/1.4.2/shiro-event-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon-transport/2.3.0/ribbon-transport-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/servo/servo-core/0.12.21/servo-core-0.12.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-resolver/4.1.45.Final/netty-resolver-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/net/sf/ehcache/ehcache-core/2.6.11/ehcache-core-2.6.11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/security/spring-security-rsa/1.0.9.RELEASE/spring-security-rsa-1.0.9.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/netflix-commons/netflix-eventbus/0.3.0/netflix-eventbus-0.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/httpcomponents/httpclient/4.5.12/httpclient-4.5.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-oxm/5.2.4.RELEASE/spring-oxm-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/core/jackson-core/2.10.0.pr1/jackson-core-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/net/sf/jmimemagic/jmimemagic/0.1.5/jmimemagic-0.1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon-httpclient/2.3.0/ribbon-httpclient-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/codehaus/woodstox/stax2-api/4.2/stax2-api-4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/objenesis/objenesis/2.6/objenesis-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-tx/5.2.4.RELEASE/spring-tx-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/whalin/Memcached-Java-Client/3.0.2/Memcached-Java-Client-3.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/json/json/20180130/json-20180130.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/hibernate/validator/hibernate-validator/6.0.18.Final/hibernate-validator-6.0.18.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/guava/guava/28.2-android/guava-28.2-android.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-aop/5.2.4.RELEASE/spring-aop-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.0.pr1/jackson-datatype-jsr310-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/archaius/archaius-core/0.7.6/archaius-core-0.7.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-crypto-hash/1.4.2/shiro-crypto-hash-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-starter-netflix-archaius/2.2.2.RELEASE/spring-cloud-starter-netflix-archaius-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-swagger-common/2.9.2/springfox-swagger-common-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/stax/stax-api/1.0.1/stax-api-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/hystrix/hystrix-serialization/1.5.18/hystrix-serialization-1.5.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-crypto-cipher/1.4.2/shiro-crypto-cipher-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/imageio/imageio-core/3.4.1/imageio-core-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/github/openfeign/feign-slf4j/10.7.4/feign-slf4j-10.7.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.18/hystrix-metrics-event-stream-1.5.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/apache/shiro/shiro-cache/1.4.2/shiro-cache-1.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/netty/netty-common/4.1.45.Final/netty-common-4.1.45.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/javax/inject/javax.inject/1/javax.inject-1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/twelvemonkeys/common/common-io/3.4.1/common-io-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-jcl/5.2.4.RELEASE/spring-jcl-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/zaxxer/HikariCP/3.4.2/HikariCP-3.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/cloud/spring-cloud-netflix-eureka-client/2.2.2.RELEASE/spring-cloud-netflix-eureka-client-2.2.2.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/data/spring-data-keyvalue/2.2.5.RELEASE/spring-data-keyvalue-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon-core/2.3.0/ribbon-core-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/io/springfox/springfox-spring-web/2.9.2/springfox-spring-web-2.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/ribbon/ribbon-loadbalancer/2.3.0/ribbon-loadbalancer-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/netflix-commons/netflix-commons-util/0.3.0/netflix-commons-util-0.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/jackson/core/jackson-databind/2.10.0.pr1/jackson-databind-2.10.0.pr1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/sun/jersey/jersey-client/1.19.1/jersey-client-1.19.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-context/5.2.4.RELEASE/spring-context-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-logging/2.2.5.RELEASE/spring-boot-starter-logging-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/codehaus/jettison/jettison/1.3.7/jettison-1.3.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/jodd/jodd-core/5.0.13/jodd-core-5.0.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/eu/bitwalker/UserAgentUtils/1.21/UserAgentUtils-1.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/spring-beans/5.2.4.RELEASE/spring-beans-5.2.4.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/javax/activation/activation/1.1.1/activation-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/org/springframework/boot/spring-boot-starter-cache/2.2.5.RELEASE/spring-boot-starter-cache-2.2.5.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/mavenRepository/com/netflix/hystrix/hystrix-javanica/1.5.18/hystrix-javanica-1.5.18.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+      <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+      <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+      <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+      <element id="library" level="project" name="Maven: com.alibaba:druid-spring-boot-starter:1.1.18" />
+      <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.18" />
+      <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.61" />
+      <element id="library" level="project" name="Maven: com.belerweb:pinyin4j:2.5.1" />
+      <element id="library" level="project" name="Maven: com.beust:jcommander:1.72" />
+      <element id="library" level="project" name="Maven: com.bladejava:blade-patchca:1.1.0" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-afterburner:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.10.0.pr1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.woodstox:woodstox-core:6.0.0.pr2" />
+      <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+      <element id="library" level="project" name="Maven: com.github.jai-imageio:jai-imageio-core:1.3.1" />
+      <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.2" />
+      <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper-spring-boot-autoconfigure:1.2.10" />
+      <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10" />
+      <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.8" />
+      <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.2" />
+      <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.6" />
+      <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.3.4" />
+      <element id="library" level="project" name="Maven: com.google.guava:failureaccess:1.0.1" />
+      <element id="library" level="project" name="Maven: com.google.guava:guava:28.2-android" />
+      <element id="library" level="project" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
+      <element id="library" level="project" name="Maven: com.google.inject:guice:4.1.0" />
+      <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.3" />
+      <element id="library" level="project" name="Maven: com.google.zxing:core:3.3.2" />
+      <element id="library" level="project" name="Maven: com.google.zxing:javase:3.3.2" />
+      <element id="library" level="project" name="Maven: com.netflix.archaius:archaius-core:0.7.6" />
+      <element id="library" level="project" name="Maven: com.netflix.eureka:eureka-client:1.9.17" />
+      <element id="library" level="project" name="Maven: com.netflix.eureka:eureka-core:1.9.17" />
+      <element id="library" level="project" name="Maven: com.netflix.hystrix:hystrix-core:1.5.18" />
+      <element id="library" level="project" name="Maven: com.netflix.hystrix:hystrix-javanica:1.5.18" />
+      <element id="library" level="project" name="Maven: com.netflix.hystrix:hystrix-metrics-event-stream:1.5.18" />
+      <element id="library" level="project" name="Maven: com.netflix.hystrix:hystrix-serialization:1.5.18" />
+      <element id="library" level="project" name="Maven: com.netflix.netflix-commons:netflix-commons-util:0.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.netflix-commons:netflix-eventbus:0.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.netflix-commons:netflix-infix:0.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.netflix-commons:netflix-statistics:0.1.1" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon-core:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon-eureka:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon-httpclient:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon-loadbalancer:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon-transport:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.ribbon:ribbon:2.3.0" />
+      <element id="library" level="project" name="Maven: com.netflix.servo:servo-core:0.12.21" />
+      <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:5.7.3" />
+      <element id="library" level="project" name="Maven: com.stoyanr:evictor:1.0.0" />
+      <element id="library" level="project" name="Maven: com.sun.jersey.contribs:jersey-apache-client4:1.19.1" />
+      <element id="library" level="project" name="Maven: com.sun.jersey:jersey-client:1.19.1" />
+      <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.19.1" />
+      <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.6" />
+      <element id="library" level="project" name="Maven: com.thoughtworks.xstream:xstream:1.4.11.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-image:3.4.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-io:3.4.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.common:common-lang:3.4.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-core:3.4.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-jpeg:3.4.1" />
+      <element id="library" level="project" name="Maven: com.twelvemonkeys.imageio:imageio-metadata:3.4.1" />
+      <element id="library" level="project" name="Maven: com.whalin:Memcached-Java-Client:3.0.2" />
+      <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:3.4.2" />
+      <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+      <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.13" />
+      <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+      <element id="library" level="project" name="Maven: commons-configuration:commons-configuration:1.8" />
+      <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.3" />
+      <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
+      <element id="library" level="project" name="Maven: commons-jxpath:commons-jxpath:1.3" />
+      <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+      <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+      <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.6" />
+      <element id="library" level="project" name="Maven: de.ruedigermoeller:fst:2.57" />
+      <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+      <element id="library" level="project" name="Maven: eu.bitwalker:UserAgentUtils:1.21" />
+      <element id="library" level="project" name="Maven: io.github.openfeign.form:feign-form-spring:3.8.0" />
+      <element id="library" level="project" name="Maven: io.github.openfeign.form:feign-form:3.8.0" />
+      <element id="library" level="project" name="Maven: io.github.openfeign:feign-core:10.7.4" />
+      <element id="library" level="project" name="Maven: io.github.openfeign:feign-hystrix:10.7.4" />
+      <element id="library" level="project" name="Maven: io.github.openfeign:feign-slf4j:10.7.4" />
+      <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.6.0" />
+      <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-dns:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver-dns:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.45.Final" />
+      <element id="library" level="project" name="Maven: io.projectreactor.addons:reactor-extra:3.3.2.RELEASE" />
+      <element id="library" level="project" name="Maven: io.projectreactor:reactor-core:3.3.3.RELEASE" />
+      <element id="library" level="project" name="Maven: io.reactivex.rxjava2:rxjava:2.2.18" />
+      <element id="library" level="project" name="Maven: io.reactivex:rxjava-reactive-streams:1.2.1" />
+      <element id="library" level="project" name="Maven: io.reactivex:rxjava:1.3.8" />
+      <element id="library" level="project" name="Maven: io.reactivex:rxnetty-contexts:0.4.9" />
+      <element id="library" level="project" name="Maven: io.reactivex:rxnetty-servo:0.4.9" />
+      <element id="library" level="project" name="Maven: io.reactivex:rxnetty:0.4.9" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-core:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-schema:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-spi:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-spring-web:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-common:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" />
+      <element id="library" level="project" name="Maven: io.springfox:springfox-swagger2:2.9.2" />
+      <element id="library" level="project" name="Maven: io.swagger:swagger-annotations:1.5.20" />
+      <element id="library" level="project" name="Maven: io.swagger:swagger-models:1.5.20" />
+      <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
+      <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" />
+      <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
+      <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" />
+      <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
+      <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.3.2" />
+      <element id="library" level="project" name="Maven: javax.cache:cache-api:1.1.1" />
+      <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+      <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
+      <element id="library" level="project" name="Maven: jaxen:jaxen:1.2.0" />
+      <element id="library" level="project" name="Maven: joda-time:joda-time:2.10.5" />
+      <element id="library" level="project" name="Maven: junit:junit:4.12" />
+      <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
+      <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.10.8" />
+      <element id="library" level="project" name="Maven: net.coobird:thumbnailator:0.4.8" />
+      <element id="library" level="project" name="Maven: net.sf.dozer:dozer:5.5.1" />
+      <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.11" />
+      <element id="library" level="project" name="Maven: net.sf.jmimemagic:jmimemagic:0.1.5" />
+      <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.4" />
+      <element id="library" level="project" name="Maven: org.antlr:stringtemplate:3.2.1" />
+      <element id="library" level="project" name="Maven: org.apache.ant:ant-launcher:1.9.7" />
+      <element id="library" level="project" name="Maven: org.apache.ant:ant:1.9.7" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-email:1.5" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.9" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-math:2.2" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.7.0" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-text:1.3" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.12" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" />
+      <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.12.1" />
+      <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.12.1" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.9" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.9" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi-scratchpad:3.9" />
+      <element id="library" level="project" name="Maven: org.apache.poi:poi:3.9" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-aspectj:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-cache:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-core:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-ogdl:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-core:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-cipher:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-core:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-hash:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-ehcache:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-event:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-lang:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.4.2" />
+      <element id="library" level="project" name="Maven: org.apache.thrift:libthrift:0.13.0" />
+      <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.31" />
+      <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.31" />
+      <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.31" />
+      <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
+      <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.9.5" />
+      <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.5" />
+      <element id="library" level="project" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.64" />
+      <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" />
+      <element id="library" level="project" name="Maven: org.checkerframework:checker-compat-qual:2.5.5" />
+      <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.3.7" />
+      <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:4.2" />
+      <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:2.1" />
+      <element id="library" level="project" name="Maven: org.hamcrest:hamcrest:2.1" />
+      <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" />
+      <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.0.18.Final" />
+      <element id="library" level="project" name="Maven: org.javassist:javassist:3.21.0-GA" />
+      <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" />
+      <element id="library" level="project" name="Maven: org.jodd:jodd-bean:5.0.13" />
+      <element id="library" level="project" name="Maven: org.jodd:jodd-core:5.0.13" />
+      <element id="library" level="project" name="Maven: org.json:json:20180130" />
+      <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.11.3" />
+      <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" />
+      <element id="library" level="project" name="Maven: org.mengyun:tcc-transaction-api:1.2.12" />
+      <element id="library" level="project" name="Maven: org.mengyun:tcc-transaction-core:1.2.12" />
+      <element id="library" level="project" name="Maven: org.mengyun:tcc-transaction-spring:1.2.12" />
+      <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.0.0" />
+      <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0" />
+      <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.0" />
+      <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.0" />
+      <element id="library" level="project" name="Maven: org.objenesis:objenesis:2.6" />
+      <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.4" />
+      <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.12" />
+      <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.3" />
+      <element id="library" level="project" name="Maven: org.redisson:redisson:3.12.0" />
+      <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.30" />
+      <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.30" />
+      <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.30" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.30" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-cache:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-validation:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-commons:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-context:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-loadbalancer:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-archaius:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-eureka-client:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-hystrix:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-netflix-ribbon:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-openfeign-core:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-loadbalancer:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-archaius:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter-openfeign:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.cloud:spring-cloud-starter:2.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:2.2.5.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.2.2.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework.security:spring-security-rsa:1.0.9.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.25" />
+      <element id="library" level="project" name="Maven: redis.clients:jedis:3.1.0" />
+      <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+      <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+      <element id="library" level="project" name="Maven: xmlpull:xmlpull:1.1.3.1" />
+      <element id="library" level="project" name="Maven: xpp3:xpp3_min:1.1.4c" />
+      <element id="javaee-facet-resources" facet="jhome-dataCenter/web/Web" />
+      <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:4.1.0" />
+      <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+      <element id="library" level="project" name="Maven: org.objenesis:objenesis:2.5.1" />
+      <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:1.6.4.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.9.RELEASE" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.9.RELEASE" />
+      <element id="library" level="project" name="Maven: redis.clients:jedis:2.8.1" />
+    </root>
+  </artifact>
+</component>

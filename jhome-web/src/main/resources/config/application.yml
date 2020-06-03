@@ -1,0 +1,173 @@
+# 产品或项目名称、软件开发公司名称
+productName: JHome-JavaHome 开发平台
+companyName: JHome V1.0
+# 产品版本、版权年份
+productVersion: V1.0
+copyrightYear: 2020
+
+adminPath: ${jhome.sysproperties.adminPath}
+frontPath: ${jhome.sysproperties.frontPath}
+#======================================#
+#========== System settings ===========#
+#======================================#
+jhome:
+  # 系统参数
+  sysproperties:
+    # redis 地址
+    redissonUrl: redis://${spring.redis.host}:${spring.redis.port}
+    # 管理基础路径
+    adminPath: web
+    # 前端基础路径
+    frontPath: web
+    #消息服务配置
+    queueconfig:
+      #队列服务器地址
+      hostName: 192.168.43.93
+      #用户名
+      userName: daxu
+      #密码
+      passWord: 13528764027
+      #虚拟主机
+      virtualHost: dxhost
+#======================================#
+#========== com.nettyServer.Server settings ===========#
+#======================================#
+server:
+  port: 8111
+  servlet:
+    context-path: /jhome
+  tomcat:
+    uri-encoding: UTF-8
+
+
+
+# 日志支持
+logging.level.project.user.UserClient: DEBUG
+#========================================#
+#============= 数据库配置地址 =============#
+#========== Spring 基础配置信息 ===========#
+#=========================================#
+spring:
+  # 应用程序名称
+  application:
+    name: jhome-web
+  # 当前环境名称（注意：不可设置为 test 它是单元测试专用的名称）
+  profiles:
+    active: default
+  # 打印横幅
+  main:
+    bannerMode: "CONSOLE"
+    allow-bean-definition-overriding: true #遇到同样名字是否覆盖操作
+  thymeleaf:
+    prefix: classpath:/templates/
+  datasource:
+    url: jdbc:mysql://192.168.40.129:3306/jhome # jdbc:mysql://10.1.137.101:3306/qas_ynjm_v184
+    username: root
+    password: 111111
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 192.168.52.130 #10.1.20.66 #10.1.20.66 #192.168.40.129 #192.168.52.130
+    database: 0
+    port: 6379
+    password:
+    timeout: 10000
+
+#=========================================#
+#===============  日志配置 ===========#
+#=========================================#
+#logging:
+#  config: classpath:/config/logback-spring.xml
+
+#=========================================#
+#========== Shrio 基础配置信息 ===========#
+
+#=========================================#
+shiro:
+  filterChainDefinitionMap: |
+
+    /static/**: anon,
+    /css/**: anon,
+    /images/**: anon,
+    /js/**: anon,
+    /script/**: anon,
+    /web/**: authc,
+    /**: authc
+  LoginUrl: http://127.0.0.1:8100/jhome/account/login
+  SuccessUrl: /${jhome.sysproperties.adminPath}/web/index
+  UnauthorizedUrl: /${jhome.sysproperties.adminPath}/sys/error
+
+#=========================================#
+#========== mybase 基础配置信息 ===========#
+#=========================================#
+
+#=========================================#
+#========== thymeleaf 基础配置信息 ========#
+#=========================================#
+
+#=========================================#
+#================ 分页配置 ================#
+#=========================================#
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+#=========================================#
+#============= 消息队列服务器地址  ========#
+#=========================================#
+
+# ->->->->->->->->->->->->->->->->->->->-> 服务消费者 ->->->->->->->->->->->->->->->->->->->->
+#=========================================#
+#================ eureka配置 ================#
+#=========================================#
+###服务注册到eureka注册中心的地址
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://daxunihao:123456@127.0.0.1:9100/jhome/eureka/
+    ###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
+    ####defaultZone: http://daxunihao:123456@127.0.0.1:9100/jhome/eureka/,http://daxunihao:123456@127.0.0.1:9200/jhome/eureka/
+    register-with-eureka: true
+    ###是否需要从eureka上检索服务
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.application.name}---${server.port} Web消费者
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+
+
+
+
+#feign:
+#  compression:
+#    request:
+#      enabled: true
+#      mime-types: text/xml,application/xml,application/json
+#      min-request-size: 2048
+#    response:
+#      enabled: true
+
+feign:
+  #  hystrix:
+  #    enabled: false
+  #  httpclient:
+  #    enabled: false
+  compression:
+    request:
+      enabled: true
+      # 限制格式
+      mime-types: text/xml,application/xml,application/json
+      # 限制大小
+      min-request-size: 214800
+    response:
+      enabled: true
+
+
+ribbon:
+  ReadTimeout: 600000
+  ConnectTimeout: 600000

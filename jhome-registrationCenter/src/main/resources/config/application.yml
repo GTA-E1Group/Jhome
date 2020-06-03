@@ -1,0 +1,52 @@
+## 产品或项目名称、软件开发公司名称
+#productName: JHome-JavaHome 注册中心
+#companyName: JHome V1.0
+## 产品版本、版权年份
+#productVersion: V1.0
+#copyrightYear: 2020
+
+#======================================#
+#========== com.nettyServer.Server settings ===========#
+#======================================#
+server:
+  port: 9200
+  servlet:
+    context-path: /jhome
+  tomcat:
+    uri-encoding: UTF-8
+
+
+#======================================#
+#========== spring settings ===========#
+#======================================#
+spring:
+  application:
+    name: JHome-registationCenter
+  security:
+    basic:
+      enable: true #开启基于HTTP basic的认证
+    user:
+      name: daxunihao
+      password: 123456
+#======================================#
+#========== eureka settings ===========#
+#======================================#
+eureka:
+  instance:
+#    注册中心地址
+    hostname: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port} eureka注册中心
+  #    客户端调用地址
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/jhome/eureka/
+                   # http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+                   # http://${security.user.name}:${security.user.password}@127.0.0.1:${server.port}/eureka/
+                   # http://daxunihao:123456@127.0.0.1:8100/eureka/
+    #是否将自己注册到Eureka服务中,因为该应用本身就是注册中心，不需要再注册自己（集群的时候为true）
+    #register-with-eureka: true
+    register-with-eureka: true
+    #是否从Eureka中获取注册信息,因为自己为注册中心,不会在该应用中的检索服务信息
+    fetch-registry: true
+  server:
+    enable-self-preservation: true #true启用 禁用自我保护模式

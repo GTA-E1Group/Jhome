@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.jhome</groupId>
+    <artifactId>jhome-root</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>jhome</name>
+    <url>http://jhome.com</url>
+    <inceptionYear>2013-Now</inceptionYear>
+
+    <modules>
+        <module>../jhome-parent</module>
+        <module>../jhome-common</module>
+        <module>../jhome-web</module>
+        <module>../jhome-webspider</module>
+        <module>../jhome-sysAnnotation</module>
+        <module>../jhome-registrationCenter</module>
+        <module>../jhome-dataCenter</module>
+        <module>../jhome-registrationCenter_One</module>
+        <module>../jhome-Pay</module>
+        <module>../jhome-account</module>
+        <module>../jhome-NettyServer</module>
+    </modules>
+    <developers>
+        <developer>
+            <id>jhome</id>
+            <name>daxu</name>
+            <email>523673705@qq.com</email>
+            <roles><role>Project lead</role></roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <organization>
+        <name>jhome</name>
+        <url>http://jhome.com</url>
+    </organization>
+
+</project>

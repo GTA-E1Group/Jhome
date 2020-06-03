@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="jhome-registrationCenter_One:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62e8027e-8267-481d-a3e3-cb09ea98708c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\mavenRepository" />
+        <option name="mavenHome" value="D:/rj/javahj/apache-maven-3.5.0-bin" />
+        <option name="userSettingsFile" value="D:\mavenRepository\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8.0_181" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cORUNw20rFkl5RpDA7Fi5cWeAR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="jhome-root" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-registrationCenter_One/target" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.16503906" />
+    <property name="project.structure.side.proportion" value="0.33256084" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jhome.common.shiro.realm" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javaHome\jhome\jhome-registrationCenter_One\target" />
+      <recent name="D:\javaHome\jhome\jhome-account\target" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.JhomeWebApplication">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jhome.App" />
+      <module name="jhome-registrationCenter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jhome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JhomeNettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nettyServer.JhomeNettyServer" />
+      <module name="jhome-NettyServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nettyServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="jhome-registrationCenter_One" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jhome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.App" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JhomeAcccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jhome-account" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.JhomeAcccountApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JhomeDataCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="jhome-dataCenter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jhome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.JhomeDataCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JhomeWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jhome-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.JhomeWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.JhomeNettyServer" />
+      <item itemvalue="Spring Boot.App" />
+      <item itemvalue="Spring Boot.JhomeAcccountApplication" />
+      <item itemvalue="Spring Boot.JhomeWebApplication" />
+      <item itemvalue="Spring Boot.JhomeDataCenterApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.JhomeDataCenterApplication" />
+        <item itemvalue="Application.JhomeNettyServer" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62e8027e-8267-481d-a3e3-cb09ea98708c" name="Default Changelist" comment="" />
+      <created>1590397667722</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590397667722</updated>
+      <workItem from="1590397670269" duration="270000" />
+      <workItem from="1590397953636" duration="209000" />
+      <workItem from="1590398270340" duration="302000" />
+      <workItem from="1590398598560" duration="983000" />
+      <workItem from="1590399676043" duration="340000" />
+      <workItem from="1590400255924" duration="1564000" />
+      <workItem from="1590410144034" duration="456000" />
+      <workItem from="1590484232202" duration="966000" />
+      <workItem from="1590485338920" duration="236000" />
+      <workItem from="1590485722498" duration="685000" />
+      <workItem from="1590486672544" duration="2362000" />
+      <workItem from="1590540138431" duration="16885000" />
+      <workItem from="1590564810459" duration="152000" />
+      <workItem from="1590565357656" duration="7882000" />
+      <workItem from="1590574417236" duration="448000" />
+      <workItem from="1590575117892" duration="324000" />
+      <workItem from="1590575672023" duration="521000" />
+      <workItem from="1590576228791" duration="66000" />
+      <workItem from="1590588671667" duration="148000" />
+      <workItem from="1590592024938" duration="33000" />
+      <workItem from="1590626834778" duration="12954000" />
+      <workItem from="1590712780003" duration="18910000" />
+      <workItem from="1590810624832" duration="6256000" />
+      <workItem from="1590833446302" duration="12479000" />
+      <workItem from="1590851160697" duration="7857000" />
+      <workItem from="1590901560489" duration="6177000" />
+      <workItem from="1590908267355" duration="1862000" />
+      <workItem from="1590915126528" duration="181000" />
+      <workItem from="1590917907998" duration="3404000" />
+      <workItem from="1590928482558" duration="5966000" />
+      <workItem from="1590977764249" duration="2740000" />
+      <workItem from="1591004669429" duration="29000" />
+      <workItem from="1591103230401" duration="1589000" />
+      <workItem from="1591190063946" duration="2459000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="176" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590934445431">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="176" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1440.929@0.31.1440.929" timestamp="1590934445431" />
+    <state x="526" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1591190847445">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="526" y="205" key="#com.intellij.ide.util.MemberChooser/0.31.1440.929@0.31.1440.929" timestamp="1591190847445" />
+    <state x="436" y="327" width="791" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590932654123">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="436" y="293" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.920@0.0.1440.920" timestamp="1590844944786" />
+    <state x="509" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1590574726915" />
+    <state x="436" y="327" width="791" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog/0.31.1440.929@0.31.1440.929" timestamp="1590932654123" />
+    <state x="481" y="289" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1590907634201">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="481" y="289" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1440.920@0.0.1440.920" timestamp="1590907634201" />
+    <state x="451" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590919471124">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="451" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.31.1440.929@0.31.1440.929" timestamp="1590919471124" />
+    <state width="440" height="430" key="DebuggerActiveHint" timestamp="1591104516433">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="440" height="425" key="DebuggerActiveHint/0.0.1440.920@0.0.1440.920" timestamp="1590856051647" />
+    <state width="457" height="466" key="DebuggerActiveHint/0.0.1680.1010@0.0.1680.1010" timestamp="1590716082920" />
+    <state width="440" height="430" key="DebuggerActiveHint/0.31.1440.929@0.31.1440.929" timestamp="1591104516433" />
+    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1590398384950">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1590398384950" />
+    <state width="1397" height="263" key="GridCell.Tab.0.bottom" timestamp="1591192830806">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="283" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
+    <state width="1637" height="340" key="GridCell.Tab.0.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="263" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591192830806" />
+    <state width="1397" height="263" key="GridCell.Tab.0.center" timestamp="1591192830806">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
+    <state width="1637" height="283" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
+    <state width="1637" height="340" key="GridCell.Tab.0.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="263" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1591192830806" />
+    <state width="1397" height="263" key="GridCell.Tab.0.left" timestamp="1591192830806">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
+    <state width="1637" height="283" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
+    <state width="1637" height="340" key="GridCell.Tab.0.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="263" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1591192830806" />
+    <state width="1397" height="263" key="GridCell.Tab.0.right" timestamp="1591192830806">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="283" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
+    <state width="1637" height="340" key="GridCell.Tab.0.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="263" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1591192830806" />
+    <state width="1397" height="376" key="GridCell.Tab.1.bottom" timestamp="1591104823116">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.1.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.1.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="376" key="GridCell.Tab.1.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
+    <state width="1397" height="376" key="GridCell.Tab.1.center" timestamp="1591104823116">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.1.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.1.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="376" key="GridCell.Tab.1.center/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
+    <state width="1397" height="376" key="GridCell.Tab.1.left" timestamp="1591104823116">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.1.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.1.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="376" key="GridCell.Tab.1.left/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
+    <state width="1397" height="376" key="GridCell.Tab.1.right" timestamp="1591104823116">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.1.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.1.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="376" key="GridCell.Tab.1.right/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
+    <state width="1397" height="304" key="GridCell.Tab.2.bottom" timestamp="1591104823009">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.2.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.2.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.2.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="304" key="GridCell.Tab.2.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
+    <state width="1397" height="304" key="GridCell.Tab.2.center" timestamp="1591104823009">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.2.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.2.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.2.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="304" key="GridCell.Tab.2.center/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
+    <state width="1397" height="304" key="GridCell.Tab.2.left" timestamp="1591104823009">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.2.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.2.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.2.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="304" key="GridCell.Tab.2.left/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
+    <state width="1397" height="304" key="GridCell.Tab.2.right" timestamp="1591104823009">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="1397" height="301" key="GridCell.Tab.2.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
+    <state width="1637" height="411" key="GridCell.Tab.2.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
+    <state width="1637" height="340" key="GridCell.Tab.2.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
+    <state width="1397" height="304" key="GridCell.Tab.2.right/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
+    <state x="222" y="102" key="SettingsEditor" timestamp="1590932705076">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="222" y="70" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1590845313347" />
+    <state x="259" y="113" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1590745721364" />
+    <state x="222" y="102" key="SettingsEditor/0.31.1440.929@0.31.1440.929" timestamp="1590932705076" />
+    <state width="727" height="473" key="XDebugger.FullValuePopup" timestamp="1591104339125">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="727" height="468" key="XDebugger.FullValuePopup/0.0.1440.920@0.0.1440.920" timestamp="1590907596058" />
+    <state width="848" height="513" key="XDebugger.FullValuePopup/0.0.1680.1010@0.0.1680.1010" timestamp="1590562707605" />
+    <state width="727" height="473" key="XDebugger.FullValuePopup/0.31.1440.929@0.31.1440.929" timestamp="1591104339125" />
+    <state x="405" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1590592024938">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="405" y="285" key="com.intellij.ide.util.TipDialog/0.0.1440.920@0.0.1440.920" timestamp="1590592024938" />
+    <state x="473" y="313" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1590576247935" />
+    <state x="377" y="229" key="run.anything.popup" timestamp="1591190443264">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1591190443264" />
+    <state x="431" y="198" width="670" height="158" key="search.everywhere.popup" timestamp="1590853275102">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="431" y="198" width="670" height="158" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1590853275102" />
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1590571419537" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/modules/sys/web/dataCenterController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-NettyServer/src/main/java/com/nettyServer/Config/RedissonConditional.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-NettyServer/src/main/java/com/nettyServer/Service/impl/SocketServiceImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-NettyServer/src/main/java/com/nettyServer/Service/impl/SocketServiceImpl.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/ClientSessionDAO.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ClientRealm.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ClientRealm.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/realm/RedisSessionDao.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/ClientSessionDAO.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/modules/sys/web/dataCenterController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-web/src/main/java/com/jhome/modules/ymx/web/trackOrdersController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/realm/RedisSessionDao.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/ClientSessionDAO.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-core/1.4.2/shiro-core-1.4.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class</url>
+          <line>163</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-core/1.4.2/shiro-core-1.4.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class</url>
+          <line>101</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-web/1.4.2/shiro-web-1.4.2.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.class</url>
+          <line>32</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-web/1.4.2/shiro-web-1.4.2.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.class</url>
+          <line>25</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>
+          <line>21</line>
+          <properties class="com.jhome.common.shiro.realm.ServiceBFeignClientFallback" method="updateSession">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
