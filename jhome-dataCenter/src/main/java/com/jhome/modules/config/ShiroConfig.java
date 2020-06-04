@@ -5,7 +5,7 @@ import com.jhome.common.shiro.realm.ClientRealm;
 import com.jhome.common.shiro.realm.SysShiroProperties;
 import com.jhome.common.shiro.realm.UserRemoteServiceInterface;
 import com.shiro.common.client.ClientSessionDAO;
-import com.shiro.common.filter.ClientFormAuthenticationFilter;
+import com.shiro.common.filter.TokenFormAuthenticationFilter;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -202,9 +202,10 @@ public class ShiroConfig {
     /**
      * Form登录过滤器
      */
-    private ClientFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
-        ClientFormAuthenticationFilter bean = new ClientFormAuthenticationFilter();
+    private TokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
+        TokenFormAuthenticationFilter bean = new TokenFormAuthenticationFilter();
         //bean.setAuthorizingRealm(authorizingRealm);
+        bean.setCDao(clientSessionDAO());
         return bean;
     }
     /**

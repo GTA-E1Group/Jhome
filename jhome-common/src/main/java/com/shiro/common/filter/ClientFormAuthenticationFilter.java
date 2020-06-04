@@ -28,15 +28,6 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         logger.info("ClientAuthenticationFilter----处理拦截URL：" + httpServletRequest.getRequestURI());
         Subject subject = getSubject(request, response);
-        //单点登陆继承 获取token 给当前系统分配Session
-        String token = (String) request.getAttribute("token");
-        if (!token.isEmpty()&&!subject.isAuthenticated()) {
-            TokenBySsoAuthorizing tokenBySsoAuthorizing = new TokenBySsoAuthorizing();
-            tokenBySsoAuthorizing.setSsoToken(token);
-            Session session = subject.getSession();
-            return session != null ? true : false;
-        }
-        //Subject subject = SecurityUtils.getSubject();
         return subject.isAuthenticated();
     }
 

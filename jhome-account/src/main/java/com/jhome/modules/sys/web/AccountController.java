@@ -3,6 +3,7 @@ package com.jhome.modules.sys.web;
 import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.Cache.MemcachedManager;
 import com.daxu.common.Identity.AuthUtil;
+import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.RedissonHandler.RedissonHandler;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.jhome.common.shiro.realm.DeviceType;
@@ -63,12 +64,14 @@ public class AccountController extends baseController {
                     session.setAttribute(SessionCons.LOGIN_USER_SESSION, JSONUtils.beanToJson(userInfo) );
                     result.setMsg("登陆成功");
                     result.setCode("1");
+                    result.data= UserUtil.GetToken((String) session.getId());
+
                 }
 
                 /**
                  * 返回  模式 Token认证
                  */
-                result.data= AuthUtil.userLogin(String.valueOf(user.getId()),user, response);
+                //result.data= AuthUtil.userLogin(String.valueOf(user.getId()),user, response);
 
             } catch (Exception e) {
                 // TODO: handle exception

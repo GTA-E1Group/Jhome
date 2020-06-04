@@ -42,7 +42,9 @@
                 success: function (result) {
                     if (result.code == 1) {
                         alert("成功");
-                        window.location.href="/jhome/account/main";
+                        //window.location.href="/jhome/account/main";
+                        window.location.href=result.data;
+
                     } else {
                         alert("失败");
                     }

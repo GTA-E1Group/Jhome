@@ -3,6 +3,7 @@ package com.shiro.common.client;
 import com.alibaba.fastjson.JSON;
 import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;
+import com.daxu.common.Identity.UserUtil;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -20,83 +21,35 @@ import java.util.Collection;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class ClientSessionDAO extends CachingSessionDAO {
-
-    private RemoteBaseInterface remoteService;
-
-    private String appKey;
-
-    public void setAppKey(String appKey) {
-        this.appKey = appKey;
-    }
+public class ClientSessionDAO extends TokenBySsoAuthorizing {
+    private String ssoToken;
 
     @Override
-    protected Serializable doCreate(Session session) {
-        ShiroSession shiroSession=null;
-        Serializable sessionId;
-        /*执行模板方法，如果是单点登陆过来的直接获取缓存中的session，无需在创建*/
-        shiroSession= (ShiroSession) this.doGetSSoBySession();
-        //判断是否有单点登陆认证过来的Session
-        if(shiroSession!=null)
-        {
-            sessionId=shiroSession.getId();
-            session=shiroSession;
-        }else {
-            //远程生成
-            ResponResult responResult = remoteService.createSession((ShiroSession) session);
-            sessionId = (Serializable) responResult.getData();
-        }
-        assignSessionId(session, sessionId);
-        return sessionId;
-    }
-
-    @Override
-    protected Session doReadSession(Serializable serializable) {
-        String sessionId = (String) serializable;
-        String shiroSessionJson = remoteService.getSession("", sessionId);
-        ShiroSession shiroSession = JSON.parseObject(shiroSessionJson, ShiroSession.class);
-        return SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
-    }
-
-
-    @Override
-    protected void doUpdate(Session session) {
-        if (session instanceof SimpleSession) {
-            ShiroSession shiroSession = (ShiroSession) session;
-            if (!shiroSession.isChanged()) {
-                return;
-            }
-            remoteService.updateSession("", shiroSession);
-        }
-    }
-
-
-    @Override
-    protected void doDelete(Session session) {
-        RequestResult result = new RequestResult();
-        result.setData(session);
-        remoteService.deleteSession("", result);
-    }
-
-    @Override
-    public Collection<Session> getActiveSessions() {
-        return null;
-    }
-
-    /**
-     * 分配Session
-     * @return
-     */
     protected Session doGetSSoBySession() {
+        //解析ssoToken
+        String sessionId = "";
+        if (!ssoToken.isEmpty()) {
+            //解析Tonken
+            sessionId = (String) UserUtil.ParsingToken(this.getSsoToken());
+            //根据ssToken获取Session
+            Session session = super.doReadSession(sessionId);
+            return session;
+        }
         return null;
     }
 
-    public RemoteBaseInterface getRemoteService() {
-        return remoteService;
+    public String getSsoToken() {
+        return ssoToken;
     }
 
-    public void setRemoteService(RemoteBaseInterface remoteService) {
-        this.remoteService = remoteService;
+    public void setSsoToken(String ssoToken) {
+        this.ssoToken = ssoToken;
     }
+
+    @Override
+    public void setRemoteService(RemoteBaseInterface remoteService) {
+        super.setRemoteService(remoteService);
+    }
+
 
 }

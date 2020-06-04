@@ -5,7 +5,7 @@ import com.jhome.common.shiro.realm.ClientRealm;
 import com.jhome.common.shiro.realm.SysShiroProperties;
 import com.jhome.common.shiro.realm.UserRemoteServiceInterface;
 import com.shiro.common.client.ClientSessionDAO;
-import com.shiro.common.filter.ClientFormAuthenticationFilter;
+import com.shiro.common.filter.TokenFormAuthenticationFilter;
 import com.shiro.common.session.ClientWebSessionManager;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
@@ -31,7 +31,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 
 /**
  * Shiro 配置
@@ -130,6 +129,7 @@ public class ShiroConfig {
         simpleCookie.setHttpOnly(true);
         return simpleCookie;
     }
+
     /**
      * 设置记住我
      *
@@ -145,10 +145,9 @@ public class ShiroConfig {
     }
 
     @Bean
-    public SessionFactory sessionFactory()
-    {
-        ShiroSessionFactory sessionFactory=new ShiroSessionFactory();
-        return  sessionFactory;
+    public SessionFactory sessionFactory() {
+        ShiroSessionFactory sessionFactory = new ShiroSessionFactory();
+        return sessionFactory;
     }
 
     /**
@@ -198,23 +197,24 @@ public class ShiroConfig {
 
 
     /**
-     * Form登录过滤器
+     * Form登录过滤器-单点登录过滤器
      */
-    private ClientFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
-        ClientFormAuthenticationFilter bean = new ClientFormAuthenticationFilter();
+    private TokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
+        TokenFormAuthenticationFilter bean = new TokenFormAuthenticationFilter();
+        bean.setCDao(clientSessionDAO());
         //bean.setAuthorizingRealm(authorizingRealm);
         return bean;
     }
+
     /**
      * shiro 会话管理
+     *
      * @return
      */
     @Bean
     public ClientSessionDAO clientSessionDAO() {
-        ClientSessionDAO clientSessionDAO= new ClientSessionDAO();
+        ClientSessionDAO clientSessionDAO = new ClientSessionDAO();
         clientSessionDAO.setRemoteService(remoteService);//手动属性入住 通过分离 bean生命周期，允许springBoot同名覆盖，注入 远程会话对象
         return clientSessionDAO;
     }
-
-
 }
