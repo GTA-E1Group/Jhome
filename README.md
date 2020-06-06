@@ -1,10 +1,14 @@
 Jhome框架是我在项目工作中积累的技术框架主要用的技术是：
 ------------------------------------------------------------------------------
-    Spring全家桶 （SpringBoot Spring Shrio SpringCloud ）
+    Spring全家桶 （SpringBoot Spring SpringCloud ）
+    Shrio 安全框架
     PRC远程通信协议（ grpc  Thrift ） 
-    两阶段补偿事务（transaction）
+    分布式两阶段补偿事务（transaction）
     NIO（Netty）
     POI(文档操作)
+    redisson（Redis框架）
+    rabbitmq（消息队列）
+    mybatis
     。。。。 
     
 分布式集中认证、授权；单点登录 升级 
