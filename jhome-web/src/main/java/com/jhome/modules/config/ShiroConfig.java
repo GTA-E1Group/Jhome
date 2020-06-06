@@ -6,6 +6,7 @@ import com.jhome.common.shiro.realm.SysShiroProperties;
 import com.jhome.common.shiro.realm.UserRemoteServiceInterface;
 import com.shiro.common.client.ClientSessionDAO;
 import com.shiro.common.filter.TokenFormAuthenticationFilter;
+import com.shiro.common.filter.TokenFormAuthenticationFilter1;
 import com.shiro.common.session.ClientWebSessionManager;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
@@ -67,6 +68,9 @@ public class ShiroConfig {
 
             Map<String, Filter> filterMap = shiroFilterFactoryBean.getFilters();
             filterMap.put("authc", shiroAuthcFilter(clientRealm));
+            //filterMap.put("authc", shiroAuthcFilter1());
+
+
 
             shiroFilterFactoryBean.setLoginUrl(sysShiroProperties().getLoginUrl());//登录页面
             shiroFilterFactoryBean.setSuccessUrl(sysShiroProperties().getSuccessUrl());//登录成功页面 首页
@@ -202,9 +206,19 @@ public class ShiroConfig {
     private TokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
         TokenFormAuthenticationFilter bean = new TokenFormAuthenticationFilter();
         bean.setCDao(clientSessionDAO());
+        bean.setRemoteService(remoteService);
         //bean.setAuthorizingRealm(authorizingRealm);
         return bean;
     }
+
+    private TokenFormAuthenticationFilter1 shiroAuthcFilter1() {
+        TokenFormAuthenticationFilter1 bean = new TokenFormAuthenticationFilter1();
+        bean.setCDao(clientSessionDAO());
+        //bean.setAuthorizingRealm(authorizingRealm);
+        return bean;
+    }
+
+
 
     /**
      * shiro 会话管理

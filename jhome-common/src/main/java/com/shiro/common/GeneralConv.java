@@ -25,7 +25,6 @@ public class GeneralConv {
 
     /**
      * 集合转换
-     *
      * @param sourceList       源集合
      * @param destinationClass 目标类
      * @param <T>

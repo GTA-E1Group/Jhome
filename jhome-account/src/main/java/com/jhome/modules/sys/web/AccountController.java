@@ -64,7 +64,7 @@ public class AccountController extends baseController {
                     session.setAttribute(SessionCons.LOGIN_USER_SESSION, JSONUtils.beanToJson(userInfo) );
                     result.setMsg("登陆成功");
                     result.setCode("1");
-                    result.data= UserUtil.GetToken((String) session.getId());
+                    result.data=String.format("http://127.0.0.1:8111/jhome/web/index?token=%s",UserUtil.GetToken((String) session.getId())) ;
 
                 }
 

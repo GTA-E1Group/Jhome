@@ -204,8 +204,8 @@ public class ShiroConfig {
      */
     private TokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
         TokenFormAuthenticationFilter bean = new TokenFormAuthenticationFilter();
-        //bean.setAuthorizingRealm(authorizingRealm);
         bean.setCDao(clientSessionDAO());
+        bean.setRemoteService(remoteService);
         return bean;
     }
     /**

@@ -36,13 +36,14 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
         //判断是否有单点登陆认证过来的Session
         if (shiroSession != null) {
             sessionId = shiroSession.getId();
-            session = shiroSession;
+            //session = shiroSession;
         } else {
             //远程生成
             ResponResult responResult = remoteService.createSession((ShiroSession) session);
             sessionId = (Serializable) responResult.getData();
         }
         assignSessionId(session, sessionId);
+        session.setAttribute("AUTHENTICATED_SESSION_KEY",boolean.class);
         return sessionId;
     }
 

@@ -10,9 +10,9 @@
         <module name="jhome-dataCenter" />
         <module name="jhome-NettyServer" />
         <module name="jhome-Pay" />
-        <module name="jhome-registrationCenter_One" />
         <module name="jhome-registrationCenter" />
         <module name="jhome-webspider" />
+        <module name="jhome-registrationCenter_One" />
         <module name="jhome-web" />
         <module name="jhome-common" />
         <module name="jhome-sysAnnotation" />

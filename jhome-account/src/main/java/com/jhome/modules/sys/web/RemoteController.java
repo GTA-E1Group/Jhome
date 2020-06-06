@@ -67,6 +67,7 @@ public class RemoteController extends baseController {
             remoteService.updateSession(appKey, session);
 
         } catch (Exception ex) {
+            System.out.println(ex.getMessage().toString());
         }
        // return responResult;
     }

@@ -40,6 +40,7 @@
                 data: JSON.stringify({account: "daxu", password: "123123123"}),
                 dataType: 'json',
                 success: function (result) {
+                    console.log(result.data);
                     if (result.code == 1) {
                         alert("成功");
                         //window.location.href="/jhome/account/main";

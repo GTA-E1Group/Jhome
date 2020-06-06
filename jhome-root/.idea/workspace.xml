@@ -72,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-registrationCenter_One/target" />
+    <property name="last_opened_file_path" value="D:/javaHome/com.ymx.reptile/jeesite4/root/pom.xml" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.16503906" />
     <property name="project.structure.side.proportion" value="0.33256084" />
@@ -230,7 +230,8 @@
       <workItem from="1591103230401" duration="1589000" />
       <workItem from="1591190063946" duration="2459000" />
       <workItem from="1591193225358" duration="5681000" />
-      <workItem from="1591279377924" duration="3793000" />
+      <workItem from="1591279377924" duration="4525000" />
+      <workItem from="1591418117097" duration="28945000" />
     </task>
     <servers />
   </component>
@@ -242,10 +243,10 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="176" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1440.929@0.31.1440.929" timestamp="1590934445431" />
-    <state x="526" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1591281482133">
+    <state x="519" y="30" width="921" height="761" key="#com.intellij.ide.util.MemberChooser" timestamp="1591451411986">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
-    <state x="526" y="205" key="#com.intellij.ide.util.MemberChooser/0.31.1440.929@0.31.1440.929" timestamp="1591281482133" />
+    <state x="519" y="30" width="921" height="761" key="#com.intellij.ide.util.MemberChooser/0.31.1440.929@0.31.1440.929" timestamp="1591451411986" />
     <state x="436" y="327" width="791" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590932654123">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -260,113 +261,113 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="451" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.31.1440.929@0.31.1440.929" timestamp="1591282723435" />
-    <state width="440" height="430" key="DebuggerActiveHint" timestamp="1591104516433">
+    <state width="468" height="430" key="DebuggerActiveHint" timestamp="1591448820421">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="440" height="425" key="DebuggerActiveHint/0.0.1440.920@0.0.1440.920" timestamp="1590856051647" />
     <state width="457" height="466" key="DebuggerActiveHint/0.0.1680.1010@0.0.1680.1010" timestamp="1590716082920" />
-    <state width="440" height="430" key="DebuggerActiveHint/0.31.1440.929@0.31.1440.929" timestamp="1591104516433" />
-    <state x="501" y="249" key="FileChooserDialogImpl" timestamp="1591193577185">
+    <state width="468" height="430" key="DebuggerActiveHint/0.31.1440.929@0.31.1440.929" timestamp="1591448820421" />
+    <state x="501" y="249" key="FileChooserDialogImpl" timestamp="1591446276173">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1590398384950" />
-    <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591193577185" />
-    <state width="1397" height="263" key="GridCell.Tab.0.bottom" timestamp="1591283175782">
+    <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591446276173" />
+    <state width="1397" height="155" key="GridCell.Tab.0.bottom" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="283" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="263" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591283175782" />
-    <state width="1397" height="263" key="GridCell.Tab.0.center" timestamp="1591283175772">
+    <state width="1397" height="155" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.0.center" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
     <state width="1637" height="283" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="263" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1591283175772" />
-    <state width="1397" height="263" key="GridCell.Tab.0.left" timestamp="1591283175772">
+    <state width="1397" height="155" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.0.left" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
     <state width="1637" height="283" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="263" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1591283175772" />
-    <state width="1397" height="263" key="GridCell.Tab.0.right" timestamp="1591283175782">
+    <state width="1397" height="155" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.0.right" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="283" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="263" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1591283175782" />
-    <state width="1397" height="376" key="GridCell.Tab.1.bottom" timestamp="1591104823116">
+    <state width="1397" height="155" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.1.bottom" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="376" key="GridCell.Tab.1.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
-    <state width="1397" height="376" key="GridCell.Tab.1.center" timestamp="1591104823116">
+    <state width="1397" height="155" key="GridCell.Tab.1.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.1.center" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="376" key="GridCell.Tab.1.center/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
-    <state width="1397" height="376" key="GridCell.Tab.1.left" timestamp="1591104823116">
+    <state width="1397" height="155" key="GridCell.Tab.1.center/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.1.left" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="376" key="GridCell.Tab.1.left/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
-    <state width="1397" height="376" key="GridCell.Tab.1.right" timestamp="1591104823116">
+    <state width="1397" height="155" key="GridCell.Tab.1.left/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="155" key="GridCell.Tab.1.right" timestamp="1591456124213">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="376" key="GridCell.Tab.1.right/0.31.1440.929@0.31.1440.929" timestamp="1591104823116" />
-    <state width="1397" height="304" key="GridCell.Tab.2.bottom" timestamp="1591104823009">
+    <state width="1397" height="155" key="GridCell.Tab.1.right/0.31.1440.929@0.31.1440.929" timestamp="1591456124213" />
+    <state width="1397" height="212" key="GridCell.Tab.2.bottom" timestamp="1591455971578">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.2.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.2.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.2.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="304" key="GridCell.Tab.2.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
-    <state width="1397" height="304" key="GridCell.Tab.2.center" timestamp="1591104823009">
+    <state width="1397" height="212" key="GridCell.Tab.2.bottom/0.31.1440.929@0.31.1440.929" timestamp="1591455971578" />
+    <state width="1397" height="212" key="GridCell.Tab.2.center" timestamp="1591455971578">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.2.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.2.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.2.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="304" key="GridCell.Tab.2.center/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
-    <state width="1397" height="304" key="GridCell.Tab.2.left" timestamp="1591104823009">
+    <state width="1397" height="212" key="GridCell.Tab.2.center/0.31.1440.929@0.31.1440.929" timestamp="1591455971578" />
+    <state width="1397" height="212" key="GridCell.Tab.2.left" timestamp="1591455971578">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.2.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.2.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.2.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="304" key="GridCell.Tab.2.left/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
-    <state width="1397" height="304" key="GridCell.Tab.2.right" timestamp="1591104823009">
+    <state width="1397" height="212" key="GridCell.Tab.2.left/0.31.1440.929@0.31.1440.929" timestamp="1591455971578" />
+    <state width="1397" height="212" key="GridCell.Tab.2.right" timestamp="1591455971578">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.2.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.2.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.2.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="304" key="GridCell.Tab.2.right/0.31.1440.929@0.31.1440.929" timestamp="1591104823009" />
+    <state width="1397" height="212" key="GridCell.Tab.2.right/0.31.1440.929@0.31.1440.929" timestamp="1591455971578" />
     <state x="373" y="119" key="SettingsEditor" timestamp="1591193585779">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="222" y="70" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1590845313347" />
     <state x="259" y="113" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1590745721364" />
     <state x="373" y="119" key="SettingsEditor/0.31.1440.929@0.31.1440.929" timestamp="1591193585779" />
-    <state width="727" height="473" key="XDebugger.FullValuePopup" timestamp="1591104339125">
+    <state width="727" height="473" key="XDebugger.FullValuePopup" timestamp="1591433266229">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="727" height="468" key="XDebugger.FullValuePopup/0.0.1440.920@0.0.1440.920" timestamp="1590907596058" />
     <state width="848" height="513" key="XDebugger.FullValuePopup/0.0.1680.1010@0.0.1680.1010" timestamp="1590562707605" />
-    <state width="727" height="473" key="XDebugger.FullValuePopup/0.31.1440.929@0.31.1440.929" timestamp="1591104339125" />
+    <state width="727" height="473" key="XDebugger.FullValuePopup/0.31.1440.929@0.31.1440.929" timestamp="1591433266229" />
     <state x="405" y="285" key="com.intellij.ide.util.TipDialog" timestamp="1590592024938">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
@@ -380,16 +381,16 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.31.1440.929@0.31.1440.929" timestamp="1591197023434" />
-    <state x="377" y="229" key="run.anything.popup" timestamp="1591197337338">
+    <state x="377" y="229" key="run.anything.popup" timestamp="1591432677386">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
-    <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1591197337338" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1591280023563">
+    <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1591432677386" />
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1591451312582">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="431" y="198" width="670" height="158" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1590853275102" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1590571419537" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1591280023563" />
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1591451312582" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -445,44 +446,14 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/realm/RedisSessionDao.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/ClientSessionDAO.java</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
-          <line>89</line>
+          <line>90</line>
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/RemoteController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/session/ClientWebSessionManager.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
@@ -546,38 +517,68 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
           <line>102</line>
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-core/1.4.2/shiro-core-1.4.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class</url>
-          <line>163</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-core/1.4.2/shiro-core-1.4.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class</url>
-          <line>101</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-web/1.4.2/shiro-web-1.4.2.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.class</url>
-          <line>32</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/mavenRepository/org/apache/shiro/shiro-web/1.4.2/shiro-web-1.4.2.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.class</url>
-          <line>25</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
           <line>66</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/TokenFormAuthenticationFilter.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/TokenFormAuthenticationFilter1.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/TokenBySsoAuthorizing.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/TokenBySsoAuthorizing.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/TokenBySsoAuthorizing.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/client/TokenBySsoAuthorizing.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/realm/RedisSessionDao.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/AccountController.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/../jhome-dataCenter/src/main/java/com/jhome/common/shiro/realm/ServiceBFeignClientFallback.java</url>

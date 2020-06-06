@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.Identity.UserUtil;
+import com.daxu.common.ToolKit.StringUtil;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -28,7 +29,7 @@ public class ClientSessionDAO extends TokenBySsoAuthorizing {
     protected Session doGetSSoBySession() {
         //解析ssoToken
         String sessionId = "";
-        if (!ssoToken.isEmpty()) {
+        if (StringUtil.isNotBlank(ssoToken)) {
             //解析Tonken
             sessionId = (String) UserUtil.ParsingToken(this.getSsoToken());
             //根据ssToken获取Session
