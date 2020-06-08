@@ -73,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/javaHome/com.ymx.reptile/jeesite4/root/pom.xml" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16503906" />
     <property name="project.structure.side.proportion" value="0.33256084" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -233,7 +233,7 @@
       <workItem from="1591279377924" duration="4525000" />
       <workItem from="1591418117097" duration="31026000" />
       <workItem from="1591458815646" duration="465000" />
-      <workItem from="1591624232140" duration="1416000" />
+      <workItem from="1591624232140" duration="2639000" />
     </task>
     <servers />
   </component>
@@ -241,6 +241,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="313" y="154" key="#Project_Structure" timestamp="1591625892372">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state x="313" y="154" key="#Project_Structure/0.31.1440.929@0.31.1440.929" timestamp="1591625892372" />
     <state x="176" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590934445431">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -387,12 +391,12 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1591432677386" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1591451312582">
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1591626710030">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="431" y="198" width="670" height="158" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1590853275102" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1590571419537" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1591451312582" />
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1591626710030" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
