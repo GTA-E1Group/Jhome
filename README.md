@@ -1,6 +1,7 @@
 # Jhome框架汇总了我在开发过程中使用到的技术原型：
 
 ### 技术选型
+
 *  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
 *  2.Shrio 安全框架
 *  3.NIO（Netty）
