@@ -1,26 +1,21 @@
-# Jhome v1.0 框架汇总了我在开发过程中使用到的技术原型：
+# Jhome框架汇总了我在开发过程中使用到的技术原型：
 
-### 技术选型
 
-*  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
-*  2.Shrio 安全框架
-*  3.NIO（Netty）
-*  4.PRC远程通信协议（ grpc  Thrift ） 
-*  5.分布式两阶段补偿事务（transaction）
-*  6.POI(文档操作)
-*  7.redisson（操作Redis缓存数据库框架）
-*  8.rabbitmq（消息队列）
-*  9.mybatis
 
 ### 即将升级计划
-*  RabbitMQ 以 NIO形式实现
+*  分段上传
+*  分页组件
+*  Netty 整合 RabbitMQ 形式实现
 
 ### jhome v1.1 框架升级内容  
 该版本重点引入了Netty服务，构建分布式系统中WebSocket通信，服务之间采用NIO 通信通过时间rpc协议间接操作WebSocket,实现高性能的前后端通信；
-
+*  引入爬虫框架（后续引入实战Demo）
 *  引入grpc框架
 *  引入Thrift框架
 *  引入Netty框架
+*  引入SpringCloud框架 
+*  引入公共组件库包括（传统阻塞式 RabbitMq模式 、PIO Exl批量导入引擎、JWT单点登录Tokens生成库、分布式缓存锁、HttpClient、Memcached、其他）
+*  引入Tcc 分布式事务框架 两阶段补偿提交（后续引入实战demo）
  
 ### jhome v1.0 框架升级内容 
 该版本重点引入了Shrio框架，针对在分布式系统中，各个服务之间用户授、认证做了集中处理:
@@ -44,7 +39,19 @@
    （正在修复，消费A段退出，先调用A段的退出把Subject 认证状态isAuthenticated
     变成false,在调用服务B段退出设置B段的Subject的isAuthenticated，刷新当前页即可 服务B段退出，A段做做感知判断）
      
+### 技术选型
 
+*  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
+*  2.Shrio 安全框架
+*  3.NIO（Netty）
+*  4.PRC远程通信协议（ grpc  Thrift ） 
+*  5.分布式两阶段补偿事务（transaction）
+*  6.POI(文档操作)
+*  7.redisson（操作Redis缓存数据库框架）
+*  8.rabbitmq（消息队列）
+*  9.mybatis
+
+### 本人微信号： daxu06661
 
 
 
