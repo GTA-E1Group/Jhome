@@ -1,5 +1,6 @@
 package com.jhome.autoconfiguration;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.daxu.common.BatchExcel.ExcelteEngine;
 import com.daxu.common.Bus.PushTypeBase;
 import com.daxu.common.Cache.MemcachedManager;
@@ -7,6 +8,9 @@ import com.daxu.common.Http.HttpClient;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +21,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.sql.DataSource;
 
 /**
  * 系统组件
  */
 @Configuration(
-        proxyBeanMethods = false
+        proxyBeanMethods = true
 )
+@MapperScan({"com.jhome.modules.sys.dao"})
 @PropertySource(value = "classpath:application.yml", ignoreResourceNotFound = true)
+@EnableTransactionManagement
 //@EnableConfigurationProperties({SysConfigurationPropertiesBean.class})
 public class SysAutoConfiguration {
 //        private SysConfigurationPropertiesBean spiro;
@@ -97,15 +109,15 @@ public class SysAutoConfiguration {
 
     /**
      * StringRedisTemplate
+     *
      * @return
      */
     @Bean("StringRedisTemplate")
     @ConditionalOnMissingBean(StringRedisTemplate.class)
-    public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory)
-    {
-        StringRedisTemplate redisTemplate=new StringRedisTemplate();
+    public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        StringRedisTemplate redisTemplate = new StringRedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
-        return  redisTemplate;
+        return redisTemplate;
     }
 
     /**
@@ -122,7 +134,48 @@ public class SysAutoConfiguration {
         config.useSingleServer().setAddress(spiro.getRedissonUrl().toString()).setDatabase(0);
         //添加主从配置
         //config.useMasterSlaveServers().setMasterAddress("").setPassword("").addSlaveAddress(new String[]{"",""});
-        return  Redisson.create(config);
+        return Redisson.create(config);
+    }
+
+    /***
+     * spring 整个 my
+     * @return
+     */
+    @Bean
+    public DataSource dataSource() {
+        DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setPassword(spiro.getDatasourceconfig().getPassWord());
+        dataSource.setUsername(spiro.getDatasourceconfig().getUserName());
+        dataSource.setUrl(spiro.getDatasourceconfig().getUrl());
+        dataSource.setDbType(spiro.getDatasourceconfig().getType());
+        dataSource.setDriverClassName(spiro.getDatasourceconfig().getDrivrerClassName());
+        return dataSource;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(value = {SqlSessionFactory.class})
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(this.dataSource());
+        return sqlSessionFactoryBean.getObject();
+    }
+
+    /**
+     * 配置spring 事务
+     *
+     * @param dataSource
+     * @return
+     */
+    @Bean
+    public PlatformTransactionManager transactionManager(DataSource dataSource) {
+        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(dataSource);
+        return dataSourceTransactionManager;
+    }
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+        return propertySourcesPlaceholderConfigurer;
     }
 
 

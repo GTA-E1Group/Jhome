@@ -12,6 +12,10 @@ public class SysConfigurationPropertiesBean extends  SysProperties  {
     public String adminPath;//后台路径
     public String frontPath;//前台路径
     public String redissonUrl;
+    public DataSourceConfig datasourceconfig;//自定义数据库配置
+    /**
+     * 队列服务
+     */
     @Getter
     @Setter
     public static class QueueConfig {
@@ -29,6 +33,21 @@ public class SysConfigurationPropertiesBean extends  SysProperties  {
                     ", virtualHost='" + virtualHost + '\'' +
                     '}';
         }
+    }
+
+    /**
+     * 自定义数据源
+     */
+    @Getter
+    @Setter
+    public static class DataSourceConfig
+    {
+        public String userName;
+        public String passWord;
+        public String url;
+        public String drivrerClassName;
+        public String type;
+
     }
 
 }
