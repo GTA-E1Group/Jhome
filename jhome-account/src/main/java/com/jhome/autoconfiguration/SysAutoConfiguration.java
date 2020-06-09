@@ -22,6 +22,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -36,7 +38,7 @@ import javax.sql.DataSource;
 @Configuration(
         proxyBeanMethods = true
 )
-@MapperScan({"com.jhome.modules.sys.dao"})
+
 @PropertySource(value = "classpath:application.yml", ignoreResourceNotFound = true)
 @EnableTransactionManagement
 //@EnableConfigurationProperties({SysConfigurationPropertiesBean.class})
@@ -137,46 +139,6 @@ public class SysAutoConfiguration {
         return Redisson.create(config);
     }
 
-    /***
-     * spring 整个 my
-     * @return
-     */
-    @Bean
-    public DataSource dataSource() {
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setPassword(spiro.getDatasourceconfig().getPassWord());
-        dataSource.setUsername(spiro.getDatasourceconfig().getUserName());
-        dataSource.setUrl(spiro.getDatasourceconfig().getUrl());
-        dataSource.setDbType(spiro.getDatasourceconfig().getType());
-        dataSource.setDriverClassName(spiro.getDatasourceconfig().getDrivrerClassName());
-        return dataSource;
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(value = {SqlSessionFactory.class})
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(this.dataSource());
-        return sqlSessionFactoryBean.getObject();
-    }
-
-    /**
-     * 配置spring 事务
-     *
-     * @param dataSource
-     * @return
-     */
-    @Bean
-    public PlatformTransactionManager transactionManager(DataSource dataSource) {
-        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(dataSource);
-        return dataSourceTransactionManager;
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
 
 
 }

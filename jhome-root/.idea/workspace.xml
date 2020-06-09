@@ -80,6 +80,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jhome.modules.config" />
       <recent name="com.shiro.common.filter" />
       <recent name="com.jhome.common.shiro.filter" />
       <recent name="com.jhome.common.shiro.realm" />
@@ -234,7 +235,8 @@
       <workItem from="1591418117097" duration="31026000" />
       <workItem from="1591458815646" duration="465000" />
       <workItem from="1591624232140" duration="2911000" />
-      <workItem from="1591627169931" duration="1437000" />
+      <workItem from="1591627169931" duration="1506000" />
+      <workItem from="1591711087359" duration="1310000" />
     </task>
     <servers />
   </component>
@@ -274,11 +276,11 @@
     <state width="440" height="425" key="DebuggerActiveHint/0.0.1440.920@0.0.1440.920" timestamp="1590856051647" />
     <state width="457" height="466" key="DebuggerActiveHint/0.0.1680.1010@0.0.1680.1010" timestamp="1590716082920" />
     <state width="468" height="430" key="DebuggerActiveHint/0.31.1440.929@0.31.1440.929" timestamp="1591448820421" />
-    <state x="501" y="249" key="FileChooserDialogImpl" timestamp="1591446276173">
+    <state x="501" y="249" key="FileChooserDialogImpl" timestamp="1591712317822">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1590398384950" />
-    <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591446276173" />
+    <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591712317822" />
     <state width="1397" height="155" key="GridCell.Tab.0.bottom" timestamp="1591458584596">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -369,6 +371,10 @@
     <state x="222" y="70" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1590845313347" />
     <state x="259" y="113" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1590745721364" />
     <state x="373" y="119" key="SettingsEditor/0.31.1440.929@0.31.1440.929" timestamp="1591193585779" />
+    <state width="559" height="446" key="SwitcherDM" timestamp="1591712316554">
+      <screen x="0" y="31" width="1440" height="929" />
+    </state>
+    <state width="559" height="446" key="SwitcherDM/0.31.1440.929@0.31.1440.929" timestamp="1591712316554" />
     <state width="727" height="473" key="XDebugger.FullValuePopup" timestamp="1591433266229">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
