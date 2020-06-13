@@ -1,6 +1,5 @@
 package com.jhome.common.shiro.realm;
 
-import com.jhome.modules.sys.pojo.UserInfo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -10,16 +9,18 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
-
-import java.util.List;
-import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 系统安全认证实现类
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
 public abstract class BaseAuthorizingRealm extends AuthorizingRealm {
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
+
     // 授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
@@ -33,39 +34,33 @@ public abstract class BaseAuthorizingRealm extends AuthorizingRealm {
         System.out.println("授权");
         return null;
     }
+
     //认证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-
-        System.out.println("CustomRealmCustomRealmCustomRealmCustomRealmCustomRealmCustomRealmCustomRealm");
         // 1.向下转型
-        jhomeToken upToken = (jhomeToken) authenticationToken;
+        jhomeToken upToken;
         // TODO Auto-generated method stub
-
-        //测试代码
-        if(1==1)
-        {
-            UserInfo ui=new UserInfo();
-            ui.setUserId(UUID.randomUUID().toString());
-            ui.setAccount("daxu");
-            ui.setPassword("000000");
-            return new SimpleAuthenticationInfo(ui, ui.getPassword(), this.getName());
+        try {
+            //Token合法性验证
+            if (authenticationToken instanceof jhomeToken)
+                return null;
+            upToken = (jhomeToken) authenticationToken;
+            SimpleAuthenticationInfo simpleAuthenticationInfo = this.Verification(upToken);
+            //用户验证
+            return simpleAuthenticationInfo;
+        } catch (Exception ex) {
+            logger.info(ex.getMessage().toString());
         }
-
-        System.out.print("----------------认证---------------");
-        String userName = (String) upToken.getPrincipal();
-        String pws=(String)upToken.getCredentials();
-        List<UserInfo> userInfos =null;
-        if (userInfos != null && userInfos.size() > 0) {
-            UserInfo userInfo = userInfos.get(0);
-            return new SimpleAuthenticationInfo(userInfo, userInfo.getPassword(), this.getName());
-        }
-        //System.out.println("认证");
-        //Object obj=  authesnticationToken.getPrincipal();
-        //UserInfo userEntity =(UserInfo)  AuthUtil.getUserInfo(request);
-        //AuthUtil.userLogin(String.valueOf(user.getId()),user, response);
         return null;
     }
+
+    /**
+     * 实现验证
+     * @param token
+     * @return
+     */
+    protected abstract SimpleAuthenticationInfo Verification(jhomeToken token);
 
 
 }

@@ -14,6 +14,7 @@ import java.util.Collection;
 
 /**
  * SessionDao
+ *
  * @program: jhome-root
  * @description
  * @author: Daxv
@@ -43,7 +44,7 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
             sessionId = (Serializable) responResult.getData();
         }
         assignSessionId(session, sessionId);
-        session.setAttribute("AUTHENTICATED_SESSION_KEY",boolean.class);
+        session.setAttribute("AUTHENTICATED_SESSION_KEY", boolean.class);
         return sessionId;
     }
 
@@ -58,8 +59,6 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
             return null;
         }
     }
-
-
     @Override
     protected void doUpdate(Session session) {
         if (session instanceof SimpleSession) {
@@ -70,8 +69,6 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
             remoteService.updateSession("", shiroSession);
         }
     }
-
-
     @Override
     protected void doDelete(Session session) {
         RequestResult result = new RequestResult();

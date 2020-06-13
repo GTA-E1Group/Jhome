@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.pojo;
+package com.jhome.modules.sys.model.po;
 
 import lombok.Getter;
 import lombok.Setter;

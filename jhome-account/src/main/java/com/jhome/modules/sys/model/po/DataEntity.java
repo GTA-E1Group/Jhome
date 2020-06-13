@@ -1,10 +1,8 @@
-package com.jhome.modules.sys.pojo;
+package com.jhome.modules.sys.model.po;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 @Getter
 @Setter
 public abstract class DataEntity<T extends DataEntity<T>> extends BaseEntity<T> {

@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 用户帮助累
+ * 用户帮助类
+ *
  * @program: jhome-root
  * @description
  * @author: Daxv
@@ -48,6 +49,11 @@ public class UserUtil extends AuthUtil {
         return tokenMap.get("token");
     }
 
+    /**
+     * 获取Subject
+     *
+     * @return
+     */
     public static Subject getSubject() {
         return SecurityUtils.getSubject();
     }
@@ -60,5 +66,14 @@ public class UserUtil extends AuthUtil {
         return subject.getSession();
     }
 
-
+    public static boolean loginOut() {
+        try {
+            if (subject.isAuthenticated()) {
+                subject.logout();
+            }
+        } catch (Exception ex) {
+            return false;
+        }
+        return true;
+    }
 }

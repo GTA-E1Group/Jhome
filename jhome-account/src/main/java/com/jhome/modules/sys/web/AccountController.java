@@ -2,16 +2,13 @@ package com.jhome.modules.sys.web;
 
 import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.Cache.MemcachedManager;
-import com.daxu.common.Identity.AuthUtil;
 import com.daxu.common.Identity.UserUtil;
-import com.daxu.common.RedissonHandler.RedissonHandler;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.jhome.common.shiro.realm.DeviceType;
 import com.jhome.common.shiro.realm.SessionCons;
 import com.jhome.common.shiro.realm.jhomeToken;
-import com.jhome.modules.sys.pojo.UserInfo;
+import com.jhome.modules.sys.model.po.UserInfo;
 import com.jhome.modules.sys.web.baseController.baseController;
-import com.shiro.common.session.ShiroSession;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

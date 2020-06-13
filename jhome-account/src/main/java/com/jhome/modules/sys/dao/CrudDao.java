@@ -1,11 +1,29 @@
 package com.jhome.modules.sys.dao;
 
-import jdk.nashorn.internal.objects.annotations.Setter;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 
-@Mapper
+/**
+ * @Description 基类接口
+ * @Author daxv
+ * @Date
+ * @Remarks ...
+ */
 public interface CrudDao {
-    @Select( "select * from xx")
-    void select();
+
+    /**
+     *  @Description 单点登录接口
+     *  @Author daxv
+     *  @Date
+     *  @Remarks ...
+     */
+    public <T> ResponseEntity<T> LoginByAccount(String url, MultiValueMap<String, String> params, Class<T> type);
+
+    /**
+     *  @Description 退出
+     *  @Author daxv
+     *  @Date
+     *  @Remarks ...
+     */
+    void LoginOut();
 }

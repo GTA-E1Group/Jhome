@@ -2,6 +2,10 @@ package com.jhome.modules.config;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.common.shiro.filter.*;
 import com.jhome.common.shiro.realm.*;
+import com.jhome.modules.sys.cert.AppShiroRealm;
+import com.jhome.modules.sys.cert.CasAuthorizingRealm;
+import com.jhome.modules.sys.cert.CustomRealm;
+import com.jhome.modules.sys.cert.ThirdPathShiroRealm;
 import com.shiro.common.SimpleCredentialsMatcher.CustomCredentialsMatcher;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
@@ -19,10 +23,8 @@ import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.*;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.servlet.Filter;
-import java.awt.geom.QuadCurve2D;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -56,7 +58,7 @@ public class ShiroConfig {
      * @return
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager,AppShiroRealm appShiroRealm,CustomRealm customRealm,ThirdPathShiroRealm thirdPathShiroRealm) {
+    public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager, AppShiroRealm appShiroRealm, CustomRealm customRealm, ThirdPathShiroRealm thirdPathShiroRealm) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         try {
 

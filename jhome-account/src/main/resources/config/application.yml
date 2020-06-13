@@ -14,7 +14,7 @@ jhome:
   # 系统参数
   sysproperties:
     # redis 地址
-    redissonUrl: redis://${spring.redis.host}:${spring.redis.port}
+    #redissonUrl: redis://${spring.redis.host}:${spring.redis.port}
     # 管理基础路径
     adminPath: account
     # 前端基础路径
@@ -29,6 +29,12 @@ jhome:
       passWord: 13528764027
       #虚拟主机
       virtualHost: dxhost
+    redissConfig:
+      host: ${spring.redis.host}
+      database: ${spring.redis.database}
+      port: ${spring.redis.port}
+      password: ${spring.redis.password}
+      timeout: ${spring.redis.password}
 #======================================#
 #========== com.nettyServer.Server settings ===========#
 #======================================#
