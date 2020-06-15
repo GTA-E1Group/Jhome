@@ -13,7 +13,6 @@ import java.util.UUID;
  * @date : 11:03 2020/5/12 0012
  */
 public class CustomRealm extends BaseAuthorizingRealm {
-
     @Override
     public boolean supports(AuthenticationToken token){
         return token != null && token instanceof jhomeToken;
@@ -21,6 +20,8 @@ public class CustomRealm extends BaseAuthorizingRealm {
 
     @Override
     protected SimpleAuthenticationInfo Verification(jhomeToken token) {
+        String pws=new String(((char[])token.getCredentials()));
+        String username=token.getUsername();
         UserInfo ui=new UserInfo();
         ui.setUserId(UUID.randomUUID().toString());
         ui.setAccount("daxu");
