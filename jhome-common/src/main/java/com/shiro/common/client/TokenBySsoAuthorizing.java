@@ -8,6 +8,8 @@ import com.shiro.common.session.ShiroSession;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.SimpleSession;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -21,6 +23,7 @@ import java.util.Collection;
  * @create: 2020-06-03 22:50
  **/
 public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
     private RemoteBaseInterface remoteService;
     private String appKey;
 
@@ -31,7 +34,7 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
     @Override
     protected Serializable doCreate(Session session) {
         ShiroSession shiroSession = null;
-        Serializable sessionId;
+        Serializable sessionId = null;
         /*执行模板方法，如果是单点登陆过来的直接获取缓存中的session，无需在创建*/
         shiroSession = (ShiroSession) this.doGetSSoBySession();
         //判断是否有单点登陆认证过来的Session
@@ -40,8 +43,12 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
             //session = shiroSession;
         } else {
             //远程生成
-            ResponResult responResult = remoteService.createSession((ShiroSession) session);
-            sessionId = (Serializable) responResult.getData();
+            try {
+                ResponResult responResult = remoteService.createSession((ShiroSession) session);
+                sessionId = (Serializable) responResult.getData();
+            } catch (Exception ex) {
+                logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
+            }
         }
         assignSessionId(session, sessionId);
         session.setAttribute("AUTHENTICATED_SESSION_KEY", boolean.class);
@@ -52,28 +59,40 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
     protected Session doReadSession(Serializable serializable) {
         String sessionId = (String) serializable;
         try {
-            String shiroSessionJson = remoteService.getSession("", sessionId);
+            String shiroSessionJson = remoteService.getSession(sessionId);
             ShiroSession shiroSession = JSON.parseObject(shiroSessionJson, ShiroSession.class);
             return SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
         } catch (Exception ex) {
+            logger.info(String.format("doReadSession error :%s", ex.getMessage().toString()));
             return null;
         }
     }
+
     @Override
     protected void doUpdate(Session session) {
-        if (session instanceof SimpleSession) {
-            ShiroSession shiroSession = (ShiroSession) session;
-            if (!shiroSession.isChanged()) {
-                return;
+        try {
+            if (session instanceof SimpleSession) {
+                ShiroSession shiroSession = (ShiroSession) session;
+                if (!shiroSession.isChanged()) {
+                    return;
+                }
+                remoteService.updateSession(JSON.toJSONString(shiroSession));
             }
-            remoteService.updateSession("", shiroSession);
+        } catch (Exception ex) {
+            logger.info(String.format("doUpdate error :%s", ex.getMessage().toString()));
         }
+
     }
+
     @Override
     protected void doDelete(Session session) {
-        RequestResult result = new RequestResult();
-        result.setData(session);
-        remoteService.deleteSession("", result);
+        try {
+            RequestResult result = new RequestResult();
+            result.setData(session);
+            remoteService.deleteSession(result);
+        } catch (Exception ex) {
+            logger.info(String.format("doDelete error :%s", ex.getMessage().toString()));
+        }
     }
 
     @Override

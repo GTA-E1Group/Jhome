@@ -54,7 +54,7 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
             try {
                 cDao.setSsoToken(token);
                 String sessionId = (String) UserUtil.ParsingToken(token);
-                ShiroSession shiroSession = JSON.parseObject(remoteService.getSession("",sessionId), ShiroSession.class);
+                ShiroSession shiroSession = JSON.parseObject(remoteService.getSession(sessionId), ShiroSession.class);
                 if (shiroSession==null) {
                     return false;
                 }

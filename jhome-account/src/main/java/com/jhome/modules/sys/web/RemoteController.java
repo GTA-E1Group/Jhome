@@ -1,5 +1,6 @@
 package com.jhome.modules.sys.web;
 
+import com.alibaba.fastjson.JSON;
 import com.beust.jcommander.Parameter;
 import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;
@@ -36,59 +37,61 @@ public class RemoteController extends baseController {
     public RemoteService remoteService;
 
     @PostMapping(value = "/getSession")
-    public @ResponseBody String getSession(@RequestParam("appKey")  String appKey,@RequestParam("sessionId")  String sessionId) {
-        ShiroSession shiroSession=(ShiroSession) remoteService.getSession(appKey, sessionId);
-        String shiroSessionJson=JSONUtils.beanToJson(shiroSession);
-        //ShiroSession sh=(ShiroSession) SessionDaoZH.SerializedBeanToStringByRemoteService(shiroSession);
-        return shiroSessionJson;
+    @ResponseBody
+    public String getSession(@RequestParam("sessionId") String sessionId) {
+        try {
+            ShiroSession shiroSession = (ShiroSession) remoteService.getSession(sessionId);
+            return JSONUtils.beanToJson(shiroSession);
+        } catch (Exception ex) {
+            logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
+        }
+        return "";
     }
 
     @PostMapping(value = "/createSession")
     @ResponseBody
     public ResponResult createSession(@RequestBody ShiroSession session) {
-        ResponResult responResult=new ResponResult();
+        ResponResult responResult = new ResponResult();
         try {
-            Serializable sessionId=remoteService.createSession(session);
+            Serializable sessionId = remoteService.createSession(session);
             responResult.setData(sessionId);
-        }
-        catch (Exception ex)
-        {
-            System.out.println(ex.getMessage());
-
+        } catch (Exception ex) {
+            logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
         }
         return responResult;
     }
 
     @PostMapping(value = "/updateSession")
     @ResponseBody
-    public void updateSession(@RequestParam("appKey")  String appKey, @RequestBody ShiroSession shiroSession) {
+    public String updateSession(@RequestParam("sessionJson") String sessionJson) {
         try {
-            Session session= shiroSession;
-            remoteService.updateSession(appKey, session);
-
+            ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
+            SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
+            remoteService.updateSession(shiroSession);
         } catch (Exception ex) {
-            System.out.println(ex.getMessage().toString());
+            logger.info(String.format("UpdateSession error :%s", ex.getMessage().toString()));
+            return String.format("UpdateSession error :%s", ex.getMessage().toString());
         }
-       // return responResult;
+        return String.format("UpdateSession success :200");
     }
 
     @PostMapping(value = "/deleteSession")
     @ResponseBody
-    public boolean deleteSession(@RequestParam("appKey")  String appKey,@RequestBody RequestResult result) {
+    public boolean deleteSession(@RequestBody RequestResult result) {
         boolean falg = false;
         try {
-            remoteService.deleteSession(appKey, (Session)result.getData());
+            remoteService.deleteSession((Session) result.getData());
             falg = true;
-
         } catch (Exception ex) {
+            logger.info(String.format("deleteSession error :%s", ex.getMessage().toString()));
         }
         return falg;
     }
 
     @PostMapping(value = "/getPermissions")
     @ResponseBody
-    public PermissionContext getPermissions(String appKey, String username) {
-        return remoteService.getPermissions(appKey, username);
+    public PermissionContext getPermissions(String username) {
+        return remoteService.getPermissions(username);
     }
 
 }

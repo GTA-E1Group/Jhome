@@ -9,7 +9,7 @@ public class ServiceBFeignClientFallback implements UserRemoteServiceInterface {
 
 
     @Override
-    public String getSession(String appKey, String sessionId) {
+    public String getSession(String sessionId) {
         return null;
     }
 
@@ -19,17 +19,16 @@ public class ServiceBFeignClientFallback implements UserRemoteServiceInterface {
     }
 
     @Override
-    public void updateSession(String appKey, ShiroSession session) {
-
+    public String updateSession(String sessionJson) {
+        return null;
     }
-
     @Override
-    public boolean deleteSession(String appKey, RequestResult result) {
+    public boolean deleteSession(RequestResult result) {
         return false;
     }
 
     @Override
-    public PermissionContext getPermissions(String appKey, String username) {
+    public PermissionContext getPermissions(String username) {
         return null;
     }
 

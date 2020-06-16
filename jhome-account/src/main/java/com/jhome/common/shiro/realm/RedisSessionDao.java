@@ -124,7 +124,6 @@ public class RedisSessionDao extends AbstractSessionDAO {
     @Override
     public void delete(Session session) {
         System.out.println("删除用户会话信息");
-
         if (logger.isDebugEnabled()) {
             logger.debug("delete shiro session ,sessionId is :{}", session
                     .getId().toString());
@@ -136,7 +135,6 @@ public class RedisSessionDao extends AbstractSessionDAO {
     @Override
     public Collection<Session> getActiveSessions() {
         System.out.println("获取所有的在线会话信息");
-
         Set<Serializable> keys = redisTemplate
                 .keys(SessionCons.TOKEN_PREFIX_KEY);
         if (keys.size() == 0) {

@@ -32,19 +32,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface RemoteBaseInterface {
     @RequestMapping(value = "/jhome/RemoteService/getSession", method = RequestMethod.POST)
-    String getSession(@RequestParam("appKey") String appKey, @RequestParam("sessionId") String sessionId);
+    String getSession(@RequestParam("sessionId") String sessionId);
 
     @RequestMapping(value = "/jhome/RemoteService/createSession", method = RequestMethod.POST)
     ResponResult createSession(@RequestBody ShiroSession session);
 
     @RequestMapping(value = "/jhome/RemoteService/updateSession", method = RequestMethod.POST)
-    void updateSession(@RequestParam("appKey") String appKey, @RequestBody ShiroSession session);
+    String updateSession(@RequestParam("sessionJson") String sessionJson);
 
     @RequestMapping(value = "/jhome/RemoteService/deleteSession", method = RequestMethod.POST)
-    boolean deleteSession(@RequestParam("appKey") String appKey, @RequestBody RequestResult result);
+    boolean deleteSession(@RequestBody RequestResult result);
 
     @RequestMapping(value = "/jhome/RemoteService/getPermissions", method = RequestMethod.POST)
-    PermissionContext getPermissions(@RequestParam("appKey") String appKey, String username);
+    PermissionContext getPermissions(String username);
 
 }
 /*

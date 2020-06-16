@@ -1,5 +1,7 @@
 package com.jhome.modules.sys.dao;
 
+import org.json.JSONObject;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 
@@ -17,7 +19,7 @@ public interface CrudDao {
      *  @Date
      *  @Remarks ...
      */
-    public <T> ResponseEntity<T> LoginByAccount(String url, MultiValueMap<String, String> params, Class<T> type);
+    <T> ResponseEntity<T> LoginByAccount(String url, HttpMethod method, JSONObject params, Class<T> type) ;
 
     /**
      *  @Description 退出
