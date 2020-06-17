@@ -50,7 +50,9 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
             token = entry.getValue()[0].toString();
             break;
         }
+
         //只允许单点登录进入
+        //跨浏览器，跨电脑访问，需要根据第一次Tokne 重新绘制本地session
         if (StringUtil.isNotBlank(token) && !subject.isAuthenticated()) {
             try {
                 cDao.setSsoToken(token);
