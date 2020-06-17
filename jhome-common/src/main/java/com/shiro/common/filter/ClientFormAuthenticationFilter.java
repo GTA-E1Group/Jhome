@@ -45,7 +45,7 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
         Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         HttpServletRequest httpRequest = WebUtils.toHttp(request);
-        session.setAttribute("authc.fallbackUrl", fallbackUrl);
+        session.setAttribute("fallbackUrl", fallbackUrl);
         SavedRequest savedRequest = new ClientSavedRequest(httpRequest, backUrl);
 
         session.setAttribute(WebUtils.SAVED_REQUEST_KEY, savedRequest);

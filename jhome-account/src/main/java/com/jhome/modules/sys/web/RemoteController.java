@@ -50,15 +50,16 @@ public class RemoteController extends baseController {
 
     @PostMapping(value = "/createSession")
     @ResponseBody
-    public ResponResult createSession(@RequestBody ShiroSession session) {
-        ResponResult responResult = new ResponResult();
+    public String createSession(@RequestParam("sessionJson") String sessionJson) {
         try {
-            Serializable sessionId = remoteService.createSession(session);
-            responResult.setData(sessionId);
+            ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
+            SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
+            Serializable sessionId = remoteService.createSession(shiroSession);
+            return (String) sessionId;
         } catch (Exception ex) {
             logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
         }
-        return responResult;
+        return "";
     }
 
     @PostMapping(value = "/updateSession")
@@ -77,15 +78,19 @@ public class RemoteController extends baseController {
 
     @PostMapping(value = "/deleteSession")
     @ResponseBody
-    public boolean deleteSession(@RequestBody RequestResult result) {
-        boolean falg = false;
+    public String deleteSession(@RequestParam("sessionJson") String sessionJson) {
+
         try {
-            remoteService.deleteSession((Session) result.getData());
-            falg = true;
+            //通过接口远程成功后再销毁本地Session
+            if (1 == 1) {
+            }
+            ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
+            remoteService.deleteSession(shiroSession);
+            return "true";
         } catch (Exception ex) {
             logger.info(String.format("deleteSession error :%s", ex.getMessage().toString()));
         }
-        return falg;
+        return "false";
     }
 
     @PostMapping(value = "/getPermissions")

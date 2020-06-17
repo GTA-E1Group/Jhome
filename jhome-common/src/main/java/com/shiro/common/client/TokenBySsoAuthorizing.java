@@ -41,11 +41,12 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
         if (shiroSession != null) {
             sessionId = shiroSession.getId();
             //session = shiroSession;
+            //复制session,把缓存中的session重新拷贝一份
+
         } else {
             //远程生成
             try {
-                ResponResult responResult = remoteService.createSession((ShiroSession) session);
-                sessionId = (Serializable) responResult.getData();
+                sessionId= remoteService.createSession(JSON.toJSONString(session));
             } catch (Exception ex) {
                 logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
             }
@@ -87,9 +88,7 @@ public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
     @Override
     protected void doDelete(Session session) {
         try {
-            RequestResult result = new RequestResult();
-            result.setData(session);
-            remoteService.deleteSession(result);
+            remoteService.deleteSession(JSON.toJSONString(session));
         } catch (Exception ex) {
             logger.info(String.format("doDelete error :%s", ex.getMessage().toString()));
         }

@@ -27,11 +27,11 @@ import javax.sql.DataSource;
  * @create: 2020-06-09 22:10
  **/
 
-@MapperScan(value = {"com.jhome.modules.sys.dao"}, sqlSessionFactoryRef = "SqlSessionFactory1")
-//使用指定的sqlSessionFactory作为数据源
-@Configuration(
-        proxyBeanMethods = true
-)
+//@MapperScan(value = {"com.jhome.modules.sys.dao"}, sqlSessionFactoryRef = "SqlSessionFactory1")
+////使用指定的sqlSessionFactory作为数据源
+//@Configuration(
+//        proxyBeanMethods = true
+//)
 public class MybatisConfig {
     @Autowired
     private SysConfigurationPropertiesBean spiro;

@@ -141,18 +141,18 @@ pagehelper:
 ###服务注册到eureka注册中心的地址
 eureka:
   client:
-    service-url:
+    serviceUrl:
       defaultZone: http://daxunihao:123456@127.0.0.1:9100/jhome/eureka/
       ###defaultZone: http://daxunihao:123456@127.0.0.1:9100/jhome/eureka/,http://daxunihao:123456@127.0.0.1:9200/jhome/eureka/
     ###因为该应用为服务提供者，是eureka的一个客户端，需要注册到注册中心
     registerWithEureka: true
     ###是否需要从eureka上检索服务
-    fetchRegistry: true
+    fetchRegistry: false
   instance:
-    instance-id: ${spring.application.name}:${server.port} 账户服务
-    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
-    ip-address: 127.0.0.1
-    hostname: 127.0.0.1
+    #    instance-id: ${spring.application.name}:${server.port} 账户服务
+    preferIpAddress: true #将自己的ip地址注册到Eureka服务中
+    ipAddress: 127.0.0.1
+#    hostname: 127.0.0.1
 
 #ribbon:
 #  eureka:

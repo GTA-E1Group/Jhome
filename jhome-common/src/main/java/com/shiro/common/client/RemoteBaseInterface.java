@@ -35,13 +35,15 @@ public interface RemoteBaseInterface {
     String getSession(@RequestParam("sessionId") String sessionId);
 
     @RequestMapping(value = "/jhome/RemoteService/createSession", method = RequestMethod.POST)
-    ResponResult createSession(@RequestBody ShiroSession session);
+    String createSession(@RequestParam("sessionJson") String sessionJson);
+    //ResponResult createSession(@RequestBody ShiroSession session);
 
     @RequestMapping(value = "/jhome/RemoteService/updateSession", method = RequestMethod.POST)
     String updateSession(@RequestParam("sessionJson") String sessionJson);
 
     @RequestMapping(value = "/jhome/RemoteService/deleteSession", method = RequestMethod.POST)
-    boolean deleteSession(@RequestBody RequestResult result);
+    //boolean deleteSession(@RequestBody RequestResult result);
+    String deleteSession(@RequestParam("sessionJson") String sessionJson);
 
     @RequestMapping(value = "/jhome/RemoteService/getPermissions", method = RequestMethod.POST)
     PermissionContext getPermissions(String username);

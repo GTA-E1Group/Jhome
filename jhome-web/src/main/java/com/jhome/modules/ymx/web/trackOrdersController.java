@@ -2,6 +2,8 @@ package com.jhome.modules.ymx.web;
 
 import com.daxu.common.Bus.IBus;
 import com.daxu.common.Bus.PushInfo;
+import com.daxu.common.Bus.ResponseJson;
+import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.QueueHandler;
 import com.jhome.modules.ymx.web.baseController.baseController;
@@ -10,14 +12,13 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Model;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.mengyun.tcctransaction.api.Compensable;
 import org.mengyun.tcctransaction.api.Propagation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -27,23 +28,22 @@ import java.util.Date;
 public class trackOrdersController extends baseController {
 
 
-
     @Autowired
-    public  Bus bus;
+    public Bus bus;
 //    @Autowired
 //    public SysConfigurationPropertiesBean pro;
 
 
-/*    @Autowired
-    private RemoteServiceInterface remoteService;*/
+    /*    @Autowired
+        private RemoteServiceInterface remoteService;*/
     //@Compensable(confirmMethod = "tccMember", cancelMethod = "tccMember", propagation = Propagation.SUPPORTS)
     @ApiOperation(value = "首页接口", notes = "首页接口文档详情")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String trackOrdersIndex(Model model) {
         try {
-            System.out.println(String.format("容器注入BUS 成功！类名称：%s",bus.getClass().toString()));
+            System.out.println(String.format("容器注入BUS 成功！类名称：%s", bus.getClass().toString()));
             System.out.println("你好我来了");
-           // System.out.println(String.format("后端路径表示：%s 前端路径标识：%s", pro.getAdminPath(), pro.getFrontPath()));
+            // System.out.println(String.format("后端路径表示：%s 前端路径标识：%s", pro.getAdminPath(), pro.getFrontPath()));
 
         } catch (Exception ex) {
 
@@ -106,4 +106,17 @@ public class trackOrdersController extends baseController {
         }
         return name;
     }
+
+    //退出
+    @PostMapping("/logout")
+    @ResponseBody
+    public ResponseJson logout() {
+        try {
+            UserUtil.loginOut();
+        } catch (Exception ex) {
+            return new ResponseJson().error(ex.getMessage().toString());
+        }
+        return new ResponseJson().success();
+    }
+
 }

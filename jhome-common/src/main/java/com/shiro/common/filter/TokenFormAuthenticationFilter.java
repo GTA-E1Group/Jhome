@@ -31,6 +31,7 @@ import java.util.Map;
 public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilter {
     private ClientSessionDAO cDao;
     private RemoteBaseInterface remoteService;
+
     /**
      * 单点登录拦截
      *
@@ -55,7 +56,7 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
                 cDao.setSsoToken(token);
                 String sessionId = (String) UserUtil.ParsingToken(token);
                 ShiroSession shiroSession = JSON.parseObject(remoteService.getSession(sessionId), ShiroSession.class);
-                if (shiroSession==null) {
+                if (shiroSession == null) {
                     return false;
                 }
                 Session session = subject.getSession();
@@ -90,6 +91,7 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
     public void setCDao(ClientSessionDAO cDao) {
         this.cDao = cDao;
     }
+
     public void setRemoteService(RemoteBaseInterface remoteService) {
         this.remoteService = remoteService;
     }

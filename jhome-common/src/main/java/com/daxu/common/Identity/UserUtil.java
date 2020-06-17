@@ -68,6 +68,7 @@ public class UserUtil extends AuthUtil {
 
     public static boolean loginOut() {
         try {
+            Subject subject = SecurityUtils.getSubject();
             if (subject.isAuthenticated()) {
                 subject.logout();
             }

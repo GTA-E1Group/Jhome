@@ -12,18 +12,21 @@ public class ServiceBFeignClientFallback implements UserRemoteServiceInterface {
     }
 
     @Override
-    public ResponResult createSession(ShiroSession session) {
+    public String createSession(String sessionJson) {
         return null;
     }
+
 
     @Override
     public String updateSession(String sessionJson) {
         return null;
     }
+
     @Override
-    public boolean deleteSession(RequestResult result) {
-        return false;
+    public String deleteSession(String sessionJson) {
+        return null;
     }
+
 
     @Override
     public PermissionContext getPermissions(String username) {
