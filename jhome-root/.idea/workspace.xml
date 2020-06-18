@@ -257,6 +257,7 @@
       <workItem from="1592320312907" duration="2897000" />
       <workItem from="1592407646539" duration="3751000" />
       <workItem from="1592411460938" duration="146000" />
+      <workItem from="1592490252448" duration="2835000" />
     </task>
     <servers />
   </component>
@@ -414,10 +415,10 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="517" y="412" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.31.1440.929@0.31.1440.929" timestamp="1591198028126" />
-    <state x="334" y="45" width="773" height="900" key="find.popup" timestamp="1592321944520">
+    <state x="334" y="45" width="773" height="900" key="find.popup" timestamp="1592491009589">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
-    <state x="334" y="45" width="773" height="900" key="find.popup/0.31.1440.929@0.31.1440.929" timestamp="1592321944520" />
+    <state x="334" y="45" width="773" height="900" key="find.popup/0.31.1440.929@0.31.1440.929" timestamp="1592491009589" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1591197023434">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -426,12 +427,12 @@
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1592410437261" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1592411557310">
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup" timestamp="1592490727985">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state x="431" y="198" width="670" height="158" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1590853275102" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1590571419537" />
-    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1592411557310" />
+    <state x="431" y="231" width="672" height="160" key="search.everywhere.popup/0.31.1440.929@0.31.1440.929" timestamp="1592490727985" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -508,7 +509,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/realm/RedisSessionDao.java</url>
-          <line>75</line>
+          <line>80</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -535,11 +536,6 @@
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/common/shiro/filter/FormAuthenticationFilter.java</url>
           <line>117</line>
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/TokenFormAuthenticationFilter.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/TokenFormAuthenticationFilter1.java</url>

@@ -19,6 +19,7 @@ jhome:
     adminPath: account
     # 前端基础路径
     foreignServerPath: RemoteService
+    expiredTime: 600 #Session 和Redis 缓存过期时间单位(秒)
     #消息服务配置
     queueconfig:
       #队列服务器地址

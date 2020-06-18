@@ -43,7 +43,7 @@ public class RemoteController extends baseController {
             ShiroSession shiroSession = (ShiroSession) remoteService.getSession(sessionId);
             return JSONUtils.beanToJson(shiroSession);
         } catch (Exception ex) {
-            logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
+            logger.error(String.format("createSession error :%s", ex.getMessage().toString()));
         }
         return "";
     }
@@ -57,7 +57,7 @@ public class RemoteController extends baseController {
             Serializable sessionId = remoteService.createSession(shiroSession);
             return (String) sessionId;
         } catch (Exception ex) {
-            logger.info(String.format("createSession error :%s", ex.getMessage().toString()));
+            logger.error(String.format("createSession error :%s", ex.getMessage().toString()));
         }
         return "";
     }
@@ -69,17 +69,17 @@ public class RemoteController extends baseController {
             ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
             SessionDaoZH.SerializedStringToAttributeBean(shiroSession);
             remoteService.updateSession(shiroSession);
+            return String.format("UpdateSession success :200");
+
         } catch (Exception ex) {
-            logger.info(String.format("UpdateSession error :%s", ex.getMessage().toString()));
+            logger.error(String.format("UpdateSession error :%s", ex.getMessage().toString()));
             return String.format("UpdateSession error :%s", ex.getMessage().toString());
         }
-        return String.format("UpdateSession success :200");
     }
 
     @PostMapping(value = "/deleteSession")
     @ResponseBody
     public String deleteSession(@RequestParam("sessionJson") String sessionJson) {
-
         try {
             //通过接口远程成功后再销毁本地Session
             if (1 == 1) {
@@ -88,9 +88,9 @@ public class RemoteController extends baseController {
             remoteService.deleteSession(shiroSession);
             return "true";
         } catch (Exception ex) {
-            logger.info(String.format("deleteSession error :%s", ex.getMessage().toString()));
+            logger.error(String.format("deleteSession error :%s", ex.getMessage().toString()));
+            return "false";
         }
-        return "false";
     }
 
     @PostMapping(value = "/getPermissions")

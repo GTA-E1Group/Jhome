@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class SysConfigurationPropertiesBean extends SysProperties {
     public QueueConfig queueconfig;//队列配置
     public RedissConfig redissConfig;//队列配置
+    private long expiredTime;
     public String adminPath;//后台路径
     public String frontPath;//前台路径
     public DataSourceConfig datasourceconfig;//自定义数据库配置

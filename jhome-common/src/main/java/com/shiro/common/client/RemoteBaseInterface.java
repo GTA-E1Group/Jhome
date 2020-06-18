@@ -46,7 +46,7 @@ public interface RemoteBaseInterface {
     String deleteSession(@RequestParam("sessionJson") String sessionJson);
 
     @RequestMapping(value = "/jhome/RemoteService/getPermissions", method = RequestMethod.POST)
-    PermissionContext getPermissions(String username);
+    PermissionContext getPermissions(@RequestParam("username")  String username);
 
 }
 /*

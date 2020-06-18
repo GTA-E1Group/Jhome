@@ -59,11 +59,11 @@ public class AccountController extends baseController {
                     session.setAttribute(SessionCons.DEVICE_TYPE, DeviceType.PC.toString());
                     //4.将用户信息保存到session中
                     session.setAttribute(SessionCons.LOGIN_USER_SESSION, JSONUtils.beanToJson(userInfo));
-                    String tokenString = UserUtil.GetToken((String) session.getId());
+                    String tokenStr = UserUtil.GetToken((String) session.getId());
                     String backUrl = (String) session.getAttribute("fallbackUrl");
                     if (StringUtil.isNotBlank(backUrl))
-                        return new ResponseJson().success().setValue("backUrl", String.format("http://%s?token=%s", backUrl, tokenString));
-                    return new ResponseJson().success().setValue("backUrl", String.format("jhome/web/index?token=%s", tokenString));
+                        return new ResponseJson().success().setValue("backUrl", String.format("%s?token=%s", backUrl, tokenStr));
+                    return new ResponseJson().success().setValue("backUrl", "/jhome/account/main");
                 }
                 /**
                  * 返回  模式 Token认证

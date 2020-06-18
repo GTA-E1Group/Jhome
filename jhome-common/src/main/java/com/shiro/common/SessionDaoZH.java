@@ -52,6 +52,27 @@ public class SessionDaoZH {
         });
         return session;
     }
+
+    /**
+     * 复制Session 对缓存中的Session进行增量更新
+     * @param sessionOld
+     * @param sessionNew
+     * @return
+     */
+    public static Session MergeAttributeBean(Session sessionOld,Session sessionNew)
+    {
+        Collection<Object> objectLists=  sessionNew.getAttributeKeys();
+        objectLists.forEach(c->{
+            String key=(String)c;
+            Object value=(Object) sessionNew.getAttribute(key);
+            if(sessionOld.getAttributeKeys().contains(key))
+            {
+                sessionOld.removeAttribute(key);
+            }
+            sessionOld.setAttribute(key,value);
+        });
+        return sessionOld;
+    }
 //    /**
 //     * 【不是基本类型全部序列化 序列化】
 //     * @param session

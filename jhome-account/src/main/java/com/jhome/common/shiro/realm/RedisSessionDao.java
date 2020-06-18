@@ -1,6 +1,8 @@
 package com.jhome.common.shiro.realm;
 
 import com.daxu.common.ToolKit.StringUtil;
+import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
+import com.netflix.discovery.converters.Auto;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
 import org.apache.shiro.session.Session;
@@ -17,27 +19,30 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 远程会话
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
 public class RedisSessionDao extends AbstractSessionDAO {
-    protected final long PC_EXPIRE_TIME=600;
-    protected final long APP_EXPIRE_TIME=600;
+    protected final long PC_EXPIRE_TIME = 600;
+    protected final long APP_EXPIRE_TIME = 600;
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     public RedisTemplate redisTemplate;
+    @Autowired
+    public SysConfigurationPropertiesBean sysConfigurationProperties;
 
     //用户第一次访问系统时创建会话信息
     @Override
     protected Serializable doCreate(Session session) {
-        System.out.println("用户第一次访问系统时创建会话信息");
+        logger.debug("用户第一次访问系统时创建会话信息");
         SessionDaoZH.SerializedBeanToString(session);
         Serializable sessionId = SessionCons.TOKEN_PREFIX
                 + UUID.randomUUID().toString();
         assignSessionId(session, sessionId);
         redisTemplate.opsForValue().set(sessionId, session);
-        redisTemplate.expire(sessionId, PC_EXPIRE_TIME, TimeUnit.SECONDS);
+        redisTemplate.expire(sessionId, sysConfigurationProperties.getExpiredTime(), TimeUnit.SECONDS);
         if (logger.isDebugEnabled()) {
             logger.debug("create shiro session ,sessionId is :{}",
                     sessionId.toString());
@@ -49,21 +54,21 @@ public class RedisSessionDao extends AbstractSessionDAO {
     @Override
     protected Session doReadSession(Serializable sessionId) {
         System.out.println("读取会话信息");
-        Session session = (Session)redisTemplate.opsForValue().get(sessionId);
+        Session session = (Session) redisTemplate.opsForValue().get(sessionId);
         //SerializedStringToBean(session);
         if (null != session) {
             String deviceType = (String) session.getAttribute(SessionCons.DEVICE_TYPE);
             if (StringUtil.isNotBlank(deviceType)) {
                 if (deviceType.equals(DeviceType.PC.toString())) {
                     // PC会话信息
-                    session.setTimeout(PC_EXPIRE_TIME * 1000);
+                    session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
                     if (logger.isDebugEnabled()) {
                         logger.debug("read pc session ,sessionId is :{}",
                                 sessionId.toString());
                     }
                 } else {
                     // APP会话信息
-                    session.setTimeout(APP_EXPIRE_TIME * 1000);
+                    session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
                     if (logger.isDebugEnabled()) {
                         logger.debug("read app session ,sessionId is :{}",
                                 sessionId.toString());
@@ -86,20 +91,26 @@ public class RedisSessionDao extends AbstractSessionDAO {
     //更新用户会话信息
     @Override
     public void update(Session session) throws UnknownSessionException {
-        System.out.println("更新用户会话信息");
+        logger.debug("更新用户会话信息");
         SessionDaoZH.SerializedBeanToString(session);
+        //获取缓存中的session
+        Session sessionOld = (Session) redisTemplate.opsForValue().get(session.getId());
+        //合并新老session
+        if (sessionOld != session)
+            session = SessionDaoZH.MergeAttributeBean(sessionOld, session);
+        //增量更新到Redis中
         if (null != session && null != session.getId()) {
             String deviceType = (String) session
                     .getAttribute(SessionCons.DEVICE_TYPE);
 
             if (StringUtil.isBlank(deviceType))
                 deviceType = DeviceType.PC.toString();
-                //session.setAttribute(SessionCons.DEVICE_TYPE,deviceType);
+            //session.setAttribute(SessionCons.DEVICE_TYPE,deviceType);
             redisTemplate.opsForValue().set(session.getId(), session);
             if (deviceType.equals(DeviceType.PC.toString())) {
                 // PC会话信息
-                session.setTimeout(PC_EXPIRE_TIME * 1000);
-                redisTemplate.expire(session.getId(), PC_EXPIRE_TIME,
+                session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
+                redisTemplate.expire(session.getId(), sysConfigurationProperties.getExpiredTime(),
                         TimeUnit.SECONDS);
                 if (logger.isDebugEnabled()) {
                     logger.debug("update pc session ,sessionId is :{}", session
@@ -107,15 +118,15 @@ public class RedisSessionDao extends AbstractSessionDAO {
                 }
             } else {
                 // APP会话信息
-                session.setTimeout(APP_EXPIRE_TIME * 1000);
-                redisTemplate.expire(session.getId(), APP_EXPIRE_TIME,
+                session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
+                redisTemplate.expire(session.getId(), sysConfigurationProperties.getExpiredTime(),
                         TimeUnit.SECONDS);
                 if (logger.isDebugEnabled()) {
                     logger.debug("update app session ,sessionId is :{}",
                             session.getId().toString());
                 }
             }
-        }else {
+        } else {
             logger.debug("Session是空没有读到");
         }
     }
@@ -123,7 +134,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
     //删除用户会话信息
     @Override
     public void delete(Session session) {
-        System.out.println("删除用户会话信息");
+        logger.debug("删除用户会话信息");
         if (logger.isDebugEnabled()) {
             logger.debug("delete shiro session ,sessionId is :{}", session
                     .getId().toString());

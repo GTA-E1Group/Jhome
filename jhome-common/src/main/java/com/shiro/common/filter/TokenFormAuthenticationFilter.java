@@ -44,13 +44,7 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         Subject subject = getSubject(request, response);
         //获取URL参数上的Token
-        String token = "";
-        Map<String, String[]> params = request.getParameterMap();
-        for (Map.Entry<String, String[]> entry : params.entrySet()) {
-            token = entry.getValue()[0].toString();
-            break;
-        }
-
+        String token = WebUtils.toHttp(request).getHeader("token");
         //只允许单点登录进入
         //跨浏览器，跨电脑访问，需要根据第一次Tokne 重新绘制本地session
         if (StringUtil.isNotBlank(token) && !subject.isAuthenticated()) {
@@ -61,22 +55,21 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
                 if (shiroSession == null) {
                     return false;
                 }
-                Session session = subject.getSession();
-                //
-                //subject.logout();
-                //subject = SecurityUtils.getSubject();
-//               executeChain(request,response,null);
+                subject.getSession();
+                /*
+                subject.logout();
+                subject = SecurityUtils.getSubject();
+               executeChain(request,response,null);
                 //判断token是否有效
                 //解析Tonken
-
                 //执行验证 Token 通过Token 解析，拿到SessionID  调用远程回话获取session 分配session给当前系统
-                //DefaultWebSecurityManager securityManager= (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
-//                SubjectContext context = securityManager.createSubject();
-//                context.setAuthenticated(true);
-//                context.setAuthenticationToken(token);
-//                context.setAuthenticationInfo(info);
-//                context.setSecurityManager(securityManager);
-//                securityManager.createSubject(context);
+                DefaultWebSecurityManager securityManager= (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
+                SubjectContext context = securityManager.createSubject();
+                context.setAuthenticated(true);
+                context.setAuthenticationToken(token);
+                context.setAuthenticationInfo(info);
+                context.setSecurityManager(securityManager);
+                securityManager.createSubject(context);*/
                 return true;
             } catch (Exception ex) {
                 return false;
@@ -84,7 +77,6 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
         }
         return subject.isAuthenticated();
     }
-
 
     public ClientSessionDAO getCDao() {
         return cDao;
