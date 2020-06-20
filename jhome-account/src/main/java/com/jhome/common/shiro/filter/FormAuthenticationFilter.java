@@ -5,6 +5,7 @@ import com.jhome.common.shiro.realm.jhomeToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
@@ -65,10 +66,15 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
      */
     @Override
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
-        String userName = getUsername(request);
-        String pwd = getPassword(request);
-        jhomeToken jhomeToken = new jhomeToken(userName, pwd, 0, "");
-        return jhomeToken;
+        try {
+            String userName = getUsername(request);
+            String pwd = getPassword(request);
+            jhomeToken jhomeToken = new jhomeToken(userName, pwd, 0, "");
+            return jhomeToken;
+        } catch (Exception ex) {
+            logger.error("Login submission detected.  Attempting to execute login.");
+            return new UsernamePasswordToken();
+        }
     }
 
     /**

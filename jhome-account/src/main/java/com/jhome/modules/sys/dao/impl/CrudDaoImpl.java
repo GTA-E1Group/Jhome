@@ -1,18 +1,15 @@
 package com.jhome.modules.sys.dao.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.daxu.common.Identity.UserUtil;
 import com.jhome.modules.sys.dao.CrudDao;
+import com.other.common.utils.excel.annotation.ExcelField;
 import io.netty.handler.codec.json.JsonObjectDecoder;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @program: jhome-root
@@ -20,7 +17,7 @@ import java.util.Arrays;
  * @author: Daxv
  * @create: 2020-06-13 17:42
  **/
-public class CrudDaoImpl implements CrudDao {
+public class CrudDaoImpl extends BaseDaoImpl implements CrudDao {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -39,27 +36,23 @@ public class CrudDaoImpl implements CrudDao {
     @Override
     public <T> ResponseEntity<T> LoginByAccount(String url, HttpMethod method, JSONObject params, Class<T> type) {
         try {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            //表单方式提交
-            httpHeaders.setContentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE));
-            //httpHeaders.set(HttpHeaders.ACCEPT, "application/json;charset=UTF-8");
-            httpHeaders.set("Accept", "*/*");
-            httpHeaders.set("Accept-Charset", "utf-8");
-            //httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-            //将请求头和参数合并成一个请求
-            HttpEntity<String> requestEntity = new HttpEntity(params.toString(), httpHeaders);
-            ResponseEntity<T> responseEntity = client.exchange(url, method, requestEntity, type);
-            //JSONObject jsonObject= (JSONObject) client.patchForObject(url,requestEntity,type);
-            return responseEntity;
+            return super.ToPost(client, url, method, params, type);
         } catch (Exception ex) {
-            logger.error(ex.getMessage().toString());
+            logger.error(String.format("单点登录失败：%s",ex.getMessage()));
             return null;
         }
-
     }
 
     @Override
-    public void LoginOut() {
-        UserUtil.loginOut();
+    public <T> ResponseEntity<T> LoginOut(String url, Class<T> type) {
+        try {
+            return client.getForEntity(url, type);
+
+        }
+        catch (Exception ex)
+        {
+            logger.error(String.format("注销失败：%s",ex.getMessage()));
+            return null;
+        }
     }
 }

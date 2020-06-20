@@ -19,6 +19,7 @@ import java.util.Map;
  * @description
  * @author: Daxv
  * @create: 2020-06-13 18:46
+ * 配置两套数据源可以实现多数据源 ， 该方案是实现动态数据源 通过注解解析
  **/
 
 //@Configuration

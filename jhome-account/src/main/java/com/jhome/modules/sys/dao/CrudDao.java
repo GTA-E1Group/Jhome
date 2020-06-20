@@ -1,9 +1,8 @@
 package com.jhome.modules.sys.dao;
 
-import org.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
 
 /**
  * @Description 基类接口
@@ -14,18 +13,18 @@ import org.springframework.util.MultiValueMap;
 public interface CrudDao {
 
     /**
-     *  @Description 单点登录接口
-     *  @Author daxv
-     *  @Date
-     *  @Remarks ...
+     * @Description 单点登录接口
+     * @Author daxv
+     * @Date
+     * @Remarks ...
      */
-    <T> ResponseEntity<T> LoginByAccount(String url, HttpMethod method, JSONObject params, Class<T> type) ;
+    <T> ResponseEntity<T> LoginByAccount(String url, HttpMethod method, JSONObject params, Class<T> type);
 
     /**
-     *  @Description 退出
-     *  @Author daxv
-     *  @Date
-     *  @Remarks ...
+     * @Description 退出
+     * @Author daxv
+     * @Date
+     * @Remarks ...
      */
-    void LoginOut();
+    <T> ResponseEntity<T> LoginOut(String url, Class<T> type);
 }
