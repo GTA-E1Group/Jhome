@@ -26,5 +26,5 @@ public interface CrudDao {
      * @Date
      * @Remarks ...
      */
-    <T> ResponseEntity<T> LoginOut(String url, Class<T> type);
+    <T> ResponseEntity<T> LoginOut(String url, JSONObject params, Class<T> type);
 }

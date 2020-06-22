@@ -36,22 +36,19 @@ public class CrudDaoImpl extends BaseDaoImpl implements CrudDao {
     @Override
     public <T> ResponseEntity<T> LoginByAccount(String url, HttpMethod method, JSONObject params, Class<T> type) {
         try {
-            return super.ToPost(client, url, method, params, type);
+            return super.SendByPostRequest(url, method, params, type, client);
         } catch (Exception ex) {
-            logger.error(String.format("单点登录失败：%s",ex.getMessage()));
+            logger.error(String.format("单点登录失败：%s", ex.getMessage()));
             return null;
         }
     }
 
     @Override
-    public <T> ResponseEntity<T> LoginOut(String url, Class<T> type) {
+    public <T> ResponseEntity<T> LoginOut(String url, JSONObject params, Class<T> type) {
         try {
-            return client.getForEntity(url, type);
-
-        }
-        catch (Exception ex)
-        {
-            logger.error(String.format("注销失败：%s",ex.getMessage()));
+            return super.SendByGetRequest(url, params, type, client);
+        } catch (Exception ex) {
+            logger.error(String.format("注销失败：%s", ex.getMessage()));
             return null;
         }
     }

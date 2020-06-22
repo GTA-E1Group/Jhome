@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * ClientAuthenticationFilter是用于实现身份认证的拦截器（authc），当用户没有身份认证时；
@@ -35,20 +36,27 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         String backUrl = request.getParameter("backUrl");
-        saveRequest(request, backUrl, getDefaultBackUrl(WebUtils.toHttp(request)));
-        redirectToLogin(request, response);
+        Session session = saveRequest(request, backUrl, getDefaultBackUrl(WebUtils.toHttp(request)));
+        HttpServletRequest req = WebUtils.toHttp(request);
+//        HttpServletResponse rep = WebUtils.toHttp(response);
+//        rep.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+        //客户端向Acccount服务 发送token 服务端复制SessionId
+        //实现方式很多，也可以配置服务器端允许跨域，允许客户端携带的Cookie中存储的tokenID = SessionId 进行传递
+        String mbUrl = String.format("%s?token=%s", super.getLoginUrl(), session.getId());
+        WebUtils.issueRedirect(request, response, mbUrl);
+        //redirectToLogin(request, response);
         return false;
     }
 
     // 调用远程会话 将返回地址 存储到 Redis中
-    protected void saveRequest(ServletRequest request, String backUrl, String fallbackUrl) {
+    protected Session saveRequest(ServletRequest request, String backUrl, String fallbackUrl) {
         Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         HttpServletRequest httpRequest = WebUtils.toHttp(request);
         session.setAttribute("fallbackUrl", fallbackUrl);
         SavedRequest savedRequest = new ClientSavedRequest(httpRequest, backUrl);
-
         session.setAttribute(WebUtils.SAVED_REQUEST_KEY, savedRequest);
+        return session;
     }
 
     //获取登录成功后返回地址

@@ -1,6 +1,7 @@
 package com.jhome.modules.sys.web;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.beust.jcommander.Parameter;
 import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;
@@ -16,7 +17,6 @@ import javafx.scene.shape.VLineTo;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.SimpleSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -81,10 +81,18 @@ public class RemoteController extends baseController {
     @ResponseBody
     public String deleteSession(@RequestParam("sessionJson") String sessionJson) {
         try {
+            ShiroSession shiroSession=JSON.parseObject(sessionJson,ShiroSession.class);
+
+            String userJson= (String) shiroSession.getAttribute("session_login_user");
+            JSONObject userInfoObject=JSON.parseObject(userJson);
+            String token=userInfoObject.getJSONObject("data").getString("token");
+            JSONObject jsonObject=new JSONObject();
+            jsonObject.put("token",token);
             //通过接口远程成功后再销毁本地Session
+            // ResponseEntity<JSONObject> jsonObject= ucServer.loginOut(url,jsonObject,JSONObject.class)
+            //if(jsonObject.getBody().getString("")).equealls("200")
             if (1 == 1) {
             }
-            ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
             remoteService.deleteSession(shiroSession);
             return "true";
         } catch (Exception ex) {

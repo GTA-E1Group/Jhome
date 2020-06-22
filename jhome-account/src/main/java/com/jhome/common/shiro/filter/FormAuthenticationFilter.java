@@ -1,5 +1,6 @@
 package com.jhome.common.shiro.filter;
 
+import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
 import com.jhome.common.shiro.realm.jhomeToken;
 import org.apache.shiro.SecurityUtils;
@@ -13,24 +14,40 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.FormAuthenticationFilter {
     private static final Logger logger = LoggerFactory.getLogger(FormAuthenticationFilter.class);
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        //跨域部署，解决Cookie没有一起传递问题，通过向Account端传输token=SdsssionID
+        //解决Account复制问题，避免创建新的session 客户端委托Account服务建立session ，在跨域中 回传sessionId
+        Subject subject = getSubject(request, response);
+        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
+        /*
+        String token1=httpServletRequest.getHeader("token");
+        String token2= (String) httpServletRequest.getAttribute("token");
+        */
+        String token = httpServletRequest.getParameter("token");
+        if (StringUtil.isNotBlank(token)) {
+            try {
+                HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
+                CookieUtil.set(httpServletResponse, "JhomeCookie", token, 30);//设置客户端回传到Account端 采用一致的Session
+                return true;
+            } catch (Exception ex) {
+                return false;
+            }
+        }
+        //是否登录成功则交给Shiro本身去验证
         return super.isAccessAllowed(request, response, mappedValue);
     }
 
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-        System.out.println("登录验证..................................");
-
-
         Subject subject = SecurityUtils.getSubject();
         boolean bo = subject.isAuthenticated();
-
-
         if (isLoginRequest(request, response)) {
             if (isLoginSubmission(request, response)) {
                 if (logger.isTraceEnabled()) {
@@ -53,8 +70,6 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
             //saveRequestAndRedirectToLogin(request, response);  // 去掉保存登录前的跳转地址  ThinkGem
             return false;
         }
-
-
     }
 
     /**
