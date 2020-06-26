@@ -1,8 +1,6 @@
 package com.jhome.modules.sys.web;
 
-import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.Bus.ResponseJson;
-import com.daxu.common.Cache.MemcachedManager;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.daxu.common.ToolKit.StringUtil;

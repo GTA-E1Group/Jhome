@@ -2,6 +2,7 @@ package com.shiro.common.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.daxu.common.Identity.UserUtil;
+import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
 import com.shiro.common.client.ClientSessionDAO;
 import com.shiro.common.client.RemoteBaseInterface;
@@ -19,6 +20,8 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Map;
 
@@ -44,7 +47,8 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         Subject subject = getSubject(request, response);
         //获取URL参数上的Token
-        String token = WebUtils.toHttp(request).getHeader("token");
+        //String token = WebUtils.toHttp(request).getHeader("token");
+        String token = this.GetToken(request, response);
         //只允许单点登录进入
         //跨浏览器，跨电脑访问，需要根据第一次Tokne 重新绘制本地session
         if (StringUtil.isNotBlank(token) && !subject.isAuthenticated()) {
@@ -77,6 +81,28 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
         }
         return subject.isAuthenticated();
     }
+
+    /**
+     * @Description 读取token
+     * @Author daxv
+     * @Date
+     * @Remarks ...
+     */
+
+    public String GetToken(ServletRequest request, ServletResponse response) {
+        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
+        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("token")) ? httpServletRequest.getHeader("token") : httpServletRequest.getParameter("token");
+        if (StringUtil.isBlank(token))
+            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
+        if (StringUtil.isBlank(token)) {
+            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeToken");
+            if (cookie != null) {
+                token = cookie.getValue();
+            }
+        }
+        return token;
+    }
+
 
     public ClientSessionDAO getCDao() {
         return cDao;

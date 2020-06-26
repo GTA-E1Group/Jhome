@@ -3,7 +3,6 @@ package com.jhome.modules.sys.web;
 import com.jhome.common.shiro.realm.jhomeToken;
 import com.other.common.codec.EncodeUtils;
 import com.other.common.web.http.ServletUtils;
-import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.ui.Model;
