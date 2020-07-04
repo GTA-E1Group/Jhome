@@ -8,7 +8,6 @@ import com.daxu.common.Http.HttpClient;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
-import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -153,7 +152,7 @@ public class SysAutoConfiguration {
      *
      * @return
      */
-    @Bean
+   /* @Bean
     public PageHelper pageHelper() {
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
@@ -168,7 +167,7 @@ public class SysAutoConfiguration {
         properties.setProperty("dialect", "myssql");
         pageHelper.setProperties(properties);
         return pageHelper;
-    }
+    }*/
 
     @Bean
     @LoadBalanced
