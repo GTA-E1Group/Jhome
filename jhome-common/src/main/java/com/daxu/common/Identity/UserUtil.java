@@ -1,5 +1,8 @@
 package com.daxu.common.Identity;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import javafx.scene.control.TableRow;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
@@ -77,4 +80,36 @@ public class UserUtil extends AuthUtil {
         }
         return true;
     }
+
+    /**
+     * 获取用户信息；
+     *
+     * @return
+     */
+    public static String GetUserInfo() {
+        return (String) SecurityUtils.getSubject().getPrincipal();
+    }
+
+    /**
+     * 获取用户信息并解析
+     *
+     * @param certification
+     * @param type
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    public static <T> T GetUserInfoByBean(UserInfoCertification certification, Class<T> type) throws Exception {
+        if (type == null)
+            throw new Exception();
+        String userJosn = SecurityUtils
+                .getSubject()
+                .getSession()
+                .getAttribute("session_login_user")
+                .toString();
+        String userinfoStr = certification.invoke(JSONObject.parseObject(userJosn));
+        return JSON.parseObject(userinfoStr, type);
+    }
+
+
 }

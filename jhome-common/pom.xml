@@ -295,7 +295,6 @@
         </dependency>
 
 
-
         <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -352,7 +351,6 @@
         </dependency>
 
 
-
         <!--shiro 框架-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -388,7 +386,6 @@
         </dependency>
 
 
-
         <!--TCC事务-->
         <dependency>
             <groupId>org.mengyun</groupId>
@@ -412,6 +409,60 @@
             <artifactId>libthrift</artifactId>
             <version>0.13.0</version>
         </dependency>
+
+        <!--swagger2 配置-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!--    判断值是否为空 ，避免日志出错  避免看这个心烦 -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+
+
+        <!--pagehelper mybasePlush 和 此插件冲突-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.github.pagehelper</groupId>-->
+        <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+        <!--            <version>${pagehelper.version}</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp3.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+
+        <!-- 数据库配置基础插件相关 -->
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- alibaba的druid数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

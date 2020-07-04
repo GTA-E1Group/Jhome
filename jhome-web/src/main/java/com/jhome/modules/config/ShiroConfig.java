@@ -71,7 +71,6 @@ public class ShiroConfig {
             //filterMap.put("authc", shiroAuthcFilter1());
 
 
-
             shiroFilterFactoryBean.setLoginUrl(sysShiroProperties().getLoginUrl());//登录页面
             shiroFilterFactoryBean.setSuccessUrl(sysShiroProperties().getSuccessUrl());//登录成功页面 首页
             shiroFilterFactoryBean.setUnauthorizedUrl(sysShiroProperties().getUnauthorizedUrl());//没有权限访问 错误页面，认证不通过跳转
@@ -217,7 +216,6 @@ public class ShiroConfig {
         //bean.setAuthorizingRealm(authorizingRealm);
         return bean;
     }
-
 
 
     /**

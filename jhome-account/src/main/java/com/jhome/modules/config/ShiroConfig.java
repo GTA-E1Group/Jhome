@@ -45,6 +45,7 @@ public class ShiroConfig {
         return new SysConfigurationPropertiesBean();
     }
 
+
     @Bean(name = "SysShiroProperties")
     public SysShiroProperties sysShiroProperties() {
         return new SysShiroProperties();
@@ -210,7 +211,9 @@ public class ShiroConfig {
 
     @Bean
     public DefaultWebSessionManager sessionManager() {
-        DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+
+        //DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+        JhomeDefaultWebSessionManager sessionManager = new JhomeDefaultWebSessionManager();
         //会话验证器调度时间 设置全局会话超时时间，默认30分钟(1800000)
         sessionManager.setSessionValidationInterval(1800000);
         //定时检查失效的session

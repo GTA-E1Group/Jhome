@@ -24,11 +24,13 @@ public class ResponseJson extends HashMap<String, Object> {
         super();
         this.setStatus(code);
     }
+
     public ResponseJson success() {
         put("msg", SUCCESS_MSG);
         put("status", SUCCESS_STATUS);
         return this;
     }
+
     //后续使用 Shrio框架
     public ResponseJson success(HttpStatus status) {
         put("msg", SUCCESS_MSG);
@@ -49,7 +51,7 @@ public class ResponseJson extends HashMap<String, Object> {
     }
 
     public ResponseJson setData(String key, Object obj) {
-        HashMap<String, Object> data = (HashMap<String, Object>) obj;
+        HashMap<String, Object> data = (HashMap<String, Object>) get("data");
         if (data == null) {
             data = new HashMap<String, Object>();
             put("data", data);

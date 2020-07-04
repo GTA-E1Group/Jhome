@@ -30,7 +30,7 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
         String token1=httpServletRequest.getHeader("token");
         String token2= (String) httpServletRequest.getAttribute("token");
         */
-        String token = httpServletRequest.getParameter("token");
+        String token = httpServletRequest.getParameter("JhomeToken");
         if (StringUtil.isNotBlank(token)) {
             try {
                 HttpServletResponse httpServletResponse = WebUtils.toHttp(response);

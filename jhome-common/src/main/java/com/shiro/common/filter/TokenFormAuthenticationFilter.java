@@ -47,7 +47,6 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         Subject subject = getSubject(request, response);
         //获取URL参数上的Token
-        //String token = WebUtils.toHttp(request).getHeader("token");
         String token = this.GetToken(request, response);
         //只允许单点登录进入
         //跨浏览器，跨电脑访问，需要根据第一次Tokne 重新绘制本地session
@@ -91,11 +90,11 @@ public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilte
 
     public String GetToken(ServletRequest request, ServletResponse response) {
         HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("token")) ? httpServletRequest.getHeader("token") : httpServletRequest.getParameter("token");
+        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("JhomeToken")) ? httpServletRequest.getHeader("JhomeToken") : httpServletRequest.getParameter("JhomeToken");
         if (StringUtil.isBlank(token))
             token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
         if (StringUtil.isBlank(token)) {
-            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeToken");
+            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeCookie");
             if (cookie != null) {
                 token = cookie.getValue();
             }
