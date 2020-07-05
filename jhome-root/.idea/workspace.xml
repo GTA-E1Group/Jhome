@@ -75,7 +75,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/Cert" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-web/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16503906" />
     <property name="project.structure.side.proportion" value="0.33256084" />
@@ -90,76 +90,25 @@
       <recent name="com.shiro.common.filter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\XProject\Jhome\jhome-web\src\main\resources" />
+      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\sysAnnotation\common" />
       <recent name="D:\XProject\Jhome\jhome-account\src\main\java\com\jhome\modules\sys\cert" />
       <recent name="D:\XProject\Jhome\jhome-account\src\main\java\com\jhome\common" />
       <recent name="D:\javaHome\jhome\jhome-registrationCenter_One\target" />
-      <recent name="D:\javaHome\jhome\jhome-account\target" />
     </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
         <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JhomeWebApplication">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jhome.App" />
-      <module name="jhome-registrationCenter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jhome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JhomeNettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nettyServer.JhomeNettyServer" />
-      <module name="jhome-NettyServer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.nettyServer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="jhome-registrationCenter_One" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jhome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.App" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.JhomeAcccountApplication">
     <configuration name="JhomeAcccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="jhome-account" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.JhomeAcccountApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JhomeDataCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="jhome-dataCenter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jhome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jhome.JhomeDataCenterApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,27 +121,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.App" />
-      <item itemvalue="Application.JhomeNettyServer" />
-      <item itemvalue="Spring Boot.App" />
       <item itemvalue="Spring Boot.JhomeAcccountApplication" />
       <item itemvalue="Spring Boot.JhomeWebApplication" />
-      <item itemvalue="Spring Boot.JhomeDataCenterApplication" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.JhomeNettyServer" />
-        <item itemvalue="Spring Boot.JhomeDataCenterApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@35603d30" type="d2cb1801:ServiceModel$ContributorNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
           <option name="groupByServiceGroups" value="false" />
@@ -267,7 +210,7 @@
       <workItem from="1593840341786" duration="11931000" />
       <workItem from="1593855458437" duration="843000" />
       <workItem from="1593856342740" duration="49000" />
-      <workItem from="1593951535530" duration="3971000" />
+      <workItem from="1593951535530" duration="5648000" />
     </task>
     <servers />
   </component>
@@ -316,62 +259,62 @@
     </state>
     <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1590398384950" />
     <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591712317822" />
-    <state width="1397" height="316" key="GridCell.Tab.0.bottom" timestamp="1593955400379">
+    <state width="957" height="245" key="GridCell.Tab.0.bottom" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="283" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593955400379" />
-    <state width="1397" height="316" key="GridCell.Tab.0.center" timestamp="1593955400379">
+    <state width="957" height="245" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.0.center" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
     <state width="1637" height="283" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1593955400379" />
-    <state width="1397" height="316" key="GridCell.Tab.0.left" timestamp="1593955400379">
+    <state width="957" height="245" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.0.left" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
     <state width="1637" height="283" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1593955400379" />
-    <state width="1397" height="316" key="GridCell.Tab.0.right" timestamp="1593955400379">
+    <state width="957" height="245" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.0.right" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="283" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419131" />
     <state width="1637" height="340" key="GridCell.Tab.0.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1593955400379" />
-    <state width="1397" height="316" key="GridCell.Tab.1.bottom" timestamp="1593856303007">
+    <state width="957" height="245" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.1.bottom" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.1.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593856303007" />
-    <state width="1397" height="316" key="GridCell.Tab.1.center" timestamp="1593856303005">
+    <state width="957" height="245" key="GridCell.Tab.1.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.1.center" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.1.center/0.31.1440.929@0.31.1440.929" timestamp="1593856303005" />
-    <state width="1397" height="316" key="GridCell.Tab.1.left" timestamp="1593856303005">
+    <state width="957" height="245" key="GridCell.Tab.1.center/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.1.left" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.1.left/0.31.1440.929@0.31.1440.929" timestamp="1593856303005" />
-    <state width="1397" height="316" key="GridCell.Tab.1.right" timestamp="1593856303006">
+    <state width="957" height="245" key="GridCell.Tab.1.left/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
+    <state width="957" height="245" key="GridCell.Tab.1.right" timestamp="1593957531338">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.1.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
     <state width="1637" height="411" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1590747419128" />
     <state width="1637" height="340" key="GridCell.Tab.1.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
-    <state width="1397" height="316" key="GridCell.Tab.1.right/0.31.1440.929@0.31.1440.929" timestamp="1593856303006" />
+    <state width="957" height="245" key="GridCell.Tab.1.right/0.31.1440.929@0.31.1440.929" timestamp="1593957531338" />
     <state width="1397" height="229" key="GridCell.Tab.2.bottom" timestamp="1592411401480">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -571,6 +514,11 @@
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/mainController.java</url>
           <line>29</line>
           <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/JhomeAcccountApplication.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

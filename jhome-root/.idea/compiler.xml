@@ -12,13 +12,13 @@
         <module name="jhome-webspider" />
         <module name="jhome-web" />
         <module name="jhome-common" />
-        <module name="jhome-sysAnnotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jhome-dataCenter" target="1.8" />
       <module name="jhome-Pay" target="1.8" />
       <module name="jhome-registrationCenter_One" target="1.8" />
+      <module name="jhome-sysAnnotation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

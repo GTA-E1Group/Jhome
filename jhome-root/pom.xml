@@ -18,7 +18,6 @@
         <module>../jhome-common</module>
         <module>../jhome-web</module>
         <module>../jhome-webspider</module>
-        <module>../jhome-sysAnnotation</module>
         <module>../jhome-registrationCenter</module>
         <module>../jhome-account</module>
         <module>../jhome-NettyServer</module>
