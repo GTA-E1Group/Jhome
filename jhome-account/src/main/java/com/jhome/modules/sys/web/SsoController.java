@@ -22,16 +22,16 @@ import javax.servlet.http.HttpServletResponse;
 public class SsoController {
     /**
      * 单点登录（如已经登录，则直接跳转）
-     *
-     * @param username         登录用户名（loginCode）
-     * @param token            单点登录令牌，令牌组成：sso密钥+用户名+日期，进行md5加密，举例：
-     *                         // 注意如果 shiro.sso.encryptKey 为 true，则 secretKey 会自动加密。
-     *                         String secretKey = Global.getConfig("shiro.sso.secretKey");
-     *                         String token = Md5Utils.md5(secretKey + username + DateUtils.getDate("yyyyMMdd"));
-     * @param 登录附加参数（JSON格式），或 param_ 前缀的请求参数。
-     * @param url              登录成功后跳转的url地址。
-     * @param relogin          是否强制重新登录，需要强制重新登录传递true
-     * @see ：
+     * <p>
+     * username         登录用户名（loginCode）
+     * token            单点登录令牌，令牌组成：sso密钥+用户名+日期，进行md5加密，举例：
+     * // 注意如果 shiro.sso.encryptKey 为 true，则 secretKey 会自动加密。
+     * String secretKey = Global.getConfig("shiro.sso.secretKey");
+     * String token = Md5Utils.md5(secretKey + username + DateUtils.getDate("yyyyMMdd"));
+     * （JSON格式），或 param_ 前缀的请求参数。
+     * url              登录成功后跳转的url地址。
+     * 是否强制重新登录，需要强制重新登录传递true
+     * ：
      * http://localhost/project/sso/{username}/{token}?url=/sys/user/list?p1=v1%26p2=v2&relogin=true
      * 如果url中携带参数，请使用转义字符，如“&”号，使用“%26”转义。
      */
