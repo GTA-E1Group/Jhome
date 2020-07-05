@@ -1,6 +1,6 @@
 package com.nettyServer.Server;
 
-import com.nettyServer.Model.ResponseJson;
+import com.daxu.common.Bus.ResponseJson;
 import com.nettyServer.Service.impl.ChatServiceImpl;
 import com.nettyServer.Util.Constant;
 import com.alibaba.fastjson.JSONObject;

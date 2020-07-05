@@ -8,7 +8,13 @@ import com.daxu.common.Http.HttpClient;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
+import com.rpc.common.thrift.socketService;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.thrift.protocol.TCompactProtocol;
+import org.apache.thrift.protocol.TProtocol;
+import org.apache.thrift.transport.TFramedTransport;
+import org.apache.thrift.transport.TSocket;
+import org.apache.thrift.transport.TTransport;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.redisson.Redisson;
@@ -177,4 +183,22 @@ public class SysAutoConfiguration {
     }
 
 
+    /**
+     * rpc
+     * @return
+     */
+    @Bean("TTransport")
+    @ConditionalOnMissingBean(TTransport.class)
+    public TTransport tTransport()
+    {
+        return new TFramedTransport(new TSocket("127.0.0.1",8899),600);
+    }
+    @Bean
+    @DependsOn("TTransport")
+    @ConditionalOnMissingBean(socketService.Client.class)
+    public socketService.Client client()
+    {
+        TProtocol tProtocol=new TCompactProtocol(tTransport());
+        return  new socketService.Client(tProtocol);
+    }
 }

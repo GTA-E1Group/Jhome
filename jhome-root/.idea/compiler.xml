@@ -7,17 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jhome-account" />
-        <module name="jhome-dataCenter" />
         <module name="jhome-NettyServer" />
-        <module name="jhome-Pay" />
         <module name="jhome-registrationCenter" />
         <module name="jhome-webspider" />
-        <module name="jhome-registrationCenter_One" />
         <module name="jhome-web" />
         <module name="jhome-common" />
         <module name="jhome-sysAnnotation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jhome-dataCenter" target="1.8" />
+      <module name="jhome-Pay" target="1.8" />
+      <module name="jhome-registrationCenter_One" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

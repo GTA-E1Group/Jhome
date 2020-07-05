@@ -9,7 +9,7 @@
 #========== com.nettyServer.Server settings ===========#
 #======================================#
 server:
-  port: 9100
+  port: 9200
   servlet:
     context-path: /jhome
   tomcat:
@@ -22,7 +22,7 @@ spring:
     name: JHome-registationCenter
   security:
     basic:
-      enable: true #开启基于HTTP basic的认证       defaultZone: http://daxunihao:123456@localhost:9100/jhome/eureka/
+      enable: true #开启基于HTTP basic的认证       defaultZone: http://daxunihao:123456@localhost:9200/jhome/eureka/
     user:
       name: daxunihao
       password: 123456

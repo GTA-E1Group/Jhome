@@ -9,7 +9,7 @@
 #========== com.nettyServer.Server settings ===========#
 #======================================#
 server:
-  port: 9200
+  port: 9100
   servlet:
     context-path: /jhome
   tomcat:

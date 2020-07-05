@@ -1,8 +1,8 @@
 package com.nettyServer.Service.impl;
 
+import com.daxu.common.Bus.ResponseJson;
 import com.nettyServer.Model.ChatType;
 import com.nettyServer.Model.GroupInfo;
-import com.nettyServer.Model.ResponseJson;
 import com.nettyServer.Service.ChatService;
 import com.nettyServer.Util.Constant;
 import com.alibaba.fastjson.JSONObject;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.text.MessageFormat;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author : Daxv

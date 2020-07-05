@@ -20,9 +20,6 @@
         <module>../jhome-webspider</module>
         <module>../jhome-sysAnnotation</module>
         <module>../jhome-registrationCenter</module>
-        <module>../jhome-dataCenter</module>
-        <module>../jhome-registrationCenter_One</module>
-        <module>../jhome-Pay</module>
         <module>../jhome-account</module>
         <module>../jhome-NettyServer</module>
     </modules>
