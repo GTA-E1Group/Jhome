@@ -1,5 +1,6 @@
 package com.jhome.common.shiro.realm;
 
+import com.shiro.common.token.jhomeToken;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.shiro.ShiroException;

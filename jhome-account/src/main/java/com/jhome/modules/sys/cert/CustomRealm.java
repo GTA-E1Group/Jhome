@@ -1,8 +1,8 @@
 package com.jhome.modules.sys.cert;
 
 import com.jhome.common.shiro.realm.BaseAuthorizingRealm;
-import com.jhome.common.shiro.realm.jhomeToken;
 import com.jhome.modules.sys.model.po.UserInfo;
+import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.*;
 
 import java.util.UUID;

@@ -1,5 +1,7 @@
 package com.jhome.common.shiro.realm;
 
+import com.shiro.common.token.DeviceType;
+import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

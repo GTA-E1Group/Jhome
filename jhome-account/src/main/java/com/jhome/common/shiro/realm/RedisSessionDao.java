@@ -5,6 +5,7 @@ import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.netflix.discovery.converters.Auto;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
+import com.shiro.common.token.DeviceType;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.AbstractSessionDAO;

@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +31,16 @@ public enum DeviceType {
             list.add(deviceType.type);
         }
         return list;
+    }
+
+    /**
+     * 是否是单点登录类型
+     * @param type
+     * @return
+     */
+    public static boolean IsSinglepointLoginContainType(String type)
+    {
+        List list=toList();
+        return list.contains(type);
     }
 }

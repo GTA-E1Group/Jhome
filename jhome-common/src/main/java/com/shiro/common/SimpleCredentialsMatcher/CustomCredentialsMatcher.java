@@ -1,5 +1,7 @@
 package com.shiro.common.SimpleCredentialsMatcher;
 
+import com.shiro.common.token.DeviceType;
+import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -7,6 +9,7 @@ import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 
 /**
  * 密码比较器：规范是extends SimpleCredentialsMatcher
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
@@ -27,18 +30,19 @@ public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
 
         //1.向下转型
-        UsernamePasswordToken upToken = (UsernamePasswordToken) token;
+        jhomeToken jhomeToken = (com.shiro.common.token.jhomeToken) token;
+        //过滤单点登录
+        if (DeviceType.IsSinglepointLoginContainType(jhomeToken.getDeviceType()))
+            return true;
 
         //2.获取用户名或密码
-        String username = upToken.getUsername();
-
+        String username = jhomeToken.getUsername();
         //获取密码并使用Md5Hash算法进行加密
         //String inputPwdEncrypt = Encrypt.md5(new String(upToken.getPassword()), username);
-
+        String inputPwdEncrypt = "123456";
         //3.获取数据库中的加密的密码
         String dbPwd = info.getCredentials().toString();
         //return  upToken.getPassword().equals(dbPwd);
-        return  true;
-        //return equals(inputPwdEncrypt, dbPwd);
+        return equals(inputPwdEncrypt, dbPwd);
     }
 }

@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.token;
 
 import lombok.Getter;
 import lombok.Setter;

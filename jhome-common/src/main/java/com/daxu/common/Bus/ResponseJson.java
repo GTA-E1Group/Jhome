@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class ResponseJson extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
     private static final Integer SUCCESS_STATUS = 200;
-    private static final Integer ERROR_STATUS = -1;
+    private static final Integer ERROR_STATUS = 401;
     private static final String SUCCESS_MSG = "一切正常";
 
     public ResponseJson() {

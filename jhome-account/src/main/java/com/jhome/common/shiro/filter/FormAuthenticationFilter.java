@@ -2,7 +2,7 @@ package com.jhome.common.shiro.filter;
 
 import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
-import com.jhome.common.shiro.realm.jhomeToken;
+import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
