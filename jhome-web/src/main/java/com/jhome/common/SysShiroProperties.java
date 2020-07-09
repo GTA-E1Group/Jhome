@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.jhome.common;
 
 import com.shiro.common.ShiroProperties;
 import lombok.Getter;

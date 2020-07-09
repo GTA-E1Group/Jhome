@@ -1,9 +1,9 @@
 package com.jhome.modules.config;
 
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
-import com.jhome.common.shiro.realm.ClientRealm;
-import com.jhome.common.shiro.realm.SysShiroProperties;
-import com.jhome.common.shiro.realm.UserRemoteServiceInterface;
+import com.jhome.common.ClientRealm;
+import com.jhome.common.SysShiroProperties;
+import com.jhome.common.UserRemoteServiceInterface;
 import com.shiro.common.session.ClientSessionDAO;
 import com.shiro.common.filter.ClientTokenFormAuthenticationFilter;
 import com.shiro.common.session.ClientWebSessionManager;

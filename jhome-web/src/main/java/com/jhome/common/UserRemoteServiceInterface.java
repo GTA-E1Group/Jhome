@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.jhome.common;
 
 import com.jhome.modules.config.FeignConfig;
 import com.shiro.common.session.RemoteBaseInterface;
