@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.realm;
 
 import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
@@ -18,7 +18,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
-import java.util.UUID;
 
 /**
  * @author : Daxv

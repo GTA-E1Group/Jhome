@@ -1,6 +1,5 @@
 package com.shiro.common.filter;
 
-import com.shiro.common.client.TokenBySsoAuthorizing;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * ClientAuthenticationFilter是用于实现身份认证的拦截器（authc），当用户没有身份认证时；

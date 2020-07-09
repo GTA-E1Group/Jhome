@@ -1,12 +1,16 @@
 package com.jhome.modules.config;
+
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
+import com.jhome.common.shiro.SysShiroProperties;
 import com.jhome.common.shiro.filter.*;
-import com.jhome.common.shiro.realm.*;
 import com.jhome.modules.sys.cert.AppShiroRealm;
 import com.jhome.modules.sys.cert.CasAuthorizingRealm;
 import com.jhome.modules.sys.cert.CustomRealm;
 import com.jhome.modules.sys.cert.ThirdPathShiroRealm;
 import com.shiro.common.SimpleCredentialsMatcher.CustomCredentialsMatcher;
+import com.shiro.common.realm.CustomizedModularRealmAuthenticator;
+import com.shiro.common.realm.JhomeDefaultWebSessionManager;
+import com.shiro.common.session.ServerRedisSessionDao;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -21,8 +25,10 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.*;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.servlet.Filter;
 import java.util.ArrayList;
@@ -32,11 +38,17 @@ import java.util.Map;
 
 /**
  * Shiro 配置
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
 @Configuration
 public class ShiroConfig {
+
+    @Autowired
+    public RedisTemplate redisTemplate;
+    @Autowired
+    public SysConfigurationPropertiesBean sysConfigurationProperties;
 
     //    @Autowired
 //    public SysShiroProperties spro;
@@ -52,7 +64,6 @@ public class ShiroConfig {
     }
 
 
-
     /**
      * 注入 ShiroFilterFactoryBean
      *
@@ -63,7 +74,7 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         try {
 
-            Map<String, Filter> filterMap=shiroFilterFactoryBean.getFilters();
+            Map<String, Filter> filterMap = shiroFilterFactoryBean.getFilters();
 
             //filterMap.put("inner", shiroInnerFilter());
             //filterMap.put("cas", shiroCasFilter());
@@ -78,7 +89,7 @@ public class ShiroConfig {
             shiroFilterFactoryBean.setUnauthorizedUrl(sysShiroProperties().getUnauthorizedUrl());//没有权限访问 错误页面，认证不通过跳转
             // 设置拦截器
             Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-            filterChainDefinitionMap=sysShiroProperties().getFilterChainDefinitionMap();
+            filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap();
             // 开放登陆接口
 //            filterChainDefinitionMap.put("/login", "anon");
 //            // 静态资源放行
@@ -128,7 +139,6 @@ public class ShiroConfig {
     }
 
 
-
     /**
      * 生成代理，通过代理进行控制
      */
@@ -154,7 +164,7 @@ public class ShiroConfig {
     }
 
     /**
-     *   会话Cookie模板 30天缓存
+     * 会话Cookie模板 30天缓存
      */
     @Bean
     public SimpleCookie rememberMeCookie() {
@@ -166,14 +176,15 @@ public class ShiroConfig {
         simpleCookie.setHttpOnly(true);
         return simpleCookie;
     }
+
     /**
-    *@Description 关闭浏览器 Cookie失效 Add+2020-05-13
-    *@Param
-    *@Return
-    *@Author Mr.Ren
-    *@Date
-    *@Time
-    */
+     * @Description 关闭浏览器 Cookie失效 Add+2020-05-13
+     * @Param
+     * @Return
+     * @Author Mr.Ren
+     * @Date
+     * @Time
+     */
     @Bean
     public SimpleCookie sessionIdCookie() {
         //cookie的name,对应的默认是 JSESSIONID
@@ -231,14 +242,15 @@ public class ShiroConfig {
 
     /**
      * 定义自己的SessionFactory
+     *
      * @return
      */
     @Bean
-    public SessionFactory sessionFactory()
-    {
-        ShiroSessionFactory sessionFactory=new ShiroSessionFactory();
-        return  sessionFactory;
+    public SessionFactory sessionFactory() {
+        ShiroSessionFactory sessionFactory = new ShiroSessionFactory();
+        return sessionFactory;
     }
+
     /**
      * 密码比较器
      *
@@ -248,8 +260,6 @@ public class ShiroConfig {
     public CustomCredentialsMatcher customCredentialsMatcher() {
         return new CustomCredentialsMatcher();
     }
-
-
 
 
     /**
@@ -308,12 +318,16 @@ public class ShiroConfig {
 
     /**
      * shiro 会话管理
+     *
      * @return
      */
     @Bean
-    @ConditionalOnMissingBean(RedisSessionDao.class)
-    public RedisSessionDao redisSessionDAO() {
-        return new RedisSessionDao();
+    @ConditionalOnMissingBean(ServerRedisSessionDao.class)
+    public ServerRedisSessionDao redisSessionDAO() {
+        ServerRedisSessionDao redisSessionDao = new ServerRedisSessionDao();
+        redisSessionDao.setRedisTemplate(redisTemplate);
+        redisSessionDao.setExpiredTime(sysConfigurationProperties.getExpiredTime());
+        return redisSessionDao;
     }
 
 
@@ -365,7 +379,6 @@ public class ShiroConfig {
     private UserFilter shiroUserFilter() {
         return new UserFilter();
     }
-
 
 
 }

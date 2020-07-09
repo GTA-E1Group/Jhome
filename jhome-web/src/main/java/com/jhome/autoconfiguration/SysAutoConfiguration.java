@@ -7,6 +7,7 @@ import com.daxu.common.Http.HttpClient;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
+import com.shiro.common.filter.CorsFilter;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -136,5 +137,15 @@ public class SysAutoConfiguration {
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
+    }
+
+    /**
+     * shiro跨域处理
+     * @return
+     */
+    @Bean
+    public CorsFilter corsFilter() {
+        CorsFilter corsFilter = new CorsFilter();
+        return corsFilter;
     }
 }

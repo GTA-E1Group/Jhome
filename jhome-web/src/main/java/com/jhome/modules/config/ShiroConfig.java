@@ -4,9 +4,8 @@ import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.common.shiro.realm.ClientRealm;
 import com.jhome.common.shiro.realm.SysShiroProperties;
 import com.jhome.common.shiro.realm.UserRemoteServiceInterface;
-import com.shiro.common.client.ClientSessionDAO;
-import com.shiro.common.filter.TokenFormAuthenticationFilter;
-import com.shiro.common.filter.TokenFormAuthenticationFilter1;
+import com.shiro.common.session.ClientSessionDAO;
+import com.shiro.common.filter.ClientTokenFormAuthenticationFilter;
 import com.shiro.common.session.ClientWebSessionManager;
 import com.shiro.common.session.ShiroSessionFactory;
 import org.apache.shiro.codec.Base64;
@@ -202,21 +201,13 @@ public class ShiroConfig {
     /**
      * Form登录过滤器-单点登录过滤器
      */
-    private TokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
-        TokenFormAuthenticationFilter bean = new TokenFormAuthenticationFilter();
+    private ClientTokenFormAuthenticationFilter shiroAuthcFilter(AuthorizingRealm authorizingRealm) {
+        ClientTokenFormAuthenticationFilter bean = new ClientTokenFormAuthenticationFilter();
         bean.setCDao(clientSessionDAO());
         bean.setRemoteService(remoteService);
         //bean.setAuthorizingRealm(authorizingRealm);
         return bean;
     }
-
-    private TokenFormAuthenticationFilter1 shiroAuthcFilter1() {
-        TokenFormAuthenticationFilter1 bean = new TokenFormAuthenticationFilter1();
-        bean.setCDao(clientSessionDAO());
-        //bean.setAuthorizingRealm(authorizingRealm);
-        return bean;
-    }
-
 
     /**
      * shiro 会话管理

@@ -1,4 +1,4 @@
-package com.shiro.common.client;
+package com.shiro.common.session;
 
 import com.daxu.common.Bus.RequestResult;
 import com.daxu.common.Bus.ResponResult;

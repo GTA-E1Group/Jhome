@@ -1,8 +1,11 @@
 package com.jhome.modules.sys.cert;
 
-import com.jhome.common.shiro.realm.BaseAuthorizingRealm;
+import com.shiro.common.realm.BaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.subject.PrincipalCollection;
+
 /**
  * 移动端 认证
  * @author : Daxv
@@ -16,6 +19,11 @@ public class AppShiroRealm extends BaseAuthorizingRealm {
 
     @Override
     protected SimpleAuthenticationInfo Verification(jhomeToken token) {
+        return null;
+    }
+
+    @Override
+    protected SimpleAuthorizationInfo GetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
 }

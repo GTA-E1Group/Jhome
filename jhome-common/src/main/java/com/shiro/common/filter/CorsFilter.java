@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;/**
+package com.shiro.common.filter;/**
  * @program: jhome-root
  * @description
  * @author: Daxv
@@ -39,7 +39,6 @@ import java.io.IOException;
  * @author: Daxv
  * @create: 2020-07-07 21:40
  **/
-@Component
 public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -61,7 +60,7 @@ public class CorsFilter implements Filter {
         httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
         if (httpServletRequest.getMethod().equals("OPTIONS")) {
             httpServletResponse.setStatus(200);
-            return; 
+            return;
         }
         filterChain.doFilter(httpServletRequest, httpServletResponse);
 

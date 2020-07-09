@@ -1,8 +1,8 @@
 package com.jhome.modules.sys.service;
 
 import com.domain.common.PermissionContext;
-import com.domain.common.RemoteServiceInterface;
-import com.jhome.common.shiro.realm.RedisSessionDao;
+import com.netflix.loadbalancer.Server;
+import com.shiro.common.session.ServerRedisSessionDao;
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class RemoteService {
 
     @Autowired
-    public RedisSessionDao rsDao;//对外暴露服务
+    public ServerRedisSessionDao rsDao;//对外暴露服务
     @Autowired
     public AuthorizationService authorizationService;//获取用户角色
 

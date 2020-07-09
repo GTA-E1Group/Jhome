@@ -1,20 +1,17 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.realm;
 
 import com.shiro.common.token.jhomeToken;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.shiro.ShiroException;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
-import org.apache.shiro.authz.ModularRealmAuthorizer;
 import org.apache.shiro.realm.Realm;
-import org.apache.shiro.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
+
 /**
  * 多数据源 认证
  * @author : Daxv

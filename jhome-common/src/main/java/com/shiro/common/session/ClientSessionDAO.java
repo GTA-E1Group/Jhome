@@ -1,20 +1,8 @@
-package com.shiro.common.client;
+package com.shiro.common.session;
 
-import com.alibaba.fastjson.JSON;
-import com.daxu.common.Bus.RequestResult;
-import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.StringUtil;
-import com.shiro.common.SessionDaoZH;
-import com.shiro.common.session.ShiroSession;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
-import org.apache.shiro.session.mgt.SimpleSession;
-import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.io.Serializable;
-import java.util.Collection;
 
 /**
  * 关键一步实现调用服务器的RedisSessionDao 实现对统一数据源操作

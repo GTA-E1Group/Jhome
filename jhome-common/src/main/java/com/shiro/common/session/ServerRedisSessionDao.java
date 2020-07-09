@@ -1,17 +1,14 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.session;
 
 import com.daxu.common.ToolKit.StringUtil;
-import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
-import com.netflix.discovery.converters.Auto;
 import com.shiro.common.SessionDaoZH;
-import com.shiro.common.session.ShiroSession;
+import com.shiro.common.realm.SessionCons;
 import com.shiro.common.token.DeviceType;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.AbstractSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.Serializable;
@@ -24,15 +21,17 @@ import java.util.concurrent.TimeUnit;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class RedisSessionDao extends AbstractSessionDAO {
+public class ServerRedisSessionDao extends AbstractSessionDAO {
     protected final long PC_EXPIRE_TIME = 600;
     protected final long APP_EXPIRE_TIME = 600;
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
+    //redis操作类
+    private RedisTemplate redisTemplate;
+    //过期时间
+    private long expiredTime;
 
-    @Autowired
-    public RedisTemplate redisTemplate;
-    @Autowired
-    public SysConfigurationPropertiesBean sysConfigurationProperties;
+    public ServerRedisSessionDao() {
+    }
 
     //用户第一次访问系统时创建会话信息
     @Override
@@ -43,7 +42,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
                 + UUID.randomUUID().toString();
         assignSessionId(session, sessionId);
         redisTemplate.opsForValue().set(sessionId, session);
-        redisTemplate.expire(sessionId, sysConfigurationProperties.getExpiredTime(), TimeUnit.SECONDS);
+        redisTemplate.expire(sessionId, expiredTime, TimeUnit.SECONDS);
         if (logger.isDebugEnabled()) {
             logger.debug("create shiro session ,sessionId is :{}",
                     sessionId.toString());
@@ -62,14 +61,14 @@ public class RedisSessionDao extends AbstractSessionDAO {
             if (StringUtil.isNotBlank(deviceType)) {
                 if (deviceType.equals(DeviceType.PC.toString())) {
                     // PC会话信息
-                    session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
+                    session.setTimeout(expiredTime * 1000);
                     if (logger.isDebugEnabled()) {
                         logger.debug("read pc session ,sessionId is :{}",
                                 sessionId.toString());
                     }
                 } else {
                     // APP会话信息
-                    session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
+                    session.setTimeout(expiredTime * 1000);
                     if (logger.isDebugEnabled()) {
                         logger.debug("read app session ,sessionId is :{}",
                                 sessionId.toString());
@@ -110,8 +109,8 @@ public class RedisSessionDao extends AbstractSessionDAO {
             redisTemplate.opsForValue().set(session.getId(), session);
             if (deviceType.equals(DeviceType.PC.toString())) {
                 // PC会话信息
-                session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
-                redisTemplate.expire(session.getId(), sysConfigurationProperties.getExpiredTime(),
+                session.setTimeout(expiredTime * 1000);
+                redisTemplate.expire(session.getId(), expiredTime,
                         TimeUnit.SECONDS);
                 if (logger.isDebugEnabled()) {
                     logger.debug("update pc session ,sessionId is :{}", session
@@ -119,8 +118,8 @@ public class RedisSessionDao extends AbstractSessionDAO {
                 }
             } else {
                 // APP会话信息
-                session.setTimeout(sysConfigurationProperties.getExpiredTime() * 1000);
-                redisTemplate.expire(session.getId(), sysConfigurationProperties.getExpiredTime(),
+                session.setTimeout(expiredTime * 1000);
+                redisTemplate.expire(session.getId(), expiredTime,
                         TimeUnit.SECONDS);
                 if (logger.isDebugEnabled()) {
                     logger.debug("update app session ,sessionId is :{}",
@@ -157,4 +156,19 @@ public class RedisSessionDao extends AbstractSessionDAO {
     }
 
 
+    public RedisTemplate getRedisTemplate() {
+        return redisTemplate;
+    }
+
+    public void setRedisTemplate(RedisTemplate redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
+
+    public long getExpiredTime() {
+        return expiredTime;
+    }
+
+    public void setExpiredTime(long expiredTime) {
+        this.expiredTime = expiredTime;
+    }
 }

@@ -4,26 +4,16 @@ import com.alibaba.fastjson.JSON;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
-import com.shiro.common.client.ClientSessionDAO;
-import com.shiro.common.client.RemoteBaseInterface;
+import com.shiro.common.session.ClientSessionDAO;
+import com.shiro.common.session.RemoteBaseInterface;
 import com.shiro.common.session.ShiroSession;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.mgt.DefaultSecurityManager;
-import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.subject.SubjectContext;
-import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.util.WebUtils;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * @program: jhome-root
@@ -31,7 +21,7 @@ import java.util.Map;
  * @author: Daxv
  * @create: 2020-06-04 22:22
  **/
-public class TokenFormAuthenticationFilter extends ClientFormAuthenticationFilter {
+public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticationFilter {
     private ClientSessionDAO cDao;
     private RemoteBaseInterface remoteService;
 

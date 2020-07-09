@@ -39,7 +39,7 @@ public class SsoController {
     @GetMapping(value = "/sso/{type}/{name}/{token}")
     public String sso(@PathVariable String type,
                       @PathVariable String name,
-                      @PathVariable String token,
+                       String token,
                       HttpServletRequest request,
                       HttpServletResponse response) {
 

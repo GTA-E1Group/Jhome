@@ -1,9 +1,11 @@
 package com.jhome.modules.sys.cert;
 
-import com.jhome.common.shiro.realm.BaseAuthorizingRealm;
+import com.shiro.common.realm.BaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.subject.PrincipalCollection;
 
 
 /**
@@ -20,6 +22,11 @@ public class ThirdPathShiroRealm extends BaseAuthorizingRealm {
     }
     @Override
     protected SimpleAuthenticationInfo Verification(jhomeToken token) {
+        return null;
+    }
+
+    @Override
+    protected SimpleAuthorizationInfo GetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
 }

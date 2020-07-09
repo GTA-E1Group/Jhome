@@ -1,4 +1,4 @@
-package com.jhome.common.shiro.realm;
+package com.shiro.common.realm;
 
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
@@ -8,6 +8,7 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
@@ -34,7 +35,9 @@ public abstract class BaseAuthorizingRealm extends AuthorizingRealm {
 
         }
         System.out.println("授权");
-        return null;
+        SimpleAuthorizationInfo simpleAuthorizationInfo=this.GetAuthorizationInfo(principalCollection);
+        return simpleAuthorizationInfo;
+        //return null;
     }
 
     //认证
@@ -58,11 +61,18 @@ public abstract class BaseAuthorizingRealm extends AuthorizingRealm {
     }
 
     /**
-     * 实现验证
+     * 实现验证 acc系统实现数据认证 远程系统通过客户端sessionDAO 调用远程ServerSessionDAO 实现session共享
      * @param token
      * @return
      */
     protected abstract SimpleAuthenticationInfo Verification(jhomeToken token);
+
+    /**
+     * 获取授权 ACC自身实现授权调用 远程调用通过远程接口访问API获取权限信息
+     * @param principalCollection
+     * @return
+     */
+    protected abstract SimpleAuthorizationInfo GetAuthorizationInfo(PrincipalCollection principalCollection);
 
 
 }

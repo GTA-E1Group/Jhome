@@ -1,4 +1,4 @@
-package com.shiro.common.client;
+package com.shiro.common.filter;
 
 import com.daxu.common.ToolKit.StringUtil;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;

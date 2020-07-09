@@ -9,6 +9,7 @@ import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
 import com.rpc.common.thrift.socketService;
+import com.shiro.common.filter.CorsFilter;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
@@ -174,7 +175,6 @@ public class SysAutoConfiguration {
         pageHelper.setProperties(properties);
         return pageHelper;
     }*/
-
     @Bean
     @LoadBalanced
     @ConditionalOnMissingBean(RestTemplate.class)
@@ -185,20 +185,30 @@ public class SysAutoConfiguration {
 
     /**
      * rpc
+     *
      * @return
      */
     @Bean("TTransport")
     @ConditionalOnMissingBean(TTransport.class)
-    public TTransport tTransport()
-    {
-        return new TFramedTransport(new TSocket("127.0.0.1",8899),600);
+    public TTransport tTransport() {
+        return new TFramedTransport(new TSocket("127.0.0.1", 8899), 600);
     }
+
     @Bean
     @DependsOn("TTransport")
     @ConditionalOnMissingBean(socketService.Client.class)
-    public socketService.Client client()
-    {
-        TProtocol tProtocol=new TCompactProtocol(tTransport());
-        return  new socketService.Client(tProtocol);
+    public socketService.Client client() {
+        TProtocol tProtocol = new TCompactProtocol(tTransport());
+        return new socketService.Client(tProtocol);
+    }
+
+    /**
+     * shiro跨域处理
+     * @return
+     */
+    @Bean
+    public CorsFilter corsFilter() {
+        CorsFilter corsFilter = new CorsFilter();
+        return corsFilter;
     }
 }

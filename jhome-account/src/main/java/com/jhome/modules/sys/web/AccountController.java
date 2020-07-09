@@ -4,9 +4,9 @@ import com.daxu.common.Bus.ResponseJson;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.daxu.common.ToolKit.StringUtil;
-import com.jhome.common.shiro.realm.SessionCons;
-import com.jhome.modules.sys.model.po.UserInfo;
+import com.domain.common.UserInfo;
 import com.jhome.modules.sys.web.baseController.baseController;
+import com.shiro.common.realm.SessionCons;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
 import io.swagger.annotations.Api;
@@ -45,7 +45,7 @@ public class AccountController extends baseController {
                 //默认用户信息
                 //UsernamePasswordToken token =new UsernamePasswordToken(user.getAccount(),user.getPassword());
                 //自定义多个realm
-                jhomeToken jhomeToken = new jhomeToken(user.getAccount(), user.getPassword(), 0, DeviceType.PC.toString());
+                jhomeToken jhomeToken = new jhomeToken(user.getLoginName(), user.getPassword(), 0, DeviceType.PC.toString());
                 jhomeToken.setRememberMe(true);
                 subject.login(jhomeToken);
                 //UserEntity user2=(UserEntity) subject.getPrincipal();
