@@ -19,7 +19,7 @@ import java.util.Collection;
  * @author: Daxv
  * @create: 2020-06-03 22:50
  **/
-public abstract class TokenBySsoAuthorizing extends CachingSessionDAO {
+public abstract class ClientTokenBySsoAuthorizing extends CachingSessionDAO {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
     private RemoteBaseInterface remoteService;
     private String appKey;

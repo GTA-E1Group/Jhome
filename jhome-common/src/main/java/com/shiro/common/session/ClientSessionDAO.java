@@ -10,7 +10,7 @@ import org.apache.shiro.session.Session;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class ClientSessionDAO extends TokenBySsoAuthorizing {
+public class ClientSessionDAO extends ClientTokenBySsoAuthorizing {
     private String ssoToken;
 
     @Override
