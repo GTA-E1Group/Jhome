@@ -75,7 +75,7 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>${mybatisplus.version}</version>
         </dependency>
- 
+
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -96,8 +96,6 @@
         </dependency>
 
 
-
-
         <!-- 参数校验 validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,15 +106,11 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-
-
         <!--Redis-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--        </dependency>-->
         <!--依赖项目-->
         <dependency>
             <groupId>com.jhome</groupId>
@@ -124,23 +118,12 @@
             <version>${project.parent.version}</version>
             <scope>compile</scope>
         </dependency>
-        <!--
-                <dependency>
-                    <groupId>com.jhome</groupId>
-                    <artifactId>jhome-webspider</artifactId>
-                    <version>${project.parent.version}</version>
-                    <scope>compile</scope>
-                </dependency>
-        -->
-
-
         <!--热部署 一 重新发布模式 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-
 
 
         <!--springboot 整合eureka客户端-->

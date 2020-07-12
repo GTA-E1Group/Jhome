@@ -139,13 +139,4 @@ public class SysAutoConfiguration {
         return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
     }
 
-    /**
-     * shiro跨域处理
-     * @return
-     */
-    @Bean
-    public CorsFilter corsFilter() {
-        CorsFilter corsFilter = new CorsFilter();
-        return corsFilter;
-    }
 }

@@ -202,13 +202,4 @@ public class SysAutoConfiguration {
         return new socketService.Client(tProtocol);
     }
 
-    /**
-     * shiro跨域处理
-     * @return
-     */
-    @Bean
-    public CorsFilter corsFilter() {
-        CorsFilter corsFilter = new CorsFilter();
-        return corsFilter;
-    }
 }
