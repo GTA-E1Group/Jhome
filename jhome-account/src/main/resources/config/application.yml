@@ -1,9 +1,18 @@
+#================================================================================ 版本配置 settings ===========#
+
 # 产品或项目名称、软件开发公司名称
 productName: JHome-JavaHome 开发平台
 companyName: JHome V1.0
 # 产品版本、版权年份
 productVersion: V1.0
 copyrightYear: 2020
+#================================================================================ server settings ===========#
+server:
+  port: 8100
+  servlet:
+    context-path: /jhome
+  tomcat:
+    uri-encoding: UTF-8
 
 adminPath: ${jhome.sysproperties.adminPath}
 foreignServerPath: ${jhome.sysproperties.foreignServerPath}
@@ -11,13 +20,12 @@ foreignServerPath: ${jhome.sysproperties.foreignServerPath}
 jhome:
   # 系统参数
   sysproperties:
-    # redis 地址
-    #redissonUrl: redis://${spring.redis.host}:${spring.redis.port}
     # 管理基础路径
     adminPath: account
     # 前端基础路径
     foreignServerPath: RemoteService
-    expiredTime: 600 #Session 和Redis 缓存过期时间单位(秒)
+    #Session 和Redis 缓存过期时间单位(秒) 40分钟
+    expiredTime: 2400
     #消息服务配置
     queueconfig:
       #队列服务器地址
@@ -28,19 +36,19 @@ jhome:
       passWord: 13528764027
       #虚拟主机
       virtualHost: dxhost
+    # redissconfig地址
     redissConfig:
       host: ${spring.redis.host}
       database: ${spring.redis.database}
       port: ${spring.redis.port}
       password: ${spring.redis.password}
       timeout: ${spring.redis.password}
-#================================================================================ com.nettyServer.Server settings ===========#
-server:
-  port: 8100
-  servlet:
-    context-path: /jhome/
-  tomcat:
-    uri-encoding: UTF-8
+    # 单点登录配置信息
+    casConfig:
+      clientName: SmartCampus
+      serverUrl:
+      projectUrl: http://127.0.0.1:8100/jhome/account
+      isEnable: false #是否启用Cas认证
 
 #================================================================================ 数据库配置地址 =============#
 #================================================================================ Spring 基础配置信息 ===========#
@@ -104,11 +112,14 @@ shiro:
     /v2/**:anon,
     /swagger-resources/**:anon,
     /web/**:authc,
+    /account/index:casSecurityFilter,
+    /account/callback**:callbackFilter,
+    /**:casSecurityFilter,
     /account/**:authc,
     /**:authc
+
   LoginUrl: /${adminPath}/login
   UnauthorizedUrl: /${adminPath}/sys/error
-  #success-url: /${adminPath}/main
 
 #================================================================================ mybatis plus 基础配置信息 ===========#
 mybatis-plus:

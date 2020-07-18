@@ -1,19 +1,15 @@
 package com.jhome.autoconfiguration;
 
 import com.daxu.common.BatchExcel.ExcelteEngine;
-import com.daxu.common.Bus.PushTypeBase;
 import com.daxu.common.Cache.MemcachedManager;
 import com.daxu.common.Http.HttpClient;
 import com.daxu.common.Queue.Bus;
 import com.daxu.common.Queue.Config;
 import com.daxu.common.WebSocket.WebSocket;
-import com.shiro.common.filter.CorsFilter;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

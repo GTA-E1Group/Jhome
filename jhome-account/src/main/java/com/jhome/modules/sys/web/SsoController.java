@@ -4,11 +4,13 @@ import com.daxu.common.Bus.ResponseJson;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.StringUtil;
 import com.jhome.modules.sys.service.RemoteService;
+import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
 import io.swagger.annotations.Api;
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,18 +57,25 @@ public class SsoController {
             if (StringUtil.isNotBlank(token)) {
                 ShiroSession shiroSession = (ShiroSession) remoteService.getSession(token);
                 if (shiroSession != null)
-                    return new ResponseJson().success().setValue("jhomeToken", shiroSession.getId()).toString();
+                    return new ResponseJson().successByMessAge("您已经登录，无需二次登陆！").setValue("jhomeToken", shiroSession.getId()).toString();
             }
             // 通过令牌登录系统
             jhomeToken jhomeToken = new jhomeToken(name, "", 0, type);
             UserUtil.getSubject().login(jhomeToken);
-            if (UserUtil.getSubject().isAuthenticated())
+            if (UserUtil.getSubject().isAuthenticated()){
+                String userJosn= (String) UserUtil.getSubject().getPrincipal();
+                Session session=UserUtil.getSubject().getSession();
+                session.setAttribute(SessionCons.DEVICE_TYPE,DeviceType.CAS.toString());
+                session.setAttribute(SessionCons.LOGIN_USER_SESSION,userJosn);
                 return new ResponseJson()
                         .success()
                         .setValue("token", UserUtil.getSubject()
                                 .getSession()
                                 .getId())
                         .toString();
+
+            }
+
         } catch (AuthenticationException e) {
             return new ResponseJson().error("msg:登录失败，请联系管理员！").toString();
 

@@ -1,6 +1,6 @@
 package com.jhome.modules.sys.cert;
 
-import com.shiro.common.realm.BaseAuthorizingRealm;
+import com.shiro.common.realm.ServerBaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
@@ -14,7 +14,7 @@ import org.apache.shiro.subject.PrincipalCollection;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class ThirdPathShiroRealm extends BaseAuthorizingRealm {
+public class ThirdPathShiroRealm extends ServerBaseAuthorizingRealm {
 
     @Override
     public boolean supports(AuthenticationToken token) {

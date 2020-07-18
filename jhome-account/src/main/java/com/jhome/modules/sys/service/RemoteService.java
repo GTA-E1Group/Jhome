@@ -1,8 +1,7 @@
 package com.jhome.modules.sys.service;
 
 import com.domain.common.PermissionContext;
-import com.netflix.loadbalancer.Server;
-import com.shiro.common.session.ServerRedisSessionDao;
+import com.shiro.common.realm.ServerRedisSessionDao;
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

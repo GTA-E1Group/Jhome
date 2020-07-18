@@ -10,12 +10,13 @@ import java.util.List;
  * @date : 11:03 2020/5/12 0012
  */
 public enum DeviceType {
-    PC("Pc"), APP("App"), CAS("Cas"), THIRDPATH("ThirdPath");
+    PC("Pc"), APP("App"), CAS("Cas"), THIRDPATH("ThirdPath"), SmartCampusCas("SmartCampusCas");
     private String type;
 
     DeviceType(String type) {
         this.type = type;
     }
+
     @Override
     public String toString() {
         return this.type;
@@ -23,6 +24,7 @@ public enum DeviceType {
 
     /**
      * 枚举转换LIst
+     *
      * @return
      */
     public static List toList() {
@@ -34,13 +36,15 @@ public enum DeviceType {
     }
 
     /**
-     * 是否是单点登录类型
+     * 是否是单点登录类型 单点登录类型无需密码进行匹配
+     *
      * @param type
      * @return
      */
-    public static boolean IsSinglepointLoginContainType(String type)
-    {
-        List list=toList();
+    public static boolean IsSinglepointLoginContainType(String type) {
+        List list = toList();
+        list.remove("App");
+        list.remove("Pc");
         return list.contains(type);
     }
 }

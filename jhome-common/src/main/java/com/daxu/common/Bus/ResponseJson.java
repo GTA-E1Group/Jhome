@@ -30,7 +30,11 @@ public class ResponseJson extends HashMap<String, Object> {
         put("status", SUCCESS_STATUS);
         return this;
     }
-
+    public ResponseJson successByMessAge(String messAge) {
+        put("msg", messAge);
+        put("status", SUCCESS_STATUS);
+        return this;
+    }
     //后续使用 Shrio框架
     public ResponseJson success(HttpStatus status) {
         put("msg", SUCCESS_MSG);

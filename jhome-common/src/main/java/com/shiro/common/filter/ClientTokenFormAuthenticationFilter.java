@@ -1,6 +1,8 @@
 package com.shiro.common.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.daxu.common.Bus.ResponseJson;
+import com.daxu.common.Http.HttpUtil;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.CookieUtil;
 import com.daxu.common.ToolKit.StringUtil;
@@ -35,6 +37,7 @@ public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticatio
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        ResponseJson result = new ResponseJson();
         Subject subject = getSubject(request, response);
         //获取URL参数上的Token
         String token = this.GetToken(request, response);
@@ -43,30 +46,25 @@ public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticatio
         if (StringUtil.isNotBlank(token) && !subject.isAuthenticated()) {
             try {
                 cDao.setSsoToken(token);
-                String sessionId = (String) UserUtil.ParsingToken(token);
-                ShiroSession shiroSession = JSON.parseObject(remoteService.getSession(sessionId), ShiroSession.class);
+                //String sessionId = (String) UserUtil.ParsingToken(token);//解析token 后台登录没有加密，无需解密
+                ShiroSession shiroSession = JSON.parseObject(remoteService.getSession(token), ShiroSession.class);
                 if (shiroSession == null) {
+                    result.error("登录已经失效，请重新登录！");
+                    HttpUtil.SendFlush(response, result);
                     return false;
                 }
                 subject.getSession();
-                /*
-                subject.logout();
-                subject = SecurityUtils.getSubject();
-               executeChain(request,response,null);
-                //判断token是否有效
-                //解析Tonken
-                //执行验证 Token 通过Token 解析，拿到SessionID  调用远程回话获取session 分配session给当前系统
-                DefaultWebSecurityManager securityManager= (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
-                SubjectContext context = securityManager.createSubject();
-                context.setAuthenticated(true);
-                context.setAuthenticationToken(token);
-                context.setAuthenticationInfo(info);
-                context.setSecurityManager(securityManager);
-                securityManager.createSubject(context);*/
                 return true;
             } catch (Exception ex) {
+                result.error("登录已经失效，请重新登录！");
+                HttpUtil.SendFlush(response, result);
                 return false;
             }
+        }
+        if (StringUtil.isBlank(token) && !subject.isAuthenticated()) {
+            result.error("登录已经失效，请重新登录！");
+            HttpUtil.SendFlush(response, result);
+            return false;
         }
         return subject.isAuthenticated();
     }
@@ -91,7 +89,6 @@ public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticatio
         }
         return token;
     }
-
 
     public ClientSessionDAO getCDao() {
         return cDao;

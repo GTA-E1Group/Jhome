@@ -380,14 +380,29 @@
             <artifactId>shiro-aspectj</artifactId>
             <version>${shiro.version}</version>
         </dependency>
-
-
+        <!-- pac4j 与 shiro 集成 -->
+        <dependency>
+            <groupId>io.buji</groupId>
+            <artifactId>buji-pac4j</artifactId>
+            <version>4.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>shiro-web</artifactId>
+                    <groupId>org.apache.shiro</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--  Cas认证  -->
+        <dependency>
+            <groupId>org.pac4j</groupId>
+            <artifactId>pac4j-cas</artifactId>
+            <version>3.8.3</version>
+        </dependency>
         <dependency>
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
             <version>5.5.1</version>
         </dependency>
-
 
         <!--TCC事务-->
         <dependency>
@@ -443,13 +458,13 @@
         <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
         <!--            <version>${pagehelper.version}</version>-->
         <!--        </dependency>-->
+        <!--  okhttp      -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>${okhttp3.version}</version>
             <scope>compile</scope>
         </dependency>
-
 
         <!-- 数据库配置基础插件相关 -->
         <!-- mysql -->

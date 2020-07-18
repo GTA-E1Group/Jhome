@@ -36,8 +36,8 @@ public class ClientFormAuthenticationFilter extends org.apache.shiro.web.filter.
         String backUrl = request.getParameter("backUrl");
         Session session = saveRequest(request, backUrl, getDefaultBackUrl(WebUtils.toHttp(request)));
         HttpServletRequest req = WebUtils.toHttp(request);
-//        HttpServletResponse rep = WebUtils.toHttp(response);
-//        rep.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+        //HttpServletResponse rep = WebUtils.toHttp(response);
+        //rep.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
         //客户端向Acccount服务 发送token 服务端复制SessionId
         //实现方式很多，也可以配置服务器端允许跨域，允许客户端携带的Cookie中存储的tokenID = SessionId 进行传递
         String mbUrl = String.format("%s?token=%s", super.getLoginUrl(), session.getId());

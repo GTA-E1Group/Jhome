@@ -1,8 +1,7 @@
-package com.shiro.common.session;
+package com.shiro.common.realm;
 
 import com.daxu.common.ToolKit.StringUtil;
 import com.shiro.common.SessionDaoZH;
-import com.shiro.common.realm.SessionCons;
 import com.shiro.common.token.DeviceType;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;

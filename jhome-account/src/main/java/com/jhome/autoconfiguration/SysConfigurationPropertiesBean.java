@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component;
 @Setter
 @Getter
 public class SysConfigurationPropertiesBean extends SysProperties {
-    public QueueConfig queueconfig;//队列配置
-    public RedissConfig redissConfig;//队列配置
-    private long expiredTime;
     public String adminPath;//后台路径
     public String frontPath;//前台路径
+    public QueueConfig queueconfig;//队列配置
+    public RedissConfig redissConfig;//缓存配置
+    private long expiredTime;//缓存过期时间
     public DataSourceConfig datasourceconfig;//自定义数据库配置
+    public CasConfig casConfig;//CAS单点登录配置
+
+
 
     /**
      * 队列服务
@@ -60,6 +63,14 @@ public class SysConfigurationPropertiesBean extends SysProperties {
         public String drivrerClassName;
         public String type;
 
+    }
+    @Getter
+    @Setter
+    public static class CasConfig {
+        public String clientName;
+        public String serverUrl;
+        public String projectUrl;
+        public String isEnable;
     }
 
 }

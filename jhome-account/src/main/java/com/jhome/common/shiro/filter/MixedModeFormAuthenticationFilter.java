@@ -17,8 +17,11 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.FormAuthenticationFilter {
-    private static final Logger logger = LoggerFactory.getLogger(FormAuthenticationFilter.class);
+/**
+ * 服务器端渲染视图 模式拦截器
+ */
+public class MixedModeFormAuthenticationFilter extends org.apache.shiro.web.filter.authc.FormAuthenticationFilter {
+    private static final Logger logger = LoggerFactory.getLogger(MixedModeFormAuthenticationFilter.class);
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
@@ -92,6 +95,28 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
         }
     }
 
+
+
+    /**
+     * 多项目登录，比如如果是从其他应用中重定向过来的，
+     * 首先检查Session中是否有“authc.fallbackUrl”属性，
+     * 如果有就认为它是默认的重定向地址；
+     * 否则使用Server自己的successUrl作为登录成功后重定向到的地址。
+     *
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @Override
+    protected void issueSuccessRedirect(ServletRequest request, ServletResponse response) throws Exception {
+        String fallbackUrl = (String) getSubject(request, response)
+                .getSession().getAttribute("authc.fallbackUrl");
+        if (StringUtil.isBlank(fallbackUrl)) {
+            fallbackUrl = getSuccessUrl();
+        }
+        WebUtils.redirectToSavedRequest(request, response, fallbackUrl);
+    }
+
     /**
      * 登录成功调用事件
      *
@@ -124,25 +149,6 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
     }
 
 
-    /**
-     * 多项目登录，比如如果是从其他应用中重定向过来的，
-     * 首先检查Session中是否有“authc.fallbackUrl”属性，
-     * 如果有就认为它是默认的重定向地址；
-     * 否则使用Server自己的successUrl作为登录成功后重定向到的地址。
-     *
-     * @param request
-     * @param response
-     * @throws Exception
-     */
-    @Override
-    protected void issueSuccessRedirect(ServletRequest request, ServletResponse response) throws Exception {
-        String fallbackUrl = (String) getSubject(request, response)
-                .getSession().getAttribute("authc.fallbackUrl");
-        if (StringUtil.isBlank(fallbackUrl)) {
-            fallbackUrl = getSuccessUrl();
-        }
-        WebUtils.redirectToSavedRequest(request, response, fallbackUrl);
-    }
 
 
 }

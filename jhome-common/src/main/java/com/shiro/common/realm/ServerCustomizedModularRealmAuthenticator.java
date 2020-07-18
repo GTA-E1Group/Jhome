@@ -1,6 +1,7 @@
 package com.shiro.common.realm;
 
 import com.shiro.common.token.jhomeToken;
+import io.buji.pac4j.token.Pac4jToken;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.shiro.authc.AuthenticationException;
@@ -14,49 +15,43 @@ import java.util.Collection;
 
 /**
  * 多数据源 认证
+ *
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
 @Getter
 @Setter
-public class CustomizedModularRealmAuthenticator extends ModularRealmAuthenticator   {
+public class ServerCustomizedModularRealmAuthenticator extends ModularRealmAuthenticator {
 
-    /**                                                  doGetAuthenticationInfo
+    /**
+     * doGetAuthenticationInfo
      * 重写doAuthenticate让APP帐号和PC帐号自动使用各自的Realm
      * https://www.jianshu.com/p/6866cdc4462a
      */
-    @Override
     protected AuthenticationInfo doAuthenticate(AuthenticationToken authenticationToken) throws AuthenticationException {
-        /**
-         * 判断getRealms()是否返回为空
-         */
+        //判断getRealms()是否返回为空
         this.assertRealmsConfigured();
-        /**
-         * jhomeToken
-         */
-        jhomeToken customizedToken = (jhomeToken) authenticationToken;
-        /**
-         * 登录设备类型
-         */
-        String deviceType = customizedToken.getDeviceType();
-        /**
-         * 所有自定义的Realm
-         */
+        //所有自定义的Realm
         Collection<Realm> customerRealms = this.getRealms();
-        /**
-         * 登录设备类型对应的所有自定义Realm
-         */
+        //登录设备类型对应的所有自定义Realm
         Collection<Realm> deviceRealms = new ArrayList<>();
-        /**
-         * 这里所有自定义的Realm的Name必须包含相对应的设备名
-         */
+        //Pac4jTokne执行
+        if (authenticationToken instanceof Pac4jToken)
+            return doSingleRealmAuthentication(
+                    customerRealms.stream()
+                            .filter(c -> c.getName().contains("CasRealm"))
+                            .findFirst()
+                            .orElse(null)
+                    , authenticationToken);
+        //标准LuxToken执行
+        jhomeToken customizedToken = (jhomeToken) authenticationToken;
+        String deviceType = customizedToken.getDeviceType();
+        //这里所有自定义的Realm的Name必须包含相对应的设备名
         for (Realm realm : customerRealms) {
             if (realm.getName().contains(deviceType))
                 deviceRealms.add(realm);
         }
-        /**
-         * 判断是单Realm还是多Realm
-         */
+        //判断是单Realm还是多Realm
         if (deviceRealms.size() == 1) {
             return doSingleRealmAuthentication(deviceRealms.iterator().next(),
                     customizedToken);
@@ -64,6 +59,5 @@ public class CustomizedModularRealmAuthenticator extends ModularRealmAuthenticat
             return doMultiRealmAuthentication(deviceRealms, customizedToken);
         }
     }
-
 
 }

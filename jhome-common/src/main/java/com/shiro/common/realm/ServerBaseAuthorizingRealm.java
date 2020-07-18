@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public abstract class BaseAuthorizingRealm extends AuthorizingRealm {
+public abstract class ServerBaseAuthorizingRealm extends AuthorizingRealm {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     // 授权

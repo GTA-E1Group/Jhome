@@ -18,8 +18,7 @@ public class SysShiroProperties extends ShiroProperties {
     public String LoginUrl;
     public String SuccessUrl;
     public String UnauthorizedUrl;
-    public LinkedHashMap getFilterChainDefinitionMap()
-    {
-        return  super.ConvertMap(filterChainDefinitionMap);
+    public LinkedHashMap getFilterChainDefinitionMap(String[] excludeFilter) {
+        return super.ConvertMap(filterChainDefinitionMap, excludeFilter);
     }
 }

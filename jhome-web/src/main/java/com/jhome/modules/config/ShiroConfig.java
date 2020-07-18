@@ -75,7 +75,7 @@ public class ShiroConfig {
             shiroFilterFactoryBean.setUnauthorizedUrl(sysShiroProperties().getUnauthorizedUrl());//没有权限访问 错误页面，认证不通过跳转
             // 设置拦截器
             Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-            filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap();
+            filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap(null);
 
             shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
             shiroFilterFactoryBean.setSecurityManager(securityManager);

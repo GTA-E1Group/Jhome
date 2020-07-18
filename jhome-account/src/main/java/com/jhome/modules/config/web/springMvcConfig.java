@@ -98,4 +98,23 @@ public class springMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
     }
+
+    /**
+     * 跨域设置
+     *
+     * @param registry
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        //设置语序跨域的请求的域名
+        registry.addMapping("/*")
+                //设置允许跨域的域名
+                .allowedOrigins("")
+                //是否允许证书 不在默认开启
+                .allowCredentials(true)
+                //设置允许的方法
+                .allowedMethods("*")
+                //跨域允许的时间
+                .maxAge(3600);
+    }
 }

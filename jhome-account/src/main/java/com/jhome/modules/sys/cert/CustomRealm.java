@@ -1,7 +1,8 @@
 package com.jhome.modules.sys.cert;
 
 import com.domain.common.UserInfo;
-import com.shiro.common.realm.BaseAuthorizingRealm;
+import com.netflix.loadbalancer.Server;
+import com.shiro.common.realm.ServerBaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -15,7 +16,7 @@ import java.util.UUID;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class CustomRealm extends BaseAuthorizingRealm {
+public class CustomRealm extends ServerBaseAuthorizingRealm {
     @Override
     public boolean supports(AuthenticationToken token) {
         return token != null && token instanceof jhomeToken;

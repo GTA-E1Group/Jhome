@@ -24,7 +24,7 @@ public class HttpUtil {
             out.flush();
             return true;
         } catch (Exception ex) {
-            logger.error(ex.getMessage());
+            logger.error("HttpUtil-SendFlush:%s",ex.getMessage());
             return false;
         }
     }

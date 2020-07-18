@@ -1,5 +1,6 @@
 package com.jhome.modules.sys.web;
 
+import com.alibaba.fastjson.JSONObject;
 import com.daxu.common.Bus.ResponseJson;
 import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.JSONUtils;
@@ -12,6 +13,7 @@ import com.shiro.common.token.jhomeToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -21,8 +23,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Api(tags = "sys登录控制器")
-@Controller
+@Api(tags = "z、账户服务-登录API")
+@RestController
 @RequestMapping("/${adminPath}")
 public class AccountController extends baseController {
     @GetMapping("/login")
@@ -30,58 +32,46 @@ public class AccountController extends baseController {
         return "modules/sys/login";
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "account", value = "account", paramType = "string", required = true, dataType = "User"),
-            @ApiImplicitParam(name = "password", value = "password", paramType = "string", required = true, dataType = "User")
-    })
-    public ResponseJson login(HttpServletRequest request, HttpServletResponse response, @RequestBody UserInfo user) {
+    @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public String login(HttpServletRequest request, HttpServletResponse response, @RequestBody UserInfo user) {
         try {
-            //MemcachedManager.InitMemCache("");
-            System.out.println("登录请求~~~~");
-            try {
-                Subject subject = SecurityUtils.getSubject();
-                //默认用户信息
-                //UsernamePasswordToken token =new UsernamePasswordToken(user.getAccount(),user.getPassword());
-                //自定义多个realm
-                jhomeToken jhomeToken = new jhomeToken(user.getLoginName(), user.getPassword(), 0, DeviceType.PC.toString());
-                jhomeToken.setRememberMe(true);
-                subject.login(jhomeToken);
-                //UserEntity user2=(UserEntity) subject.getPrincipal();
-                if (subject.isAuthenticated()) {
+            if (user == null || StringUtil.isBlank(user.getLoginName()) || StringUtil.isBlank(user.getPassword()))
+                return JSONUtils.beanToJson(new ResponseJson().error("用户名密码不能为空！"));
+            if (!DeviceType.toList().contains(user.getDeviceType()))
+                return JSONUtils.beanToJson(new ResponseJson().error("登陆设备类型不能存在！"));
+            Subject subject = SecurityUtils.getSubject();
+            jhomeToken token = new jhomeToken(user.getLoginName(), user.getPassword(), 0, user.getDeviceType());
+            token.setRememberMe(true);
+            subject.login(token);
+            if (subject.isAuthenticated()) {
+                String userJson = (String) subject.getPrincipal();
+                Session session = subject.getSession();
+                session.setAttribute(SessionCons.DEVICE_TYPE, user.getDeviceType());
+                session.setAttribute(SessionCons.LOGIN_USER_SESSION, userJson);
+                String tokenStr = (String) session.getId();
+                JSONObject jsonObject = (JSONObject) JSONObject.parse(userJson);
 
-                    //3.取出Shiro中保存的用户信息
-                    UserInfo userInfo = (UserInfo) subject.getPrincipal();
-                    Session session = subject.getSession();
-                    session.setAttribute(SessionCons.DEVICE_TYPE, DeviceType.PC.toString());
-                    //4.将用户信息保存到session中
-                    session.setAttribute(SessionCons.LOGIN_USER_SESSION, JSONUtils.beanToJson(userInfo));
-                    String tokenStr = UserUtil.GetToken((String) session.getId());
-                    String backUrl = (String) session.getAttribute("fallbackUrl");
-                    if (StringUtil.isNotBlank(backUrl))
-                        return new ResponseJson().success().setValue("backUrl", String.format("%s?token=%s", backUrl, tokenStr));
-                    return new ResponseJson().success().setValue("backUrl", "/jhome/account/main");
+                if (jsonObject.getString("returnCode").equals("200")) {
+                    return new ResponseJson()
+                            .success()
+                            .setValue("data", JSONUtils.jsonToMap(jsonObject.getString("data")))
+                            .setData("jhomeToken", tokenStr)
+                            .toString();
+                } else {
+                    return new ResponseJson()
+                            .error("用户登陆失败")
+                            .toString();
                 }
-                /**
-                 * 返回  模式 Token认证
-                 */
-                //result.data= AuthUtil.userLogin(String.valueOf(user.getId()),user, response);
-
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-                return new ResponseJson().error(e.getMessage().toString());
             }
         } catch (Exception ex) {
-            return new ResponseJson().error(ex.getMessage().toString());
+            return new ResponseJson().error("登陆失败").toString();
         }
         return null;
     }
 
 
     //退出
-    @GetMapping("/logout")
+    @RequestMapping(value = "/logout",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public String logout() {
         Subject subject = SecurityUtils.getSubject();
         if (subject.isAuthenticated()) {

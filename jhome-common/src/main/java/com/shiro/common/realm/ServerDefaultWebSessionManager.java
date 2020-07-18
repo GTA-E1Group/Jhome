@@ -23,7 +23,7 @@ import java.io.Serializable;
  * @author : Daxv
  * @date : 11:03 2020/5/12 0012
  */
-public class JhomeDefaultWebSessionManager extends DefaultWebSessionManager {
+public class ServerDefaultWebSessionManager extends DefaultWebSessionManager {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
     public final static String TOKEN_NAME = "JhomeToken";
 
@@ -89,6 +89,7 @@ public class JhomeDefaultWebSessionManager extends DefaultWebSessionManager {
         String token = this.GetToken(request, response);
         if (token == null) {
             //token= SessionCons.TOKEN_PREFIX+ UUID.randomUUID().toString();
+            return null;
         }
         httpServletRequest.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE, ShiroHttpServletRequest.COOKIE_SESSION_ID_SOURCE);
         httpServletRequest.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID, token);
