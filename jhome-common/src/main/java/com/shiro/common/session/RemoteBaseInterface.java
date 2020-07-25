@@ -48,8 +48,6 @@ public interface RemoteBaseInterface {
     @RequestMapping(value = "/jhome/RemoteService/getPermissions", method = RequestMethod.POST)
     PermissionContext getPermissions(@RequestParam("username")  String username);
 
+    @RequestMapping(value = "/jhome/RemoteService/getCallbackUrl", method = RequestMethod.POST)
+    String getCallbackUrl();
 }
-/*
-public interface RemoteBaseInterface {
-
-}*/

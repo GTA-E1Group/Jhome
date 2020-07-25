@@ -8,6 +8,7 @@ import com.daxu.common.Bus.ResponResult;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.domain.common.PermissionContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.modules.sys.service.RemoteService;
 import com.jhome.modules.sys.web.baseController.baseController;
 import com.shiro.common.SessionDaoZH;
@@ -35,6 +36,8 @@ public class RemoteController extends baseController {
     private DiscoveryClient discoveryClient;
     @Autowired
     public RemoteService remoteService;
+    @Autowired
+    public SysConfigurationPropertiesBean propertiesBean;
 
     @PostMapping(value = "/getSession")
     @ResponseBody
@@ -81,13 +84,13 @@ public class RemoteController extends baseController {
     @ResponseBody
     public String deleteSession(@RequestParam("sessionJson") String sessionJson) {
         try {
-            ShiroSession shiroSession=JSON.parseObject(sessionJson,ShiroSession.class);
+            ShiroSession shiroSession = JSON.parseObject(sessionJson, ShiroSession.class);
 
-            String userJson= (String) shiroSession.getAttribute("session_login_user");
-            JSONObject userInfoObject=JSON.parseObject(userJson);
-            String token=userInfoObject.getJSONObject("data").getString("token");
-            JSONObject jsonObject=new JSONObject();
-            jsonObject.put("token",token);
+            String userJson = (String) shiroSession.getAttribute("session_login_user");
+            JSONObject userInfoObject = JSON.parseObject(userJson);
+            String token = userInfoObject.getJSONObject("data").getString("token");
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("token", token);
             //通过接口远程成功后再销毁本地Session
             // ResponseEntity<JSONObject> jsonObject= ucServer.loginOut(url,jsonObject,JSONObject.class)
             //if(jsonObject.getBody().getString("")).equealls("200")
@@ -107,4 +110,13 @@ public class RemoteController extends baseController {
         return remoteService.getPermissions(username);
     }
 
+    /**
+     * 返回退出地址
+     * @return
+     */
+    @PostMapping(value = "getCallbackUrl")
+    @ResponseBody
+    public String getCallbackUrl() {
+        return propertiesBean.getCallbackUrl();
+    }
 }

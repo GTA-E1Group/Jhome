@@ -5,6 +5,7 @@ import com.jhome.common.shiro.SysShiroProperties;
 import com.jhome.common.shiro.filter.*;
 import com.jhome.common.shiro.filter.cas.CallbackFilter;
 import com.jhome.common.shiro.filter.cas.CasClient;
+import com.jhome.common.shiro.filter.cas.CasSecurityFilter;
 import com.jhome.modules.sys.cert.AppShiroRealm;
 import com.jhome.modules.sys.cert.CasRealm;
 import com.jhome.modules.sys.cert.CustomRealm;
@@ -33,6 +34,7 @@ import org.pac4j.cas.config.CasProtocol;
 import org.pac4j.core.config.Config;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -56,6 +58,7 @@ import io.buji.pac4j.filter.LogoutFilter;
  * @date : 11:03 2020/5/12 0012
  */
 @Configuration
+@AutoConfigureAfter(ShiroLifecycleBeanPostProcessorConfig.class)
 public class ShiroConfig {
 
     @Autowired
@@ -91,15 +94,11 @@ public class ShiroConfig {
 
             Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
             Map<String, Filter> filterMap = shiroFilterFactoryBean.getFilters();
-            filterMap.put("authc", shiroAuthcFilter());
-            filterMap.put("logout", shiroLogoutFilter());
-            filterMap.put("perms", shiroPermsFilter());
-            filterMap.put("roles", shiroRolesFilter());
-            filterMap.put("user", shiroUserFilter());
-            // filterMap.put("user", crossDomainFilter());
             if (sysConfigurationProperties.getCasConfig().getIsEnable().equals("true")) {
                 //cas 资源认证拦截器
-                SecurityFilter securityFilter = new SecurityFilter();
+                //SecurityFilter securityFilter = new SecurityFilter();
+                CasSecurityFilter securityFilter = new CasSecurityFilter();
+                securityFilter.setCDao(serverRedisSessionDao());
                 securityFilter.setConfig(config());
                 securityFilter.setClients(sysConfigurationProperties.getCasConfig().getClientName());
                 filterMap.put("casSecurityFilter", securityFilter);
@@ -109,14 +108,20 @@ public class ShiroConfig {
                 callbackFilter.setDefaultUrl(sysConfigurationProperties.getCasConfig().getProjectUrl() + "/index");
                 filterMap.put("callbackFilter", callbackFilter);
                 // 注销 拦截器
-                io.buji.pac4j.filter.LogoutFilter logoutFilter = new LogoutFilter();
+                LogoutFilter logoutFilter = new LogoutFilter();
                 logoutFilter.setConfig(config());
                 logoutFilter.setCentralLogout(true);
                 logoutFilter.setLocalLogout(true);
                 logoutFilter.setDefaultUrl(sysConfigurationProperties.getCasConfig().getProjectUrl() + "/callback?client_name=" + sysConfigurationProperties.getCasConfig().getClientName());
                 filterMap.put("logout", logoutFilter);
-                filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap(null);
+                filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap(new String[]{"authc"});
             } else {
+                filterMap.put("authc", shiroAuthcFilter());
+                filterMap.put("logout", shiroLogoutFilter());
+                filterMap.put("perms", shiroPermsFilter());
+                filterMap.put("roles", shiroRolesFilter());
+                filterMap.put("user", shiroUserFilter());
+                // filterMap.put("user", crossDomainFilter());
                 filterChainDefinitionMap = sysShiroProperties().getFilterChainDefinitionMap(new String[]{"casSecurityFilter", "callbackFilter"});
             }
             shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
@@ -255,7 +260,7 @@ public class ShiroConfig {
         //是否在会话过期后会调用SessionDAO的delete方法删除会话 默认true
         sessionManager.setDeleteInvalidSessions(true);
         //实现session存储
-        sessionManager.setSessionDAO(redisSessionDAO());
+        sessionManager.setSessionDAO(serverRedisSessionDao());
         sessionManager.setSessionIdUrlRewritingEnabled(false);
         sessionManager.setSessionIdCookie(rememberMeCookie());
         sessionManager.setSessionIdCookieEnabled(true);
@@ -330,7 +335,7 @@ public class ShiroConfig {
      **/
     @Bean
     @ConditionalOnMissingBean(ServerRedisSessionDao.class)
-    public ServerRedisSessionDao redisSessionDAO() {
+    public ServerRedisSessionDao serverRedisSessionDao() {
         ServerRedisSessionDao redisSessionDao = new ServerRedisSessionDao();
         redisSessionDao.setRedisTemplate(redisTemplate);
         redisSessionDao.setExpiredTime(sysConfigurationProperties.getExpiredTime());
@@ -452,6 +457,7 @@ public class ShiroConfig {
      */
     private SeparationModeFromAuthenticationFilter shiroAuthcFilter() {
         SeparationModeFromAuthenticationFilter bean = new SeparationModeFromAuthenticationFilter();
+        bean.setCallbackUrl(sysConfigurationProperties.getCallbackUrl());
         return bean;
     }
 
@@ -463,6 +469,7 @@ public class ShiroConfig {
         //bean.setAuthorizingRealm(authorizingRealm);
         return bean;
     }
+
     /**
      * 权限字符串过滤器
      */

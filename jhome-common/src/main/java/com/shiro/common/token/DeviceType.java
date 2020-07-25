@@ -10,7 +10,7 @@ import java.util.List;
  * @date : 11:03 2020/5/12 0012
  */
 public enum DeviceType {
-    PC("Pc"), APP("App"), CAS("Cas"), THIRDPATH("ThirdPath"), SmartCampusCas("SmartCampusCas");
+    PC("Pc"), APP("App"), CAS("Cas"), THIRDPATH("ThirdPath");
     private String type;
 
     DeviceType(String type) {

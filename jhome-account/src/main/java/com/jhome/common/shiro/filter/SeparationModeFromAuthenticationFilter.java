@@ -23,25 +23,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- //
- //                       .::::.
- //                     .::::::::.
- //                    :::::::::::
- //                 ..:::::::::::'
- //              '::::::::::::'
- //                .::::::::::
- //           '::::::::::::::..
- //                ..::::::::::::.
- //              ``::::::::::::::::
- //               ::::``:::::::::'        .:::.
- //              ::::'   ':::::'       .::::::::.
- //            .::::'      ::::     .:::::::'::::.
- //           .:::'       :::::  .:::::::::' ':::::.
- //          .::'        :::::.:::::::::'      ':::::.
- //         .::'         ::::::::::::::'         ``::::.
- //     ...:::           ::::::::::::'              ``::.
- //    ```` ':.          ':::::::::'                  ::::..
- //                       '.:::::'                    ':'````..
+ * //
+ * //                       .::::.
+ * //                     .::::::::.
+ * //                    :::::::::::
+ * //                 ..:::::::::::'
+ * //              '::::::::::::'
+ * //                .::::::::::
+ * //           '::::::::::::::..
+ * //                ..::::::::::::.
+ * //              ``::::::::::::::::
+ * //               ::::``:::::::::'        .:::.
+ * //              ::::'   ':::::'       .::::::::.
+ * //            .::::'      ::::     .:::::::'::::.
+ * //           .:::'       :::::  .:::::::::' ':::::.
+ * //          .::'        :::::.:::::::::'      ':::::.
+ * //         .::'         ::::::::::::::'         ``::::.
+ * //     ...:::           ::::::::::::'              ``::.
+ * //    ```` ':.          ':::::::::'                  ::::..
+ * //                       '.:::::'                    ':'````..
+ *
  * @program: jhome-root
  * @description: 前后台分离模式过滤器
  * @author: Daxv
@@ -49,6 +50,7 @@ import javax.servlet.http.HttpServletResponse;
  **/
 public class SeparationModeFromAuthenticationFilter extends MixedModeFormAuthenticationFilter {
     private static final Logger logger = LoggerFactory.getLogger(SeparationModeFromAuthenticationFilter.class);
+    private String callbackUrl;
 
     /**
      * 跨域处理 （对前后端非分离模式支持）
@@ -69,7 +71,7 @@ public class SeparationModeFromAuthenticationFilter extends MixedModeFormAuthent
             //sessionId = (String) UserUtil.ParsingToken(sessionId);
             CookieUtil.set(httpServletResponse, "LuxCookie", sessionId, 30);
         }
-        if ("OPTIONS".equals(httpServletRequest.getMethod())){
+        if ("OPTIONS".equals(httpServletRequest.getMethod())) {
             httpServletResponse.setStatus(org.apache.http.HttpStatus.SC_NO_CONTENT);
             logger.info("OPTIONS 放行");
             return true;
@@ -91,35 +93,28 @@ public class SeparationModeFromAuthenticationFilter extends MixedModeFormAuthent
                         return true;
                     }
                 } else {
-                    HttpUtil.SendFlush(response, new ResponseJson().error("登陆已经失效，请重新登陆！~"));
+                    HttpUtil.SendFlush(response, new ResponseJson().error("登陆已经失效，请重新登陆！~").setValue("callbackUrl",this.getCallbackUrl()));
                 }
             }
-        }catch (Exception ex)
-        {
-            HttpUtil.SendFlush(response, new ResponseJson().error("登陆已经失效，请重新登陆！~"));
+        } catch (Exception ex) {
+            HttpUtil.SendFlush(response, new ResponseJson().error("登陆已经失效，请重新登陆！~").setValue("callbackUrl",this.getCallbackUrl()));
         }
         return false;
     }
-    /**
-     * 成功转发
-     *
-     * @param request
-     * @param response
-     * @throws Exception
-     */
-    @Override
-    protected void issueSuccessRedirect(ServletRequest request, ServletResponse response) throws Exception {
-        String fallbackUrl = (String) getSubject(request, response)
-                .getSession().getAttribute("authc.fallbackUrl");
-        if (StringUtil.isBlank(fallbackUrl)) {
-            fallbackUrl = getSuccessUrl();
-        }
-        WebUtils.redirectToSavedRequest(request, response, fallbackUrl);
-    }
+
+
     @Override
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
         String username = getUsername(request);
         String password = getPassword(request);
         return new jhomeToken();
+    }
+
+    public String getCallbackUrl() {
+        return callbackUrl;
+    }
+
+    public void setCallbackUrl(String callbackUrl) {
+        this.callbackUrl = callbackUrl;
     }
 }

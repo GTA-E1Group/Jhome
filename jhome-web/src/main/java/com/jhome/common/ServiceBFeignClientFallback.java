@@ -31,5 +31,10 @@ public class ServiceBFeignClientFallback implements UserRemoteServiceInterface {
         return null;
     }
 
+    @Override
+    public String getCallbackUrl() {
+        return null;
+    }
+
 
 }

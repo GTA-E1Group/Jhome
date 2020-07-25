@@ -6,8 +6,11 @@ import com.daxu.common.Identity.UserUtil;
 import com.daxu.common.ToolKit.JSONUtils;
 import com.daxu.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
+import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
+import com.jhome.modules.sys.service.RemoteService;
 import com.jhome.modules.sys.web.baseController.baseController;
 import com.shiro.common.realm.SessionCons;
+import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
 import io.swagger.annotations.Api;
@@ -17,6 +20,8 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,12 +32,17 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping("/${adminPath}")
 public class AccountController extends baseController {
+    @Autowired
+    public SysConfigurationPropertiesBean sysConfigurationPropertiesBean;
+    @Autowired
+    public RemoteService remoteService;
+
     @GetMapping("/login")
     public String login() {
         return "modules/sys/login";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public String login(HttpServletRequest request, HttpServletResponse response, @RequestBody UserInfo user) {
         try {
             if (user == null || StringUtil.isBlank(user.getLoginName()) || StringUtil.isBlank(user.getPassword()))
@@ -55,7 +65,6 @@ public class AccountController extends baseController {
                     return new ResponseJson()
                             .success()
                             .setValue("data", JSONUtils.jsonToMap(jsonObject.getString("data")))
-                            .setData("jhomeToken", tokenStr)
                             .toString();
                 } else {
                     return new ResponseJson()
@@ -71,15 +80,42 @@ public class AccountController extends baseController {
 
 
     //退出
-    @RequestMapping(value = "/logout",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    public String logout() {
-        Subject subject = SecurityUtils.getSubject();
-        if (subject.isAuthenticated()) {
-            subject.logout();
+    @RequestMapping(value = "/logout", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+
+    public String logout(@RequestParam("luxToken") String jhomeToken, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            if (StringUtil.isBlank(jhomeToken))
+                return new ResponseJson().error("token不能为空！").toString();
+            if (sysConfigurationPropertiesBean.getCasConfig().getIsEnable().equals("false")) {
+                Subject subject = UserUtil.getSubject();
+                Session session = subject.getSession();
+                JSONObject jsonObj = new JSONObject();
+                jsonObj.put("Token", jhomeToken);
+                session.getAttribute("LOGIN_USER_SESSION");
+                //第三方认证
+                /*
+                ResponseEntity<JSONObject> jsonObject = ucService.loginOut(ucApiConfigProperties.getLoginOut(), HttpMethod.GET, jsonObj, JSONObject.class);
+                if (jsonObject.getBody().getString("returnCode").equals("200")) {
+                    if (session != null) {
+                        remoteService.deleteSession(session);
+                        UserUtil.loginOut();
+                    }
+                }*/
+                if (session != null) {
+                    remoteService.deleteSession(session);
+                    UserUtil.loginOut();
+                }
+            } else {
+                ShiroSession session = new ShiroSession();
+                session.setId(jhomeToken);
+                remoteService.deleteSession(session);
+            }
+        } catch (Exception ex) {
+            return new ResponseJson().error(ex.getMessage()).toString();
         }
-        return "redirect:account/login";
-        //return "forward:/a/sys/login";
+        return new ResponseJson().success().setValue("callbackUrl", sysConfigurationPropertiesBean.getCallbackUrl()).toString();
     }
+
 
     @GetMapping("/main")
     public String main() {

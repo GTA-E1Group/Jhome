@@ -40,7 +40,7 @@ public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticatio
         ResponseJson result = new ResponseJson();
         Subject subject = getSubject(request, response);
         //获取URL参数上的Token
-        String token = this.GetToken(request, response);
+        String token = UserUtil.GetToken(request, response);
         //只允许单点登录进入
         //跨浏览器，跨电脑访问，需要根据第一次Tokne 重新绘制本地session
         if (StringUtil.isNotBlank(token) && !subject.isAuthenticated()) {
@@ -49,45 +49,24 @@ public class ClientTokenFormAuthenticationFilter extends ClientFormAuthenticatio
                 //String sessionId = (String) UserUtil.ParsingToken(token);//解析token 后台登录没有加密，无需解密
                 ShiroSession shiroSession = JSON.parseObject(remoteService.getSession(token), ShiroSession.class);
                 if (shiroSession == null) {
-                    result.error("登录已经失效，请重新登录！");
+                    result.error("登录已经失效，请重新登录！").setValue("callbackUrl",remoteService.getCallbackUrl());
                     HttpUtil.SendFlush(response, result);
                     return false;
                 }
                 subject.getSession();
                 return true;
             } catch (Exception ex) {
-                result.error("登录已经失效，请重新登录！");
+                result.error("登录已经失效，请重新登录！").setValue("callbackUrl",remoteService.getCallbackUrl());
                 HttpUtil.SendFlush(response, result);
                 return false;
             }
         }
         if (StringUtil.isBlank(token) && !subject.isAuthenticated()) {
-            result.error("登录已经失效，请重新登录！");
+            result.error("登录已经失效，请重新登录！").setValue("callbackUrl",remoteService.getCallbackUrl());
             HttpUtil.SendFlush(response, result);
             return false;
         }
         return subject.isAuthenticated();
-    }
-
-    /**
-     * @Description 读取token
-     * @Author daxv
-     * @Date
-     * @Remarks ...
-     */
-
-    public String GetToken(ServletRequest request, ServletResponse response) {
-        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("JhomeToken")) ? httpServletRequest.getHeader("JhomeToken") : httpServletRequest.getParameter("JhomeToken");
-        if (StringUtil.isBlank(token))
-            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
-        if (StringUtil.isBlank(token)) {
-            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeCookie");
-            if (cookie != null) {
-                token = cookie.getValue();
-            }
-        }
-        return token;
     }
 
     public ClientSessionDAO getCDao() {

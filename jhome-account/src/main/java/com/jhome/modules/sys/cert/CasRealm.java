@@ -48,8 +48,7 @@ public class CasRealm extends Pac4jRealm {
                 //session.setAttribute("userSessionId", loginName);
                 UserInfo userInfo=new UserInfo();
                 userInfo.setUserId(loginName);
-                userInfo.setDeviceType(DeviceType.SmartCampusCas.toString());
-
+                userInfo.setDeviceType(DeviceType.CAS.toString());
                 final PrincipalCollection principalCollection = new SimplePrincipalCollection(principal, getName());
                 return new SimpleAuthenticationInfo(principalCollection, commonProfileList.hashCode());
                 //return new SimpleAuthenticationInfo(JSONUtils.beanToJson(userInfo), "", this.getName());
@@ -57,10 +56,8 @@ public class CasRealm extends Pac4jRealm {
         }
         catch (Exception ex)
         {
-            logger.info(String.format("智慧校园单点登陆报错：%s", ex.getMessage().toString()));
-
+            logger.info(String.format("单点登陆报错：%s", ex.getMessage().toString()));
         }
-
         return null;
     }
 

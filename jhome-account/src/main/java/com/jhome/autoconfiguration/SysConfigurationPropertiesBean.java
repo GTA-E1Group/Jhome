@@ -16,6 +16,7 @@ public class SysConfigurationPropertiesBean extends SysProperties {
     private long expiredTime;//缓存过期时间
     public DataSourceConfig datasourceconfig;//自定义数据库配置
     public CasConfig casConfig;//CAS单点登录配置
+    public String callbackUrl;//cas单点登录回调地址
 
 
 
@@ -71,6 +72,7 @@ public class SysConfigurationPropertiesBean extends SysProperties {
         public String serverUrl;
         public String projectUrl;
         public String isEnable;
+        public String redirectUrl;
     }
 
 }

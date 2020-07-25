@@ -1,6 +1,7 @@
 package com.jhome.modules.sys.service;
 
 import com.domain.common.PermissionContext;
+import com.domain.common.UserInfo;
 import com.shiro.common.realm.ServerRedisSessionDao;
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +32,9 @@ public class RemoteService {
         rsDao.update(session);
     }
 
-
     public void deleteSession(Session session) {
         rsDao.delete(session);
     }
-
 
     public PermissionContext getPermissions(String username) {
         PermissionContext permissionContext = new PermissionContext();
@@ -43,4 +42,9 @@ public class RemoteService {
         permissionContext.setPermissions(authorizationService.findPermissions(appKey, username));*/
         return permissionContext;
     }
+
+    public Serializable doCreateByUserInfo(Session session, UserInfo userInfo) {
+        return rsDao.doCreateByUserInfo(session, userInfo);
+    }
+
 }

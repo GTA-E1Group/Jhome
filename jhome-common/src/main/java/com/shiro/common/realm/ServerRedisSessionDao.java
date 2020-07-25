@@ -1,6 +1,7 @@
 package com.shiro.common.realm;
 
 import com.daxu.common.ToolKit.StringUtil;
+import com.domain.common.UserInfo;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.token.DeviceType;
 import org.apache.shiro.session.Session;
@@ -48,7 +49,6 @@ public class ServerRedisSessionDao extends AbstractSessionDAO {
         }
         return sessionId;
     }
-
     //读取会话信息
     @Override
     protected Session doReadSession(Serializable sessionId) {
@@ -152,6 +152,27 @@ public class ServerRedisSessionDao extends AbstractSessionDAO {
         }
         List<Session> sessions = redisTemplate.opsForValue().multiGet(keys);
         return Collections.unmodifiableCollection(sessions);
+    }
+
+
+
+
+    /**
+     * cas 创建session
+     * @param session
+     * @param userInfo
+     * @return
+     */
+    public Serializable doCreateByUserInfo(Session session, UserInfo userInfo) {
+        SessionDaoZH.SerializedBeanToString(session);
+        assignSessionId(session, userInfo.getJhomeToken());
+        redisTemplate.opsForValue().set(userInfo.getJhomeToken(), session);
+        redisTemplate.expire(userInfo.getJhomeToken(), expiredTime, TimeUnit.SECONDS);
+        if (logger.isDebugEnabled()) {
+            logger.debug("create shiro session ,sessionId is :{}",
+                    userInfo.getJhomeToken().toString());
+        }
+        return userInfo.getJhomeToken();
     }
 
 

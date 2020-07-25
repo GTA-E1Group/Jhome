@@ -1,11 +1,12 @@
-package com.domain.common;/**
+package com.daxu.common.Identity;/**
  * @program: jhome-root
  * @description
  * @author: Daxv
- * @create: 2020-07-04 15:13
+ * @create: 2020-07-25 12:28
  **/
 
-import java.io.Serializable;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.shiro.session.Session;
 
 /**
  //
@@ -28,25 +29,10 @@ import java.io.Serializable;
  //    ```` ':.          ':::::::::'                  ::::..
  //                       '.:::::'                    ':'````..
  * @program: jhome-root
- * @description:
+ * @description: 用户认证处理类
  * @author: Daxv
- * @create: 2020-07-04 15:13
+ * @create: 2020-07-25 12:28
  **/
-public abstract class DefaultCertification implements Serializable {
-    private String jhomeToken;
-
-    @Override
-    public String toString() {
-        return "DefaultCertification{" +
-                "token='" + jhomeToken + '\'' +
-                '}';
-    }
-
-    public String getJhomeToken() {
-        return jhomeToken;
-    }
-
-    public void setJhomeToken(String jhomeToken) {
-        this.jhomeToken = jhomeToken;
-    }
+public interface UserInfoHandler {
+    Session invoke(String sessionId);
 }
