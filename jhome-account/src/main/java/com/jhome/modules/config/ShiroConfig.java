@@ -6,6 +6,7 @@ import com.jhome.common.shiro.filter.*;
 import com.jhome.common.shiro.filter.cas.CallbackFilter;
 import com.jhome.common.shiro.filter.cas.CasClient;
 import com.jhome.common.shiro.filter.cas.CasSecurityFilter;
+import com.jhome.common.utils.UserAuxiliary;
 import com.jhome.modules.sys.cert.AppShiroRealm;
 import com.jhome.modules.sys.cert.CasRealm;
 import com.jhome.modules.sys.cert.CustomRealm;
@@ -491,5 +492,15 @@ public class ShiroConfig {
         return new UserFilter();
     }
 
+    /**
+     * 用户辅助类
+     * @return
+     */
+    @Bean("UserAuxiliary")
+    public UserAuxiliary userAuxiliary() {
+        UserAuxiliary userAuxiliary = new UserAuxiliary();
+        userAuxiliary.setSessionDao(serverRedisSessionDao());
+        return userAuxiliary;
+    }
 
 }
