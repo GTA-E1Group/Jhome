@@ -17,10 +17,12 @@
         <module>../jhome-parent</module>
         <module>../jhome-common</module>
         <module>../jhome-web</module>
-        <module>../jhome-webspider</module>
-        <module>../jhome-registrationCenter</module>
         <module>../jhome-account</module>
-        <module>../jhome-NettyServer</module>
+        <module>../jhome-NettyService</module>
+        <module>../jhome-webspiderService</module>
+        <module>../jhome-registrationService</module>
+        <module>../jhome-configService</module>
+
     </modules>
     <developers>
         <developer>

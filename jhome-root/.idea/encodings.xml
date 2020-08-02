@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/../jhome-NettyServer" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jhome-NettyServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../jhome-NettyService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-account" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-account/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../jhome-configService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-parent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jhome-registrationCenter" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jhome-registrationCenter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../jhome-registrationService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../jhome-web/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jhome-webspider" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jhome-webspider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../jhome-webspiderService/src/main/java" charset="UTF-8" />
   </component>
 </project>

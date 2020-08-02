@@ -5,6 +5,8 @@ namespace java com.rpc.common
 /*基于thrift 编译器 生成IDL 代码*/
 /*编译器：D:\rj\thrift.exe*/
 /*thrift --gen java src\main\java\com\rpc\common\thrift\socketData.thrift*/
+
+
 /*IDL文件定义*/
 
 typedef i16 short
@@ -28,6 +30,7 @@ exception DataException{
 service socketService{
      void singleSend(1: required String param);
      void groupSend(1: required String param);
+     String  getOnlineUserList();
 }
 
 

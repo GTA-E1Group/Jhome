@@ -126,7 +126,7 @@
         </dependency>
 
 
-        <!--springboot 整合eureka客户端-->
+        <!--springboot 整合spring cloud eureka客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -137,6 +137,11 @@
         <!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
         <!--        </dependency>-->
 
+        <!--   springboot 整合spring cloud config组件     -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
