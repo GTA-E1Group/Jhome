@@ -45,8 +45,6 @@ spring.cloud.config.server.jdbc.sql: SELECT * from sys_config_properties where a
 #
 #  SET FOREIGN_KEY_CHECKS = 1;
 
-
-
 #  -- 服务 	Lux-account
 #  INSERT INTO `gta_ebd`.`sys_config_properties`( `paramName`, `key`, `value`, `application`, `isEnable`, `profile`, `label`, `createTime`, `createBy`, `updateTime`, `updateBy`) VALUES ( '单点登陆配置-CAS服务器', 'lux.sysproperties.casConfig.serverUrl', 'http://zhxy.edu.gtafe.com', 'Lux-account', NULL, 'dev', 'master', NULL, NULL, NULL, '');
 #  INSERT INTO `gta_ebd`.`sys_config_properties`( `paramName`, `key`, `value`, `application`, `isEnable`, `profile`, `label`, `createTime`, `createBy`, `updateTime`, `updateBy`) VALUES ( '单点登陆配置-项目地址', 'lux.sysproperties.casConfig.projectUrl', 'http://10.1.20.58:8100/zlbzxt/account', 'Lux-account', NULL, 'dev', 'master', NULL, NULL, NULL, '');

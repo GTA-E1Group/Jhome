@@ -138,7 +138,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-        <!--   spring cloud config     -->
+        <!--springboot 整合spring cloud config     -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -158,8 +158,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-
     <build>
         <plugins>
             <plugin>
@@ -168,5 +166,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

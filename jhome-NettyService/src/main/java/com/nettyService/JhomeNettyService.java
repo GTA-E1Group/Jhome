@@ -11,7 +11,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @EnableSpring
 public class JhomeNettyService {
     public static void main(String[] args) {
-
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(JhomeNettyService.class);
         AppContext appContext = applicationContext.getBean(AppContext.class);
         try {
@@ -20,5 +19,4 @@ public class JhomeNettyService {
             appContext.close();
         }
     }
-
 }

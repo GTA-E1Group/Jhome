@@ -1,10 +1,4 @@
-package com.configService;/**
- * @program: jhome-root
- * @description
- * @author: Daxv
- * @create: 2020-08-02 13:51
- **/
-
+package com.configService;
 import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
