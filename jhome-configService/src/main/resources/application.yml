@@ -5,7 +5,7 @@ spring:
   profiles:
     active: jdbc
   application:
-    name: Lux-ConfigService
+    name: jhome-configService
   datasource:
     url: jdbc:mysql://10.1.241.152:3306/gta_ebd?serverTimezone=UTC&useSSL=false
     username: root

@@ -42,6 +42,7 @@ import javax.swing.*;
 @SpringBootApplication
 public class JhomeRegistrationService {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(JhomeRegistrationService.class).bannerMode(Banner.Mode.OFF).run(args);
+        SpringApplication.run(JhomeRegistrationService.class);
+        //new SpringApplicationBuilder(JhomeRegistrationService.class).bannerMode(Banner.Mode.OFF).run(args);
     }
 }

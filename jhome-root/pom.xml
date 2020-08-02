@@ -18,11 +18,10 @@
         <module>../jhome-common</module>
         <module>../jhome-web</module>
         <module>../jhome-account</module>
-        <module>../jhome-NettyService</module>
-        <module>../jhome-webspiderService</module>
-        <module>../jhome-registrationService</module>
+        <module>../jhome-nettyService</module>
         <module>../jhome-configService</module>
-
+        <module>../jhome-registrationService</module>
+        <module>../jhome-webSpiderService</module>
     </modules>
     <developers>
         <developer>

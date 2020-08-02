@@ -7,12 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jhome-account" />
+        <module name="jhome-nettyService" />
         <module name="jhome-configService" />
         <module name="jhome-web" />
         <module name="jhome-common" />
         <module name="jhome-registrationService" />
         <module name="jhome-webspiderService" />
-        <module name="jhome-NettyService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,23 +22,28 @@
       <module name="jhome-Pay" target="1.8" />
       <module name="jhome-registrationCenter_One" target="1.8" />
       <module name="jhome-sysAnnotation" target="1.8" />
+      <module name="jhome-webSpiderService" target="1.8" />
+      <module name="jhome-webspiderService (1)" target="1.8" />
+      <module name="jhome-webspiderService (2)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Jhome-ConfigService" options="-parameters" />
       <module name="jhome-NettyServer" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jsse.jar&quot;" />
-      <module name="jhome-NettyService" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jsse.jar&quot;" />
       <module name="jhome-Pay" options="-parameters" />
       <module name="jhome-account" options="-parameters" />
       <module name="jhome-common" options="-parameters" />
       <module name="jhome-configService" options="-parameters" />
       <module name="jhome-dataCenter" options="-parameters" />
+      <module name="jhome-nettyService" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jsse.jar&quot;" />
       <module name="jhome-registrationCenter_One" options="-parameters" />
       <module name="jhome-registrationService" options="-parameters" />
       <module name="jhome-sysAnnotation" options="-parameters" />
       <module name="jhome-web" options="-parameters" />
+      <module name="jhome-webSpiderService" options="-parameters" />
       <module name="jhome-webspiderService" options="-parameters" />
+      <module name="jhome-webspiderService (2)" options="-parameters" />
     </option>
   </component>
 </project>
