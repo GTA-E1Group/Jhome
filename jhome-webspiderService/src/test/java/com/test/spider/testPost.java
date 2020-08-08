@@ -1,8 +1,6 @@
 package com.test.spider;
 
 
-import com.daxu.common.Http.HttpClient;
-import com.daxu.common.Http.HttpDao;
 import junit.framework.TestCase;
 
 public class testPost extends TestCase {

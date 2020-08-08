@@ -1,6 +1,6 @@
 package com.shiro.common.realm;
 
-import com.daxu.common.ToolKit.StringUtil;
+import com.bracket.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.token.DeviceType;

@@ -1,11 +1,11 @@
 package com.jhome.autoconfiguration;
 
-import com.daxu.common.BatchExcel.ExcelteEngine;
-import com.daxu.common.Cache.MemcachedManager;
-import com.daxu.common.Http.HttpClient;
-import com.daxu.common.Queue.Bus;
-import com.daxu.common.Queue.Config;
-import com.daxu.common.WebSocket.WebSocket;
+import com.bracket.common.BatchExcel.ExcelteEngine;
+import com.bracket.common.Cache.MemcachedManager;
+import com.bracket.common.Http.HttpClient;
+import com.bracket.common.Queue.Bus;
+import com.bracket.common.Queue.Config;
+import com.bracket.common.WebSocket.WebSocket;
 import com.rpc.common.thrift.socketService;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;

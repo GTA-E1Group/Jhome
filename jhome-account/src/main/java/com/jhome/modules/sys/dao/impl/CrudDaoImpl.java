@@ -1,7 +1,8 @@
 package com.jhome.modules.sys.dao.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.daxu.common.Identity.UserUtil;
+import com.bracket.common.Bus.AbstractDaoImpl.HttpDaoImpl;
+import com.bracket.common.Identity.UserUtil;
 import com.jhome.modules.sys.dao.CrudDao;
 import com.other.common.utils.excel.annotation.ExcelField;
 import io.netty.handler.codec.json.JsonObjectDecoder;
@@ -17,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  * @author: Daxv
  * @create: 2020-06-13 17:42
  **/
-public class CrudDaoImpl extends BaseDaoImpl implements CrudDao {
+public class CrudDaoImpl extends HttpDaoImpl implements CrudDao {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired

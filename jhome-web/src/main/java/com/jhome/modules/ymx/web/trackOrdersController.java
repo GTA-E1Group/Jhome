@@ -1,12 +1,12 @@
 package com.jhome.modules.ymx.web;
 
-import com.daxu.common.Bus.IBus;
-import com.daxu.common.Bus.PushInfo;
-import com.daxu.common.Bus.ResponseJson;
-import com.daxu.common.Identity.UserUtil;
-import com.daxu.common.Queue.Bus;
-import com.daxu.common.Queue.QueueHandler;
-import com.jhome.modules.ymx.web.baseController.baseController;
+import com.bracket.common.Bus.AbstractController.BaseController;
+import com.bracket.common.Bus.IBus;
+import com.bracket.common.Bus.PushInfo;
+import com.bracket.common.Bus.ResponseJson;
+import com.bracket.common.Identity.UserUtil;
+import com.bracket.common.Queue.Bus;
+import com.bracket.common.Queue.QueueHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -25,8 +25,7 @@ import java.util.Date;
 @Api(tags = "ymx请求控制器")
 @Controller
 @RequestMapping("${frontPath}")
-public class trackOrdersController extends baseController {
-
+public class trackOrdersController extends BaseController {
 
     @Autowired
     public Bus bus;

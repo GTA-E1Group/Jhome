@@ -3,8 +3,8 @@ package com.Spider.clientCenter;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.daxu.common.Http.HttpClient;
-import com.daxu.common.Http.HttpDao;
+import com.bracket.common.Http.HttpClient;
+import com.bracket.common.Http.HttpDao;
 
 /**
  * 处理进程

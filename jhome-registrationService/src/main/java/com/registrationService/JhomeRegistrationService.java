@@ -34,9 +34,9 @@ import javax.swing.*;
  //    ```` ':.          ':::::::::'                  ::::..
  //                       '.:::::'                    ':'````..
  * @program: jhome-root
- * @description: JhomeRegistrationService
+ * @description: JhomeRegistrationService 注册中心
  * @author: Daxv
- * @create: 2020-08-02 16:09
+ * @create: 2017-08-02 16:09
  **/
 @EnableEurekaServer //启动EurekaServer
 @SpringBootApplication

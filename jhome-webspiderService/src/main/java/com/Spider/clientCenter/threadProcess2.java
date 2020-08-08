@@ -1,7 +1,7 @@
 package com.Spider.clientCenter;
 
-import com.daxu.common.Http.HttpClient;
-import com.daxu.common.Http.HttpDao;
+import com.bracket.common.Http.HttpClient;
+import com.bracket.common.Http.HttpDao;
 
 import java.util.HashMap;
 import java.util.Map;

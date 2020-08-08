@@ -2,11 +2,11 @@ package com.Spider;
 
 import com.Spider.clientCenter.threadProcess;
 import com.Spider.clientCenter.threadProcess2;
-import com.daxu.common.Bus.IBus;
-import com.daxu.common.Queue.Bus;
-import com.daxu.common.Queue.Config;
-import com.daxu.common.Queue.QueueHandler;
-import com.daxu.common.Queue.ReadQueueDao;
+import com.bracket.common.Bus.IBus;
+import com.bracket.common.Queue.Bus;
+import com.bracket.common.Queue.Config;
+import com.bracket.common.Queue.QueueHandler;
+import com.bracket.common.Queue.ReadQueueDao;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

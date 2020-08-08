@@ -1,13 +1,13 @@
 package com.jhome.modules.sys.web;
 
-import com.daxu.common.Identity.UserUtil;
-import com.daxu.common.ToolKit.CookieUtil;
-import com.daxu.common.ToolKit.JSONUtils;
-import com.daxu.common.ToolKit.StringUtil;
+import com.bracket.common.Bus.AbstractController.BaseController;
+import com.bracket.common.Identity.UserUtil;
+import com.bracket.common.ToolKit.CookieUtil;
+import com.bracket.common.ToolKit.JSONUtils;
+import com.bracket.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.modules.sys.service.RemoteService;
-import com.jhome.modules.sys.web.baseController.BaseController;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;

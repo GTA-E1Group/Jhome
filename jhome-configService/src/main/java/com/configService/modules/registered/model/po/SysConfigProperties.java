@@ -1,6 +1,7 @@
 package com.configService.modules.registered.model.po;
 
 import com.configService.modules.registered.model.validator.IsEnableValidator;
+import com.bracket.common.Bus.AbstractModel.DataEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;

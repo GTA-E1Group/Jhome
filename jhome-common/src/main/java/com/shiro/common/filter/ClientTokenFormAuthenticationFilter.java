@@ -1,21 +1,17 @@
 package com.shiro.common.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.daxu.common.Bus.ResponseJson;
-import com.daxu.common.Http.HttpUtil;
-import com.daxu.common.Identity.UserUtil;
-import com.daxu.common.ToolKit.CookieUtil;
-import com.daxu.common.ToolKit.StringUtil;
+import com.bracket.common.Bus.ResponseJson;
+import com.bracket.common.Http.HttpUtil;
+import com.bracket.common.Identity.UserUtil;
+import com.bracket.common.ToolKit.StringUtil;
 import com.shiro.common.session.ClientSessionDAO;
 import com.shiro.common.session.RemoteBaseInterface;
 import com.shiro.common.session.ShiroSession;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.util.WebUtils;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @program: jhome-root

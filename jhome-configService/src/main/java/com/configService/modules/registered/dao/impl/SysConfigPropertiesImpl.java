@@ -3,6 +3,7 @@ package com.configService.modules.registered.dao.impl;
 import com.configService.modules.registered.dao.SysConfigPropertiesDao;
 import com.configService.modules.registered.model.po.SysConfigProperties;
 import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
+import com.bracket.common.Bus.AbstractDaoImpl.HttpDaoImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ import java.util.List;
  * @create: 2020-08-04 08:54
  **/
 @Repository
-public class SysConfigPropertiesImpl implements SysConfigPropertiesDao {
+public class SysConfigPropertiesImpl extends HttpDaoImpl implements SysConfigPropertiesDao {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private JdbcTemplate jdbcTemplate;

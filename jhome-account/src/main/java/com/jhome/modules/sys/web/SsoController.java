@@ -1,8 +1,9 @@
 package com.jhome.modules.sys.web;
 
-import com.daxu.common.Bus.ResponseJson;
-import com.daxu.common.Identity.UserUtil;
-import com.daxu.common.ToolKit.StringUtil;
+import com.bracket.common.Bus.AbstractController.BaseController;
+import com.bracket.common.Bus.ResponseJson;
+import com.bracket.common.Identity.UserUtil;
+import com.bracket.common.ToolKit.StringUtil;
 import com.jhome.modules.sys.service.RemoteService;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Api(tags = "Z、账户服务-token认证")
 @RestController
-public class SsoController {
+public class SsoController extends BaseController {
     @Autowired
     public RemoteService remoteService;
 
@@ -41,7 +42,7 @@ public class SsoController {
     @GetMapping(value = "/sso/{type}/{name}/{token}")
     public String sso(@PathVariable String type,
                       @PathVariable String name,
-                       String token,
+                      String token,
                       HttpServletRequest request,
                       HttpServletResponse response) {
 
@@ -62,11 +63,11 @@ public class SsoController {
             // 通过令牌登录系统
             jhomeToken jhomeToken = new jhomeToken(name, "", 0, type);
             UserUtil.getSubject().login(jhomeToken);
-            if (UserUtil.getSubject().isAuthenticated()){
-                String userJosn= (String) UserUtil.getSubject().getPrincipal();
-                Session session=UserUtil.getSubject().getSession();
-                session.setAttribute(SessionCons.DEVICE_TYPE,DeviceType.CAS.toString());
-                session.setAttribute(SessionCons.LOGIN_USER_SESSION,userJosn);
+            if (UserUtil.getSubject().isAuthenticated()) {
+                String userJosn = (String) UserUtil.getSubject().getPrincipal();
+                Session session = UserUtil.getSubject().getSession();
+                session.setAttribute(SessionCons.DEVICE_TYPE, DeviceType.CAS.toString());
+                session.setAttribute(SessionCons.LOGIN_USER_SESSION, userJosn);
                 return new ResponseJson()
                         .success()
                         .setValue("token", UserUtil.getSubject()

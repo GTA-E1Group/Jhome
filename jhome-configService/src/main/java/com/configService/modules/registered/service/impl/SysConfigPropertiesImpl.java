@@ -4,7 +4,7 @@ import com.configService.modules.registered.dao.SysConfigPropertiesDao;
 import com.configService.modules.registered.model.po.SysConfigProperties;
 import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
 import com.configService.modules.registered.service.SysConfigPropertiesService;
-import com.daxu.common.Bus.ResponseJson;
+import com.bracket.common.Bus.ResponseJson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

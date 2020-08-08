@@ -27,9 +27,9 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * //                       '.:::::'                    ':'````..
  *
  * @program: jhome-root
- * @description: spring cloud config pei
+ * @description: spring cloud config  配置中心
  * @author: Daxv
- * @create: 2020-08-02 13:51
+ * @create: 2017-08-02 13:51
  **/
 @SpringBootApplication
 @EnableConfigServer

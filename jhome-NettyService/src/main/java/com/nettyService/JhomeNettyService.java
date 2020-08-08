@@ -4,10 +4,33 @@ import com.nettyService.Config.EnableSpring;
 import com.nettyService.Server.AppContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
 /**
- * @author : Daxv
- * @date : 0:43 2020/5/16 0016
- */
+ * //
+ * //                       .::::.
+ * //                     .::::::::.
+ * //                    :::::::::::
+ * //                 ..:::::::::::'
+ * //              '::::::::::::'
+ * //                .::::::::::
+ * //           '::::::::::::::..
+ * //                ..::::::::::::.
+ * //              ``::::::::::::::::
+ * //               ::::``:::::::::'        .:::.
+ * //              ::::'   ':::::'       .::::::::.
+ * //            .::::'      ::::     .:::::::'::::.
+ * //           .:::'       :::::  .:::::::::' ':::::.
+ * //          .::'        :::::.:::::::::'      ':::::.
+ * //         .::'         ::::::::::::::'         ``::::.
+ * //     ...:::           ::::::::::::'              ``::.
+ * //    ```` ':.          ':::::::::'                  ::::..
+ * //                       '.:::::'                    ':'````..
+ *
+ * @program: jhome-root
+ * @description: JhomeNettyService  消息中心
+ * @author: Daxv
+ * @create: 2017-08-02 13:51
+ **/
 @EnableSpring
 public class JhomeNettyService {
     public static void main(String[] args) {

@@ -1,14 +1,13 @@
 package com.jhome.common.shiro.filter.cas;
 
-import com.daxu.common.Bus.ResponseJson;
-import com.daxu.common.ToolKit.CookieUtil;
-import com.daxu.common.ToolKit.JSONUtils;
-import com.daxu.common.ToolKit.StringUtil;
+import com.bracket.common.Bus.ResponseJson;
+import com.bracket.common.ToolKit.CookieUtil;
+import com.bracket.common.ToolKit.JSONUtils;
+import com.bracket.common.ToolKit.StringUtil;
 import com.shiro.common.realm.ServerRedisSessionDao;
 import io.buji.pac4j.context.ShiroSessionStore;
 import io.buji.pac4j.engine.ShiroSecurityLogic;
 import io.buji.pac4j.filter.SecurityFilter;
-import io.buji.pac4j.subject.Pac4jPrincipal;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.web.util.WebUtils;
 import org.pac4j.core.config.Config;

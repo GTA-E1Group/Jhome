@@ -1,10 +1,10 @@
 package com.test.spider;
 
-import com.daxu.common.Bus.IBus;
-import com.daxu.common.Bus.PushInfo;
-import com.daxu.common.Queue.Bus;
-import com.daxu.common.Queue.Config;
-import com.daxu.common.Queue.QueueHandler;
+import com.bracket.common.Bus.IBus;
+import com.bracket.common.Bus.PushInfo;
+import com.bracket.common.Queue.Bus;
+import com.bracket.common.Queue.Config;
+import com.bracket.common.Queue.QueueHandler;
 
 import java.util.Date;
 
