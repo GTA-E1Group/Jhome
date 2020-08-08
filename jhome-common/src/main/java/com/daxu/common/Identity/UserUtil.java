@@ -98,6 +98,16 @@ public class UserUtil extends AuthUtil {
     }
 
     /**
+     * 获取用户信息
+     *
+     * @return
+     */
+    public static UserInfo GetUserInfo() {
+        return GetUserInfo(null);
+    }
+
+    /**
+     * 获取用户信息
      * {"deviceType":"UcCas","gender":"1","loginName":"admin2","luxToken":"Tp3a353216-bf67-46a9-ac1e-015ba8a8b3e9","phone":"14738490400","productId":"1271318084763017218","realName":"管理员","remotelyToken":"PC-8178134ede762c42e41a7b1695082e28-666-20200720160651-2c2de0","roleNames":"学生,超级管理员","schoolName":"国泰安大学","userId":"666"}     * 获取用户信息1
      *
      * @return json
@@ -150,6 +160,7 @@ public class UserUtil extends AuthUtil {
         }
         return token;
     }
+
     /**
      * 获取用户信息2
      *
