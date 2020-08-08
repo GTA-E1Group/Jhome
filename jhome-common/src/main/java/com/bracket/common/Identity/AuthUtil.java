@@ -1,11 +1,10 @@
 package com.bracket.common.Identity;
 
 import com.alibaba.fastjson.JSON;
-import com.bracket.common.Vo.UserEntity;
 import com.bracket.common.Cache.MemcachedManager;
 import com.bracket.common.ToolKit.CookieUtil;
 import com.bracket.common.ToolKit.JSONUtils;
-import com.bracket.common.Vo.UserEntity;
+import com.domain.common.UserInfo;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -60,13 +59,13 @@ public class AuthUtil {
 			if (userMap != null) {
 				Object objectCached = new Object();
 				// ...
-				UserEntity user = (UserEntity) JSONUtils.jsonToBean(
+				UserInfo user = (UserInfo) JSONUtils.jsonToBean(
 						String.valueOf(userMap.get("userInfo")),
-						new UserEntity());
+						new UserInfo());
 
 				// 分布式缓存策略 从 memcached 中获取用户信息
 				objectCached = MemcachedManager.getMemCache().Get(
-						String.format("user_%s", user.getId()));
+						String.format("user_%s", user.getUserId()));
 				if (objectCached == null) {
 					// 非分布式换成策略 从其他cached中获取用户信息
 					objectCached = user;

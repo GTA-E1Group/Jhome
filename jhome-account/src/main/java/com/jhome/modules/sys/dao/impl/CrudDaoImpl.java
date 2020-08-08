@@ -25,6 +25,7 @@ public class CrudDaoImpl extends HttpDaoImpl implements CrudDao {
     public RestTemplate client;
 
     /**
+     * 参数传递
      * JSONObject jsonObject=new JSONObject();
      * jsonObject.put("k","v");
      *
