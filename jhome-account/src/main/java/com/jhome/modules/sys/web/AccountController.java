@@ -8,21 +8,16 @@ import com.daxu.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.modules.sys.service.RemoteService;
-import com.jhome.modules.sys.web.baseController.baseController;
+import com.jhome.modules.sys.web.baseController.BaseController;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 @Api(tags = "z、账户服务-登录API")
 @RestController
 @RequestMapping("/${adminPath}")
-public class AccountController extends baseController {
+public class AccountController extends BaseController {
     @Autowired
     public SysConfigurationPropertiesBean sysConfigurationPropertiesBean;
     @Autowired

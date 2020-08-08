@@ -7,20 +7,17 @@ import com.daxu.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.modules.sys.service.RemoteService;
-import com.jhome.modules.sys.web.baseController.baseController;
+import com.jhome.modules.sys.web.baseController.BaseController;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
 import io.buji.pac4j.subject.Pac4jPrincipal;
-import io.buji.pac4j.token.Pac4jToken;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
-import org.apache.shiro.session.mgt.SimpleSession;
 import org.apache.shiro.web.servlet.ShiroHttpServletRequest;
 import org.pac4j.core.profile.CommonProfile;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @RestController
 @RequestMapping("/${adminPath}")
-public class CasSinglePointController extends baseController {
+public class CasSinglePointController extends BaseController {
     @Autowired
     public RemoteService remoteService;
     //    @Autowired

@@ -46,6 +46,8 @@ public class ServerCustomizedModularRealmAuthenticator extends ModularRealmAuthe
         //标准LuxToken执行
         jhomeToken customizedToken = (jhomeToken) authenticationToken;
         String deviceType = customizedToken.getDeviceType();
+        if(deviceType==null)
+            return null;
         //这里所有自定义的Realm的Name必须包含相对应的设备名
         for (Realm realm : customerRealms) {
             if (realm.getName().contains(deviceType))

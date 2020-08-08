@@ -1,8 +1,7 @@
-package com.jhome.modules.sys.web.baseController;
+package com.configService.modules.registered.web.baseController;
+
 
 import com.daxu.common.Bus.ResponseJson;
-import com.fasterxml.jackson.core.json.async.NonBlockingJsonParser;
-import org.apache.poi.hslf.record.CString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -13,15 +12,38 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
+
+/**
+ //
+ //                       .::::.
+ //                     .::::::::.
+ //                    :::::::::::
+ //                 ..:::::::::::'
+ //              '::::::::::::'
+ //                .::::::::::
+ //           '::::::::::::::..
+ //                ..::::::::::::.
+ //              ``::::::::::::::::
+ //               ::::``:::::::::'        .:::.
+ //              ::::'   ':::::'       .::::::::.
+ //            .::::'      ::::     .:::::::'::::.
+ //           .:::'       :::::  .:::::::::' ':::::.
+ //          .::'        :::::.:::::::::'      ':::::.
+ //         .::'         ::::::::::::::'         ``::::.
+ //     ...:::           ::::::::::::'              ``::.
+ //    ```` ':.          ':::::::::'                  ::::..
+ //                       '.:::::'                    ':'````..
+ * @program: jhome-root
+ * @description: GlobalDataPreprocessingController
+ * @author: Daxv
+ * @create: 2020-08-08 12:21
+ **/
 
 /**
  * 全局处理
  */
-
 @ControllerAdvice
 @ResponseBody
 public class GlobalDataPreprocessingController {
@@ -122,4 +144,3 @@ public class GlobalDataPreprocessingController {
         return new ResponseJson(HttpStatus.BAD_REQUEST.hashCode()).setMsg(errors);
     }
 }
-

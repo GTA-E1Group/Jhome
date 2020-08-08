@@ -1,6 +1,5 @@
 package com.jhome.modules.sys.web.baseController;
 
-import com.jhome.modules.sys.web.baseController.globalDataPreprocessingController;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.InitBinder;
  * 初始化数据绑定器
  */
 @ControllerAdvice
-public class initDataBind extends globalDataPreprocessingController {
+public class InitDataBind extends GlobalDataPreprocessingController {
     @InitBinder("b")
     public void b(WebDataBinder binder) {
         binder.setFieldDefaultPrefix("b.");

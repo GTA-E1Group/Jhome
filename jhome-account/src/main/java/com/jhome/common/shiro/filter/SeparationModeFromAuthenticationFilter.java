@@ -105,9 +105,11 @@ public class SeparationModeFromAuthenticationFilter extends MixedModeFormAuthent
 
     @Override
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
-        String username = getUsername(request);
-        String password = getPassword(request);
-        return new jhomeToken();
+        jhomeToken token=new jhomeToken();
+        token.setDeviceType("");
+        token.setUsername(getUsername(request));
+        //token.setPassword(getPassword(request));
+        return token;
     }
 
     public String getCallbackUrl() {
