@@ -14,6 +14,7 @@
         <module name="jhome-common" />
         <module name="jhome-registrationService" />
         <module name="jhome-webspiderService" />
+        <module name="jhome-codeGenerator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="jhome-NettyServer" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jsse.jar&quot;" />
       <module name="jhome-Pay" options="-parameters" />
       <module name="jhome-account" options="-parameters" />
+      <module name="jhome-codeGenerator" options="-parameters" />
       <module name="jhome-common" options="-parameters" />
       <module name="jhome-configService" options="-parameters" />
       <module name="jhome-dataCenter" options="-parameters" />

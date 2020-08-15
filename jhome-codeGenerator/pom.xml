@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jhome-parent</artifactId>
+        <groupId>com.jhome</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../jhome-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jhome-codeGenerator</artifactId>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+
+    <dependencies>
+        <!--Spring Boot -->
+        <!--支持 Web 应用开发，包含 Tomcat 和 spring-mvc。 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!--支持 Web 应用开发，包含 Tomcat 和 spring-mvc。 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Springboot默认使用tomcat服务器，当使用undertow服务器时，需把tomcat排除-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Spring Boot  默认使用tomcat服务器 改成第三方内置NIO 服务器 undertow -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <!-- Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- thymeleaf 框架 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+
+        <!-- Mybatis 框架-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.mybatis.spring.boot</groupId>-->
+        <!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--            <version>${mybatis-spring.version}</version>-->
+        <!--        </dependency>-->
+        <!-- MybatisPlush 框架-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- dynamic-datasource-spring-boot-starter 是一个基于springboot的快速集成多数据源的启动器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- mybatisPlus 代码生成器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.3.1.tmp</version>
+        </dependency>
+        <!--依赖项目-->
+        <dependency>
+            <groupId>com.jhome</groupId>
+            <artifactId>jhome-common</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+</project>
