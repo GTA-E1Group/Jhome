@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -36,7 +37,7 @@
       <module name="jhome-common" options="-parameters" />
       <module name="jhome-configService" options="-parameters" />
       <module name="jhome-dataCenter" options="-parameters" />
-      <module name="jhome-nettyService" options="-parameters -verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jsse.jar&quot;" />
+      <module name="jhome-nettyService" options="-parameters" />
       <module name="jhome-registrationCenter_One" options="-parameters" />
       <module name="jhome-registrationService" options="-parameters" />
       <module name="jhome-sysAnnotation" options="-parameters" />

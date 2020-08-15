@@ -44,8 +44,6 @@
     <groupId> org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-
-
   </dependencies>
 
 
@@ -62,5 +60,13 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+  <!--热部署-->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

@@ -26,8 +26,22 @@ public class CrudDaoImpl extends HttpDaoImpl implements CrudDao {
 
     /**
      * 参数传递
-     * JSONObject jsonObject=new JSONObject();
-     * jsonObject.put("k","v");
+     * JSONObject jsonObj = new JSONObject();
+     * jsonObj.put("appID", ucLoginReq.getAppID());
+     * jsonObj.put("loginName", ucLoginReq.getLoginName());
+     * jsonObj.put("pwd", ucLoginReq.getPwd());
+     * jsonObj.put("signature", ucLoginReq.getSignature());
+     * jsonObj.put("timestamp", ucLoginReq.getTimestamp().toString());
+     *
+     * ResponseEntity<String> resultVo = ucService.loginByAccount(ucApiConfigProperties.getLoginActionPath(), HttpMethod.POST, jsonObj, String.class);
+     * JSONObject object= (JSONObject) JSONObject.parse(resultVo.getBody());
+     *
+     * if (resultVo.getStatusCodeValue() == 200&&object.getString("returnCode").equals("200")) {
+     *      UserInfo userInfo=this.resolveUser(object);
+     *      return new SimpleAuthenticationInfo(userInfo.toString(), pws, this.getName());
+     * } else {
+     *      logger.info(String.format("UC单点登陆失败，失败原因：%s", resultVo.getBody().toString()));
+     * }
      *
      * @param url
      * @param params
