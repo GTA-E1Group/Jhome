@@ -1,33 +1,34 @@
 # Jhome框架是一个汇总了在实际项目开发过程中所涉及的技术要点的框架：
 
-【jhome 架构图】 
-![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg) 
-
-### 技术概要：
+## 技术概要：
 *  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
 *  2.Shrio 安全框架
-*  3.NIO（Netty）
-*  4.PRC远程通信协议（ grpc  Thrift ） 
-*  5.分布式两阶段补偿事务（transaction）
-*  6.POI(文档操作)
-*  7.redisson（操作Redis缓存数据库框架）
-*  8.rabbitmq（消息队列）
-*  9.mybatis
+*  3.pack4j 安全框架
+*  4.NIO（Netty）
+*  5.PRC远程通信协议（ grpc  Thrift ） 
+*  6.分布式两阶段补偿事务（transaction）
+*  7.POI(文档操作)
+*  8.redisson（操作Redis缓存数据库框架）
+*  9.rabbitmq（消息队列）
+*  10.mybatis + mybatis-Plush
 
+## jhome 架构图 
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg) 
 
-
+ 
 ### 即将升级计划
 *  分段上传
 *  分页组件
 *  Netty 整合 RabbitMQ 形式实现
 
 ## jhome v1.2 框架升级内容  
-### 升级概要：搭建代码生成器服务，采velocity模板引擎，生成 
+### 升级概要：搭建代码生成器服务，采velocity模板引擎，一键生成：controller dao mapper model/bo model/vo model/query service service/impl
+
+### 引入技术： 
 *  增加mybatis-Plush AutoGenerator 代码一键批量生成功能 详情请见 Jhome-codeGenerator 服务
 *  引入Tcc 分布式事务框架 两阶段补偿提交（后续引入实战demo）  
 *  引入爬虫框架（后续引入实战Demo）
-### 引入技术： 
-
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/4.jpg) 
 
 
 ## jhome v1.1 框架升级内容  
@@ -44,7 +45,9 @@
 *  引入grpc框架
 *  引入Thrift框架
 *  引入SpringCloud config组件
-*  引入公共组件库包括（传统阻塞式 RabbitMq模式 、PIO Exl批量导入引擎、JWT单点登录Tokens生成库、分布式缓存锁、HttpClient、Memcached、其他）
+*  引入公共组件库包括（传统阻塞式 RabbitMq、PIO Exl批量导入引擎、JWT单点登录Tokens生成库、分布式缓存锁、HttpClient、Memcached、其他）
+*  引入POI(文档操作)  
+*  引入rabbitmq（消息队列） （目前是IO阻塞 后续升级到NIO模式） 详情见（jhome-common 公共组件服务）
   
   
   
@@ -56,9 +59,11 @@
 *  1.Spring 全家桶 （SpringBoot Spring SpringCloud ）
 *  2.构建注册中心 引入springCloud eureka组件 实现 多服务注册，统一管理各个服务 
 *  3.引入springCloud Feig组件统一请求账户服务jhome-account 实现Session 复制 
-*  4.Shrio 安全框架实现分布式系统集中授权和认证 （详情请见 jhome-account 服务）
-*  5.pack4j + Shrio 多数据源认证 单点登陆认证
+*  4.引入Shrio 安全框架实现分布式系统集中授权和认证 （详情请见 jhome-account 服务）
+*  5.引入pack4j + Shrio 多数据源认证 单点登陆认证
 *  6.升级mybatis 到 mybatis-Plush 简化用户配置提高开发效率
+*  7.redisson（redis锁 防止缓存击穿）
+*  8.RestTemplate（操作redis数据库）
  
 【Shiro + SpringBoot + SpringCloud+redis 实现分布式系统认证】 流程图
 ![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/2.jpg)
