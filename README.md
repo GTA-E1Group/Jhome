@@ -1,13 +1,7 @@
 # Jhome框架是一个汇总了在实际项目开发过程中所涉及的技术要点的框架：
 
 【jhome 架构图】 
-![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg)
-
-【Shiro + SpringBoot + SpringCloud+redis 实现分布式系统认证】 流程图
-![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/2.jpg)
-
-【Shiro +pack4j 集成单点登录】 流程图
-![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/3.jpg)
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg) 
 
 ### 技术概要：
 *  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
@@ -26,35 +20,53 @@
 *  分段上传
 *  分页组件
 *  Netty 整合 RabbitMQ 形式实现
-### jhome v1.2 框架升级内容  
 
+## jhome v1.2 框架升级内容  
+### 升级概要：搭建代码生成器服务，采velocity模板引擎，生成 
 *  增加mybatis-Plush AutoGenerator 代码一键批量生成功能 详情请见 Jhome-codeGenerator 服务
 *  引入Tcc 分布式事务框架 两阶段补偿提交（后续引入实战demo）  
 *  引入爬虫框架（后续引入实战Demo）
-  
-### jhome v1.1 框架升级内容  
-【升级重点：该版本重点搭建了消息中心，配置中心】
+### 引入技术： 
+
+
+
+## jhome v1.1 框架升级内容  
+
+### 升级概要：该版本重点搭建了消息中心，配置中心
+
 *  消息服务中心 （详情请见 jhome-NettyService ）
    利用Netty搭建消息服务中心，实现分布式系统中WebSocket通信，各服务之间通过rpc协议（实现框架：Grpc和Thrift）间接操作消息中心,把消息服务独立出来，降低系统耦合，从而实现高性能的前后端通信；
 *  配置中心,引入了 spring Cloud Config组件 （详情请见：jhome-configService）
    利用配置中心，可以简化、集中、对分布式系统中的服务统一配置，配置信息存储到Mysql中，可以达到一键初始化效果；简化部署； 
-## 引入技术： 
+   
+### 引入技术： 
 *  引入Netty框架
 *  引入grpc框架
 *  引入Thrift框架
 *  引入SpringCloud config组件
 *  引入公共组件库包括（传统阻塞式 RabbitMq模式 、PIO Exl批量导入引擎、JWT单点登录Tokens生成库、分布式缓存锁、HttpClient、Memcached、其他）
- 
+  
+  
+  
+## jhome v1.0 框架升级内容 
 
-### jhome v1.0 框架升级内容 
-【升级重点：该版本重点引入了Shrio框架，针对在分布式系统中，各个服务之间用户授、认证做了集中处理:】
-## 引入技术： 
+### 升级概要：该版本重点引入了Shrio框架，针对在分布式系统中，各个服务之间用户授、认证做了集中处理: 搭建了注册中心，统一管理各个服务
+
+### 引入技术： 
 *  1.Spring 全家桶 （SpringBoot Spring SpringCloud ）
 *  2.构建注册中心 引入springCloud eureka组件 实现 多服务注册，统一管理各个服务 
-*  3.Shrio 安全框架实现分布式系统集中授权和认证 （详情请见 jhome-account 服务）
-*  3.pack4j + Shrio 多数据源认证 单点登陆认证
+*  3.引入springCloud Feig组件统一请求账户服务jhome-account 实现Session 复制 
+*  4.Shrio 安全框架实现分布式系统集中授权和认证 （详情请见 jhome-account 服务）
+*  5.pack4j + Shrio 多数据源认证 单点登陆认证
+*  6.升级mybatis 到 mybatis-Plush 简化用户配置提高开发效率
+ 
+【Shiro + SpringBoot + SpringCloud+redis 实现分布式系统认证】 流程图
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/2.jpg)
 
-## 重点解决分布式系统 跨域 认证问题：
+【Shiro +pack4j 集成单点登录】 流程图
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/3.jpg)
+
+### 重点解决分布式系统 跨域 认证问题：
 *  登陆成功跳转问题 登陆成功后跳转到原有地址:  (已修复，后期根据当前Session 中存储的返回地址 跳转)
 *  支持单点登陆（分部署集中认证和授权解决分布式系统中的用户登陆和授权的问题，但是在微服务系统中，无法实现一次登陆多次使用）;
     （已修复）
@@ -73,7 +85,6 @@
 *  单点登陆成功后，在提供服务B端退出，消费A段无法退出
    （正在修复，消费A段退出，先调用A段的退出把Subject 认证状态isAuthenticated
     变成false,在调用服务B段退出设置B段的Subject的isAuthenticated，刷新当前页即可 服务B段退出，A段做做感知判断）
-     
 
 ### 本人微信号： daxu06661
 
