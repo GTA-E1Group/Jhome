@@ -1,4 +1,4 @@
-# 【Jhome框架】：
+# Jhome框架
 
 ## 技术概要：
 *  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
