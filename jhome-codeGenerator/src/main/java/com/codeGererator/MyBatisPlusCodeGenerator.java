@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 import com.other.common.lang.StringUtils;
@@ -73,13 +74,15 @@ public class MyBatisPlusCodeGenerator {
                 .setBaseResultMap(true)// XML ResultMap
                 .setBaseColumnList(true)// XML columList
                 .setOpen(false)//生成后打开文件夹
-                .setAuthor(authorName)
+                //.setAuthor(authorName)
+                .setAuthor(scanner("请输生成模式 1：普通对象 2 查询对象 "))
                 // 自定义文件命名，注意 %s 会自动填充表实体属性！
                 .setMapperName("%sMapper")
                 .setXmlName("%sMapper")
                 .setServiceName("%sService")
                 .setServiceImplName("%sServiceImpl")
-                //.setSwagger2(true); //实体属性 Swagger2 注解
+                .setSwagger2(true) //实体属性 Swagger2 注解
+                .setDateType(DateType.ONLY_DATE)
                 .setControllerName("%sController");
         mpg.setGlobalConfig(gc);
 
@@ -94,13 +97,18 @@ public class MyBatisPlusCodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig()
-                .setParent(customPath)// 自定义包路径
-                .setModuleName(scanner("请输入模块名"))
-                .setController("controller")// 这里是控制器包名，默认 web
-                .setEntity("entity")
-                .setMapper("dao")
-                .setService("service")
-                .setServiceImpl("service.impl");
+                .setParent(customPath)// 自定义包路径;
+                .setModuleName(scanner("请输入模块名"));
+        if (gc.getAuthor().equals("1")) {
+            pc.setController("controller");// 这里是控制器包名，默认 web
+            pc.setMapper("dao");
+            pc.setService("service");
+            pc.setServiceImpl("service.impl");
+            pc.setEntity("model.bo");
+        } else {
+            pc.setEntity("model.query");
+            gc.setEntityName("%sQuery");
+        }
         //.setXml("mapper")
         mpg.setPackageInfo(pc);
 
@@ -128,19 +136,22 @@ public class MyBatisPlusCodeGenerator {
         }));
         mpg.setCfg(cfg);
 
-
         // 配置模板
-        TemplateConfig templateConfig = new TemplateConfig()
-                // 关闭默认 xml 生成，调整生成 至 根目录
-                //.setXml(null);
-                // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
-                // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
-                .setController("/template/controller.java.vm")
-                .setEntity("/template/entity.java.vm")
-                .setMapper("/template/mapper.java.vm")
-                .setXml("/template/mapper.xml.vm")
-                .setService("/template/service.java.vm")
-                .setServiceImpl("/template/serviceImpl.java.vm");
+        TemplateConfig templateConfig = new TemplateConfig();
+        if (gc.getAuthor().equals("1")) {
+            // 关闭默认 xml 生成，调整生成 至 根目录
+            //.setXml(null);
+            // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
+            // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
+            templateConfig.setController("/template/controller.java.vm");
+            templateConfig.setEntity("/template/entity.java.vm");
+            templateConfig.setMapper("/template/mapper.java.vm");
+            templateConfig.setXml("/template/mapper.xml.vm");
+            templateConfig.setService("/template/service.java.vm");
+            templateConfig.setServiceImpl("/template/serviceImpl.java.vm");
+        } else {
+            templateConfig.setEntity("/template/entity.java.vm");
+        }
         mpg.setTemplate(templateConfig);
 
         // 策略配置
