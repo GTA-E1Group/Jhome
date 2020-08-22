@@ -1,6 +1,9 @@
 # Jhome框架是一个汇总了在实际项目开发过程中所涉及的技术要点的框架：
 
 
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/2.jpg)
+
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg)
 
 ### 即将升级计划
 *  分段上传
