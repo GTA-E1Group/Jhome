@@ -1,4 +1,4 @@
-# Jhome框架是一个汇总了在实际项目开发过程中所涉及的技术要点的框架：
+# 【Jhome框架】：
 
 ## 技术概要：
 *  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
