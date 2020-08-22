@@ -22,7 +22,7 @@
 *  Netty 整合 RabbitMQ 形式实现
 
 ## jhome v1.2 框架升级内容  
-### 升级概要：搭建代码生成器服务，采velocity模板引擎，一键生成：controller dao mapper model/bo model/vo model/query service service/impl
+### 升级概要：搭建代码生成器服务（jhome-codeGenerator），采velocity模板引擎，一键生成：controller dao mapper model/bo model/vo model/query service service/impl
 
 ### 引入技术： 
 *  增加mybatis-Plush AutoGenerator 代码一键批量生成功能 详情请见 Jhome-codeGenerator 服务
@@ -33,7 +33,7 @@
 
 ## jhome v1.1 框架升级内容  
 
-### 升级概要：该版本重点搭建了消息中心，配置中心
+### 升级概要：该版本重点搭建了消息中心（jhome-NettyService），配置中心（jhome-configService），公共组件服务（jhome-common）
 
 *  消息服务中心 （详情请见 jhome-NettyService ）
    利用Netty搭建消息服务中心，实现分布式系统中WebSocket通信，各服务之间通过rpc协议（实现框架：Grpc和Thrift）间接操作消息中心,把消息服务独立出来，降低系统耦合，从而实现高性能的前后端通信；
@@ -53,7 +53,7 @@
   
 ## jhome v1.0 框架升级内容 
 
-### 升级概要：该版本重点引入了Shrio框架，针对在分布式系统中，各个服务之间用户授、认证做了集中处理: 搭建了注册中心，统一管理各个服务
+### 升级概要：该版本重点引入了Shrio框架，针对在分布式系统中，各个服务之间用户授、认证做了集中处理: 搭建了注册中心（jhome-registrationService），统一管理各个服务
 
 ### 引入技术： 
 *  1.Spring 全家桶 （SpringBoot Spring SpringCloud ）
