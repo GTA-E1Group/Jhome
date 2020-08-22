@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.cert;
+package com.jhome.modules.userAuthentication.cert;
 
 import com.shiro.common.realm.ServerBaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;

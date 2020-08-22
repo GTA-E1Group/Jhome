@@ -99,7 +99,7 @@ spring:
 
 #================================================================================ Shrio 基础配置信息 ===========#
 #    /f/**: authc,
-#    /a/**: authc,  #LoginUrl: /${jhome.sysproperties.adminPath}/sys/login
+#    /a/**: authc,  #LoginUrl: /${jhome.sysproperties.adminPath}/userAuthentication/login
 shiro:
   filterChainDefinitionMap: |
 
@@ -122,7 +122,7 @@ shiro:
     /**:authc
 
   LoginUrl: /${adminPath}/login
-  UnauthorizedUrl: /${adminPath}/sys/error
+  UnauthorizedUrl: /${adminPath}/userAuthentication/error
 
 #================================================================================ mybatis plus 基础配置信息 ===========#
 mybatis-plus:

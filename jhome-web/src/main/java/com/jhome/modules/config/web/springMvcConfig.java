@@ -50,10 +50,10 @@ public class springMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //System.out.println(String.format("@@@@@@@@@@@@@@@@@@@ %s",spro.getAdminPath()));
-        //registry.addViewController(String.format("/%s/sys/error",spro.getAdminPath())).setViewName("/modules/sys/error");
-        //registry.addViewController(String.format("/%s/sys/main",spro.getAdminPath())).setViewName("/modules/sys/main");
-        // registry.addViewController(String.format("/%s/sys/login*",spro.getAdminPath())).setViewName("/modules/sys/login");
-        //registry.addViewController("/sys/login").setViewName("/modules/sys/login");
+        //registry.addViewController(String.format("/%s/userAuthentication/error",spro.getAdminPath())).setViewName("/modules/userAuthentication/error");
+        //registry.addViewController(String.format("/%s/userAuthentication/main",spro.getAdminPath())).setViewName("/modules/userAuthentication/main");
+        // registry.addViewController(String.format("/%s/userAuthentication/login*",spro.getAdminPath())).setViewName("/modules/userAuthentication/login");
+        //registry.addViewController("/userAuthentication/login").setViewName("/modules/userAuthentication/login");
     }
 
     /**

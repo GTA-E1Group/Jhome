@@ -87,7 +87,7 @@ shiro:
     /**: authc
   LoginUrl: http://127.0.0.1:8100/jhome/account/login
   SuccessUrl: /${jhome.sysproperties.adminPath}/web/index
-  UnauthorizedUrl: /${jhome.sysproperties.adminPath}/sys/error
+  UnauthorizedUrl: /${jhome.sysproperties.adminPath}/userAuthentication/error
 
   #================================================================================ mybase 基础配置信息 ===========#
 

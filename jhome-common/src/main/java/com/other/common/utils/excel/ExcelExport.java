@@ -518,7 +518,7 @@ public class ExcelExport implements Closeable{
 					}
 					// If is dict, get dict label
 					if (StringUtils.isNotBlank(ef.dictType())){
-						Class<?> dictUtils = Class.forName("com.other.modules.sys.utils.DictUtils");
+						Class<?> dictUtils = Class.forName("com.other.modules.userAuthentication.utils.DictUtils");
 						val = dictUtils.getMethod("getDictLabel", String.class, String.class,
 								String.class).invoke(null, ef.dictType(), val==null?"":val.toString(), "");
 						//val = DictUtils.getDictLabel(val==null?"":val.toString(), ef.dictType(), "");

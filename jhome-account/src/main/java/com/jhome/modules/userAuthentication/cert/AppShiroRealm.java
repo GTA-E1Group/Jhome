@@ -1,6 +1,5 @@
-package com.jhome.modules.sys.cert;
+package com.jhome.modules.userAuthentication.cert;
 
-import com.netflix.loadbalancer.Server;
 import com.shiro.common.realm.ServerBaseAuthorizingRealm;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.*;

@@ -1,10 +1,10 @@
-package com.jhome.modules.sys.web;
+package com.jhome.modules.userAuthentication.web;
 
 import com.bracket.common.Bus.AbstractController.BaseController;
 import com.bracket.common.Bus.ResponseJson;
 import com.bracket.common.Identity.UserUtil;
 import com.bracket.common.ToolKit.StringUtil;
-import com.jhome.modules.sys.service.RemoteService;
+import com.jhome.modules.userAuthentication.service.RemoteService;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
@@ -36,7 +36,7 @@ public class SsoController extends BaseController {
      * url              登录成功后跳转的url地址。
      * 是否强制重新登录，需要强制重新登录传递true
      * ：
-     * http://localhost/project/sso/{username}/{token}?url=/sys/user/list?p1=v1%26p2=v2&relogin=true
+     * http://localhost/project/sso/{username}/{token}?url=/userAuthentication/user/list?p1=v1%26p2=v2&relogin=true
      * 如果url中携带参数，请使用转义字符，如“&”号，使用“%26”转义。
      */
     @GetMapping(value = "/sso/{type}/{name}/{token}")

@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.cert;
+package com.jhome.modules.userAuthentication.cert;
 
 import com.domain.common.UserInfo;
 import com.shiro.common.token.DeviceType;

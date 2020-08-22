@@ -2,11 +2,10 @@ package com.jhome.modules.config.web;
 
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.modules.config.MessageConverter;
-import com.jhome.modules.sys.interceptor.LogInterceptor;
+import com.jhome.modules.userAuthentication.interceptor.LogInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -56,10 +55,10 @@ public class springMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //System.out.println(String.format("@@@@@@@@@@@@@@@@@@@ %s",spro.getAdminPath()));
-        //registry.addViewController(String.format("/%s/sys/error",spro.getAdminPath())).setViewName("/modules/sys/error");
-        //registry.addViewController(String.format("/%s/sys/main",spro.getAdminPath())).setViewName("/modules/sys/main");
-        // registry.addViewController(String.format("/%s/sys/login*",spro.getAdminPath())).setViewName("/modules/sys/login");
-        //registry.addViewController("/sys/login").setViewName("/modules/sys/login");
+        //registry.addViewController(String.format("/%s/userAuthentication/error",spro.getAdminPath())).setViewName("/modules/userAuthentication/error");
+        //registry.addViewController(String.format("/%s/userAuthentication/main",spro.getAdminPath())).setViewName("/modules/userAuthentication/main");
+        // registry.addViewController(String.format("/%s/userAuthentication/login*",spro.getAdminPath())).setViewName("/modules/userAuthentication/login");
+        //registry.addViewController("/userAuthentication/login").setViewName("/modules/userAuthentication/login");
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.web;
+package com.jhome.modules.userAuthentication.web;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bracket.common.Bus.AbstractController.BaseController;
@@ -8,7 +8,7 @@ import com.bracket.common.ToolKit.JSONUtils;
 import com.bracket.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
-import com.jhome.modules.sys.service.RemoteService;
+import com.jhome.modules.userAuthentication.service.RemoteService;
 import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
@@ -32,10 +32,6 @@ public class AccountController extends BaseController {
     @Autowired
     public RemoteService remoteService;
 
-    @GetMapping("/login")
-    public String login() {
-        return "modules/sys/login";
-    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public String login(HttpServletRequest request, HttpServletResponse response, @RequestBody UserInfo user) {

@@ -38,7 +38,7 @@ import org.springframework.context.annotation.Bean;
  * @create: 2020-07-04 14:16
  **/
 @Configurable
-@MapperScan({"com.jhome.modules.sys.dao.impl.mapperDao"})
+@MapperScan({"com.jhome.modules.userAuthentication.dao.impl.mapperDao"})
 public class MybatisPlusConfig {
 
     /**

@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.service;
+package com.jhome.modules.userAuthentication.service;
 
 import com.domain.common.PermissionContext;
 import com.domain.common.UserInfo;

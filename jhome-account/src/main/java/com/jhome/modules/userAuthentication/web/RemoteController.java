@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.web;
+package com.jhome.modules.userAuthentication.web;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -6,7 +6,7 @@ import com.bracket.common.Bus.AbstractController.BaseController;
 import com.bracket.common.ToolKit.JSONUtils;
 import com.domain.common.PermissionContext;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
-import com.jhome.modules.sys.service.RemoteService;
+import com.jhome.modules.userAuthentication.service.RemoteService;
 import com.shiro.common.SessionDaoZH;
 import com.shiro.common.session.ShiroSession;
 import io.swagger.annotations.Api;

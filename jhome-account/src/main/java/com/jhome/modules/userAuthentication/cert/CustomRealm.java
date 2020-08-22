@@ -1,8 +1,7 @@
-package com.jhome.modules.sys.cert;
+package com.jhome.modules.userAuthentication.cert;
 
 import com.bracket.common.Identity.UserUtil;
 import com.domain.common.UserInfo;
-import com.netflix.loadbalancer.Server;
 import com.shiro.common.realm.ServerBaseAuthorizingRealm;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
@@ -11,8 +10,6 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.UUID;
 
 /**
  * 后台登录数据Realm

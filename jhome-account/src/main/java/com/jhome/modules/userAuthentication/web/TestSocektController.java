@@ -1,4 +1,4 @@
-package com.jhome.modules.sys.web;
+package com.jhome.modules.userAuthentication.web;
 
  import com.bracket.common.Bus.AbstractController.BaseController;
  import com.bracket.common.Bus.ResponseJson;
