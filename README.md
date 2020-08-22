@@ -1,9 +1,14 @@
 # Jhome框架是一个汇总了在实际项目开发过程中所涉及的技术要点的框架：
 
+【jhome 架构图】 
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg)
 
+【Shiro + SpringBoot + SpringCloud+redis 实现分布式系统认证】 流程图
 ![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/2.jpg)
 
-![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg)
+【Shiro +pack4j 集成单点登录】 流程图
+![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/3.jpg)
+
 
 ### 即将升级计划
 *  分段上传
