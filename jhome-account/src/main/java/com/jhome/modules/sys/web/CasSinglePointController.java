@@ -12,6 +12,7 @@ import com.shiro.common.realm.SessionCons;
 import com.shiro.common.session.ShiroSession;
 import com.shiro.common.token.DeviceType;
 import io.buji.pac4j.subject.Pac4jPrincipal;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
@@ -29,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * cas 单点登录回调地址
  */
+@Api(tags = "D、单点登录回调")
 @RestController
 @RequestMapping("/${adminPath}")
 public class CasSinglePointController extends BaseController {

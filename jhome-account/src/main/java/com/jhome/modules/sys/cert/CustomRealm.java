@@ -1,8 +1,10 @@
 package com.jhome.modules.sys.cert;
 
+import com.bracket.common.Identity.UserUtil;
 import com.domain.common.UserInfo;
 import com.netflix.loadbalancer.Server;
 import com.shiro.common.realm.ServerBaseAuthorizingRealm;
+import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -29,20 +31,32 @@ public class CustomRealm extends ServerBaseAuthorizingRealm {
     @Override
     protected SimpleAuthenticationInfo Verification(jhomeToken token) {
         try {
-            String username= (String) token.getPrincipal();
-            username = token.getUsername();
+            String userName= (String) token.getPrincipal();
+            userName = token.getUsername();
             String deviceType=token.getDeviceType();
-            //业务认证....
             String pws = new String(((char[]) token.getCredentials()));
-            UserInfo userInfo = new UserInfo();
-            userInfo.setUserId(UUID.randomUUID().toString());
-            userInfo.setLoginName(username);
-            userInfo.setPassword("000000");
+            //业务认证....
+            UserInfo userInfo = resolveUser(userName);
             return new SimpleAuthenticationInfo(userInfo.toString(), userInfo.getPassword(), this.getName());
         } catch (Exception ex) {
             logger.info("认证报错：%s",ex.getMessage());
         }
         return null;
+    }
+
+    /**
+     * 根据用户传递过来的用户名从数据库读取本地用户信息
+     * @param userName
+     * @return
+     */
+    public UserInfo resolveUser(String userName)
+    {
+        UserInfo userInfo=new UserInfo();
+        String jhomeToken= (String) UserUtil.getSubject().getSession().getId();
+        userInfo.setJhomeToken(jhomeToken);
+        userInfo.setDeviceType(DeviceType.PC.toString());
+        //补充其他相关参数...
+        return userInfo;
     }
 
     @Override

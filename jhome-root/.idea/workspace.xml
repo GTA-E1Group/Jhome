@@ -33,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -81,22 +81,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-codeGenerator/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-codeGenerator/src/main/resources/template" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16503906" />
     <property name="project.structure.side.proportion" value="0.33256084" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XProject\Jhome\jhome-registrationService\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\EatingTools\XProject\Jhome\jhome-codeGenerator\src\main\resources" />
-      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractModel" />
-      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractDaoImpl" />
-      <recent name="D:\XProject\Jhome\jhome-configService\src\main\java\com\configService\modules\registered\model" />
-      <recent name="D:\XProject\Jhome\jhome-registrationService\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.daxu.common.Bus.AbstractInterceptor" />
@@ -105,8 +101,12 @@
       <recent name="com.configService.modules.config" />
       <recent name="com.configService.modules.registered.web.baseController" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XProject\Jhome\jhome-registrationService\src\main\resources" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EatingTools\XProject\Jhome\jhome-codeGenerator\src\main\resources\template" />
+      <recent name="D:\EatingTools\XProject\Jhome\jhome-codeGenerator\src\main\resources" />
+      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractModel" />
+      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractDaoImpl" />
+      <recent name="D:\XProject\Jhome\jhome-configService\src\main\java\com\configService\modules\registered\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,7 +294,7 @@
       <workItem from="1597473106574" duration="128000" />
       <workItem from="1597473558174" duration="67000" />
       <workItem from="1597473641882" duration="5541000" />
-      <workItem from="1598067018159" duration="1226000" />
+      <workItem from="1598067018159" duration="7655000" />
     </task>
     <servers />
   </component>
@@ -310,12 +310,12 @@
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="313" y="159" key="#Notifications/0.40.1440.920@0.40.1440.920" timestamp="1597471844608" />
-    <state x="313" y="162" key="#Project_Structure" timestamp="1597482913294">
+    <state x="313" y="162" key="#Project_Structure" timestamp="1598074878527">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="268" y="135" key="#Project_Structure/0.30.1234.793@0.30.1234.793" timestamp="1595150399512" />
     <state x="313" y="154" key="#Project_Structure/0.31.1440.929@0.31.1440.929" timestamp="1593953390614" />
-    <state x="313" y="162" key="#Project_Structure/0.40.1440.920@0.40.1440.920" timestamp="1597482913294" />
+    <state x="313" y="162" key="#Project_Structure/0.40.1440.920@0.40.1440.920" timestamp="1598074878527" />
     <state x="484" y="266" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1592041171265">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -325,12 +325,12 @@
     </state>
     <state x="176" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1440.929@0.31.1440.929" timestamp="1590934445431" />
     <state x="176" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1440.920@0.40.1440.920" timestamp="1596865009215" />
-    <state x="365" y="39" width="921" height="761" key="#com.intellij.ide.util.MemberChooser" timestamp="1596862174312">
+    <state x="365" y="39" width="921" height="761" key="#com.intellij.ide.util.MemberChooser" timestamp="1598073433341">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="313" y="29" key="#com.intellij.ide.util.MemberChooser/0.30.1234.793@0.30.1234.793" timestamp="1595663734386" />
     <state x="519" y="30" width="921" height="761" key="#com.intellij.ide.util.MemberChooser/0.31.1440.929@0.31.1440.929" timestamp="1593848307330" />
-    <state x="365" y="39" key="#com.intellij.ide.util.MemberChooser/0.40.1440.920@0.40.1440.920" timestamp="1596862174312" />
+    <state x="365" y="39" key="#com.intellij.ide.util.MemberChooser/0.40.1440.920@0.40.1440.920" timestamp="1598073433341" />
     <state x="436" y="327" width="791" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590932654123">
       <screen x="0" y="31" width="1440" height="929" />
     </state>
@@ -372,7 +372,7 @@
     <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1590398384950" />
     <state x="501" y="249" key="FileChooserDialogImpl/0.31.1440.929@0.31.1440.929" timestamp="1591712317822" />
     <state x="681" y="138" key="FileChooserDialogImpl/0.40.1440.920@0.40.1440.920" timestamp="1597476078262" />
-    <state width="1397" height="193" key="GridCell.Tab.0.bottom" timestamp="1597474538229">
+    <state width="1397" height="193" key="GridCell.Tab.0.bottom" timestamp="1598070542826">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
@@ -380,8 +380,8 @@
     <state width="1191" height="142" key="GridCell.Tab.0.bottom/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1637" height="340" key="GridCell.Tab.0.bottom/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
     <state width="1397" height="376" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="193" key="GridCell.Tab.0.bottom/0.40.1440.920@0.40.1440.920" timestamp="1597474538229" />
-    <state width="1397" height="193" key="GridCell.Tab.0.center" timestamp="1597474538229">
+    <state width="1397" height="193" key="GridCell.Tab.0.bottom/0.40.1440.920@0.40.1440.920" timestamp="1598070542826" />
+    <state width="1397" height="193" key="GridCell.Tab.0.center" timestamp="1598070542826">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
@@ -389,8 +389,8 @@
     <state width="1191" height="142" key="GridCell.Tab.0.center/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1637" height="340" key="GridCell.Tab.0.center/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
     <state width="1397" height="376" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="193" key="GridCell.Tab.0.center/0.40.1440.920@0.40.1440.920" timestamp="1597474538229" />
-    <state width="1397" height="193" key="GridCell.Tab.0.left" timestamp="1597474538229">
+    <state width="1397" height="193" key="GridCell.Tab.0.center/0.40.1440.920@0.40.1440.920" timestamp="1598070542826" />
+    <state width="1397" height="193" key="GridCell.Tab.0.left" timestamp="1598070542826">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1590907742786" />
@@ -398,8 +398,8 @@
     <state width="1191" height="142" key="GridCell.Tab.0.left/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1637" height="340" key="GridCell.Tab.0.left/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
     <state width="1397" height="376" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="193" key="GridCell.Tab.0.left/0.40.1440.920@0.40.1440.920" timestamp="1597474538229" />
-    <state width="1397" height="193" key="GridCell.Tab.0.right" timestamp="1597474538229">
+    <state width="1397" height="193" key="GridCell.Tab.0.left/0.40.1440.920@0.40.1440.920" timestamp="1598070542826" />
+    <state width="1397" height="193" key="GridCell.Tab.0.right" timestamp="1598070542826">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1397" height="301" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1590907742787" />
@@ -407,7 +407,7 @@
     <state width="1191" height="142" key="GridCell.Tab.0.right/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1637" height="340" key="GridCell.Tab.0.right/0.30.1680.1020@0.30.1680.1020" timestamp="1590989286931" />
     <state width="1397" height="376" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="193" key="GridCell.Tab.0.right/0.40.1440.920@0.40.1440.920" timestamp="1597474538229" />
+    <state width="1397" height="193" key="GridCell.Tab.0.right/0.40.1440.920@0.40.1440.920" timestamp="1598070542826" />
     <state width="1053" height="208" key="GridCell.Tab.1.bottom" timestamp="1596381072628">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
@@ -621,11 +621,6 @@
           <url>file://$PROJECT_DIR$/../jhome-common/src/main/java/com/shiro/common/filter/ClientFormAuthenticationFilter.java</url>
           <line>29</line>
           <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/modules/sys/web/mainController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/../jhome-account/src/main/java/com/jhome/JhomeAcccountApplication.java</url>

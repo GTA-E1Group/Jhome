@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Api(tags = "z、账户服务-登录API")
+@Api(tags = "Z、账户服务-登录API")
 @RestController
 @RequestMapping("/${adminPath}")
 public class AccountController extends BaseController {
@@ -109,11 +109,5 @@ public class AccountController extends BaseController {
             return new ResponseJson().error(ex.getMessage()).toString();
         }
         return new ResponseJson().success().setValue("callbackUrl", sysConfigurationPropertiesBean.getCallbackUrl()).toString();
-    }
-
-
-    @GetMapping("/main")
-    public String main() {
-        return "modules/sys/main";
     }
 }

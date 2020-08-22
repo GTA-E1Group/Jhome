@@ -8,33 +8,41 @@ import com.bracket.common.Bus.ResponseJson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- //
- //                       .::::.
- //                     .::::::::.
- //                    :::::::::::
- //                 ..:::::::::::'
- //              '::::::::::::'
- //                .::::::::::
- //           '::::::::::::::..
- //                ..::::::::::::.
- //              ``::::::::::::::::
- //               ::::``:::::::::'        .:::.
- //              ::::'   ':::::'       .::::::::.
- //            .::::'      ::::     .:::::::'::::.
- //           .:::'       :::::  .:::::::::' ':::::.
- //          .::'        :::::.:::::::::'      ':::::.
- //         .::'         ::::::::::::::'         ``::::.
- //     ...:::           ::::::::::::'              ``::.
- //    ```` ':.          ':::::::::'                  ::::..
- //                       '.:::::'                    ':'````..
+ * //
+ * //                       .::::.
+ * //                     .::::::::.
+ * //                    :::::::::::
+ * //                 ..:::::::::::'
+ * //              '::::::::::::'
+ * //                .::::::::::
+ * //           '::::::::::::::..
+ * //                ..::::::::::::.
+ * //              ``::::::::::::::::
+ * //               ::::``:::::::::'        .:::.
+ * //              ::::'   ':::::'       .::::::::.
+ * //            .::::'      ::::     .:::::::'::::.
+ * //           .:::'       :::::  .:::::::::' ':::::.
+ * //          .::'        :::::.:::::::::'      ':::::.
+ * //         .::'         ::::::::::::::'         ``::::.
+ * //     ...:::           ::::::::::::'              ``::.
+ * //    ```` ':.          ':::::::::'                  ::::..
+ * //                       '.:::::'                    ':'````..
+ *
  * @program: jhome-root
  * @description:
  * @author: Daxv
@@ -45,15 +53,20 @@ public class SysConfigPropertiesImpl implements SysConfigPropertiesService {
     private static final Logger LOGGER = LoggerFactory.getLogger(SysConfigPropertiesImpl.class);
     @Autowired
     protected SysConfigPropertiesDao sysConfigPropertiesDao;
+    @Autowired
+    protected RedisTemplate redisTemplate;
+
+    @Value("${lux.serviceUrl}")
+    protected String serviceUrl;
 
     @Override
-    public boolean save(SysConfigProperties sysConfigProperties) {
-        return sysConfigPropertiesDao.save(sysConfigProperties);
+    public boolean save(SysConfigProperties user) {
+        return sysConfigPropertiesDao.save(user);
     }
 
     @Override
-    public boolean update(SysConfigProperties sysConfigProperties) {
-        return sysConfigPropertiesDao.update(sysConfigProperties);
+    public boolean update(SysConfigProperties user) {
+        return sysConfigPropertiesDao.update(user);
     }
 
     @Override
@@ -68,6 +81,7 @@ public class SysConfigPropertiesImpl implements SysConfigPropertiesService {
 
     @Override
     public ResponseJson getList(SysConfigPropertiesQuery sysConfigPropertiesQuery) {
+        //String applyId = Register.GetCode(ProductCode.PRODUCT_CODE.toString());// 根据产品码生成申请码。
         ResponseJson responseJson = new ResponseJson();
         List<ResponseJson> list = new ArrayList();
         List<SysConfigProperties> sysConfigProperties = sysConfigPropertiesDao.getList(sysConfigPropertiesQuery);
@@ -81,27 +95,102 @@ public class SysConfigPropertiesImpl implements SysConfigPropertiesService {
                 return;
             responseJsonChild.setValue("title", item[0]);
             List<SysConfigProperties> childList = sysConfigProperties.stream().filter(t -> t.getParamName().contains(item[0])).collect(Collectors.toList());
+
+            //给申请码赋值
+      /*      for (SysConfigProperties childListItem : childList) {
+                if (childListItem.getParamName().equals("申请码")) {
+                    childListItem.setValue(applyId);
+                    break;
+                }
+            }*/
             responseJsonChild.setValue("formdata", childList);
             list.add(responseJsonChild);
         });
         responseJson.setValue("data", list);
+
         return responseJson;
     }
 
     @Transactional
     public boolean batchUpdate(List<SysConfigProperties> sysConfigPropertiesList) {
         try {
-            sysConfigPropertiesList.stream().forEach(e -> {
-                try {
+            AtomicReference<String> declareCodeAtomicReference = new AtomicReference<>("");
+            AtomicReference<String> registeredCodeAtomicReference = new AtomicReference<>("");
+            AtomicReference<String> authorizationCodeAtomicReference = new AtomicReference<>("");
+            try {
+                //注册系统
+                for (SysConfigProperties e : sysConfigPropertiesList) {
+                    switch (e.getParamName()) {
+                        case "申请码":
+                            declareCodeAtomicReference.set(e.getValue());
+                            break;
+                        case "注册码":
+                            registeredCodeAtomicReference.set(e.getValue());
+                            break;
+                        case "授权码":
+                            authorizationCodeAtomicReference.set(e.getValue());
+                            break;
+                    }
                     this.update(e);
-                } catch (Exception ex) {
-                    LOGGER.info(String.format("批量插入报错：%s", ex.getMessage()));
                 }
-            });
+                /**
+                 * 注册信息写入缓存
+                 */
+               /* String registerCode = registeredCodeAtomicReference.get();
+                String grantCode = replaceBlank(authorizationCodeAtomicReference.get());
+                if(!registerCode.isEmpty()&&!grantCode.isEmpty())
+                {
+
+                    // 授权
+                    boolean success = Register.Registe(ProductCode.PRODUCT_CODE.toString(), registerCode,
+                            grantCode);
+                    // 更改授权标识的状态
+                    //RegAPI.setVerifyFlag(success);
+                    redisTemplate.opsForValue().set(ProductCode.PRODUCT_CODE.toString(), success);
+                    this.StartService();
+                }*/
+            } catch (Exception ex) {
+                LOGGER.info(String.format("批量插入报错：%s", ex.getMessage()));
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
             return true;
         } catch (Exception ex) {
             return false;
         }
     }
+
+
+    /**
+     * 注册完成后重新启动服务
+     */
+    public void StartService() {
+        try {
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        //C:\Program Files (x86)\GTA\gtadashujuV1.0\ceshi\bigscreen
+                        String commandStop = "cmd /c start " + serviceUrl + "\\ceshi\\bigscreen\\stop_service.bat";
+                        String commandStart = "cmd /c start " + serviceUrl + "\\ceshi\\bigscreen\\start_service.bat";
+                        LOGGER.info("..............开始重启...............");
+                        Runtime.getRuntime().exec(commandStop);
+                        Thread.sleep(5000);
+                        LOGGER.info("..............正在重启服务...............");
+                        Runtime.getRuntime().exec(commandStart);
+                        LOGGER.info("..............启动成功...............");
+                    } catch (Throwable e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            };
+            Thread thread = new Thread(runnable);
+            thread.start();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

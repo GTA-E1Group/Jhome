@@ -1,8 +1,9 @@
 package com.configService.modules.registered.service;
 
+import com.bracket.common.Bus.ResponseJson;
 import com.configService.modules.registered.model.po.SysConfigProperties;
 import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
-import com.bracket.common.Bus.ResponseJson;
+
 
 import java.util.List;
 

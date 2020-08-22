@@ -1,0 +1,59 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+import com.Util.common.ToolKit.ResponseJson;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+/**
+ //
+ //                       .::::.
+ //                     .::::::::.
+ //                    :::::::::::
+ //                 ..:::::::::::'
+ //              '::::::::::::'
+ //                .::::::::::
+ //           '::::::::::::::..
+ //                ..::::::::::::.
+ //              ``::::::::::::::::
+ //               ::::``:::::::::'        .:::.
+ //              ::::'   ':::::'       .::::::::.
+ //            .::::'      ::::     .:::::::'::::.
+ //           .:::'       :::::  .:::::::::' ':::::.
+ //          .::'        :::::.:::::::::'      ':::::.
+ //         .::'         ::::::::::::::'         ``::::.
+ //     ...:::           ::::::::::::'              ``::.
+ //    ```` ':.          ':::::::::'                  ::::..
+ //                       '.:::::'                    ':'````..
+ * @description: $!{table.comment} 服务类
+ * @author:  ${author}
+ * @create: ${date}
+ **/
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+    /**
+    * 添加对象
+    */
+    ResponseJson add${entity}(${entity}Query obj);
+    /**
+    * 编辑对象
+    */
+    ResponseJson edit${entity}(${entity}Query obj);
+    /**
+    * 删除对象
+    */
+    ResponseJson delete${entity}(${entity}Query obj);
+    /**
+    * 批量删除对象
+    */
+    ResponseJson batchDelete${entity}(String[]ids);
+    /**
+    * 分页系统
+    */
+    IPage<${entity}> query${entity}List(${entity}Query queryObject);
+
+
+        }
+#end

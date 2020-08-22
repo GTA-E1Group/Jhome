@@ -1,0 +1,150 @@
+package ${package.Controller};
+
+
+import com.Util.common.Bus.AbstractController.BaseController;
+import com.Util.common.ToolKit.ResponseJson;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.annotation.*;
+import com.Util.common.ToolKit.StringUtil;
+import com.account.common.sbUtil.PageUtils;
+import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import ${package.Service}.*;
+import ${package.Entity}.*;
+#if(${restControllerStyle})
+import org.springframework.web.bind.annotation.RestController;
+#else
+import org.springframework.stereotype.Controller;
+#end
+#if(${superControllerClassPackage})
+import ${superControllerClassPackage};
+#end
+
+
+/**
+ //
+ //                       .::::.
+ //                     .::::::::.
+ //                    :::::::::::
+ //                 ..:::::::::::'
+ //              '::::::::::::'
+ //                .::::::::::
+ //           '::::::::::::::..
+ //                ..::::::::::::.
+ //              ``::::::::::::::::
+ //               ::::``:::::::::'        .:::.
+ //              ::::'   ':::::'       .::::::::.
+ //            .::::'      ::::     .:::::::'::::.
+ //           .:::'       :::::  .:::::::::' ':::::.
+ //          .::'        :::::.:::::::::'      ':::::.
+ //         .::'         ::::::::::::::'         ``::::.
+ //     ...:::           ::::::::::::'              ``::.
+ //    ```` ':.          ':::::::::'                  ::::..
+ //                       '.:::::'                    ':'````..
+ * @description: $!{table.comment} 控制器
+ * @author:  ${author}
+ * @create: ${date}
+ **/
+@Api(tags = "${table.comment}")
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+##@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end")
+#if(${kotlin})
+class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
+
+#else
+    #if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+    #else
+public class ${table.controllerName}  extends BaseController {
+    @Autowired
+    protected  ${table.serviceName} do${entity}Service;
+
+    @ResponseBody
+    @ApiOperation(value = "添加$!{table.comment}", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @PostMapping(value = "/add${entity}", produces = "application/json;charset=UTF-8")
+    public ResponseJson add${entity}(
+    @Validated @RequestBody  ${entity}Query  obj,
+            BindingResult result) {
+            try {
+            if (result.hasErrors())
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+            return do${entity}Service.add${entity}(obj);
+            } catch (Exception ex) {
+                 return new ResponseJson().error(ex.getMessage());
+            }
+    }
+
+    @ResponseBody
+    @PostMapping(value = "/edit${entity}", produces = "application/json;charset=UTF-8")
+    @ApiOperation(value = "编辑$!{table.comment}", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    public ResponseJson edit${entity}(
+            @Validated @RequestBody ${entity}Query obj,
+            BindingResult result) {
+            if (result.hasErrors())
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+            try {
+                return do${entity}Service.edit${entity}(obj);
+            } catch (Exception ex) {
+                return new ResponseJson().error(ex.getMessage());
+            }
+    }
+
+    @ResponseBody
+    @PostMapping(value = "/delete${entity}", produces = "application/json;charset=UTF-8")
+    @ApiOperation(value = "删除$!{table.comment}\"", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    public ResponseJson delete${entity}(
+            @Validated @RequestBody ${entity}Query obj,
+            BindingResult result) {
+            if (result.hasErrors())
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+            try {
+                return do${entity}Service.delete${entity}(obj);
+            } catch (Exception ex) {
+                return new ResponseJson().error(ex.getMessage());
+            }
+    }
+
+    @PostMapping(value = "/batchDelete${entity}", produces = "application/json;charset=UTF-8")
+    @ApiOperation(value = "批量删除$!{table.comment}\"", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    public ResponseJson batchDelete${entity}(@RequestParam("ids") String ids) {
+            try {
+                if(StringUtil.isBlank(ids))
+                    return new ResponseJson().error("批量删除 Ids不能为空！");
+                String[] idsArrays=  ids.split(",");
+                return do${entity}Service.batchDelete${entity}(idsArrays);
+            } catch (Exception ex) {
+                return new ResponseJson().error(ex.getMessage());
+            }
+    }
+
+    @ResponseBody
+    @ApiOperation(value = "获取$!{table.comment}列表[分页]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @PostMapping(value = "/get${entity}List", produces = "application/json;charset=UTF-8")
+    public ResponseJson query${entity}List(@Validated @RequestBody ${entity}Query query, BindingResult result) {
+        if (result.hasErrors())
+            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+        try {
+            IPage<${entity}> pageInfo = do${entity}Service.query${entity}List(query);
+            PageUtils<List<${entity}>> pageUtils = new PageUtils<List<${entity}>>(
+            pageInfo.getRecords(),
+            pageInfo.getTotal(),
+            query.getPageSize());
+            return new ResponseJson().success().setValue("Data", pageUtils);
+        } catch (Exception ex) {
+            return new ResponseJson().error(ex.getMessage());
+        }
+    }
+  }
+    #end
+
+
+#end

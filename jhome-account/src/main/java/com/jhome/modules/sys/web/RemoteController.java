@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
 
-@Api(tags = "服务器远程调用接口")
+@Api(tags = "S、服务器远程调用接口")
 @Controller
 @RequestMapping("/${foreignServerPath}")
 public class RemoteController extends BaseController {
@@ -104,7 +104,7 @@ public class RemoteController extends BaseController {
      * 返回退出地址
      * @return
      */
-    @PostMapping(value = "getCallbackUrl")
+    @PostMapping(value = "/getCallbackUrl")
     @ResponseBody
     public String getCallbackUrl() {
         return propertiesBean.getCallbackUrl();

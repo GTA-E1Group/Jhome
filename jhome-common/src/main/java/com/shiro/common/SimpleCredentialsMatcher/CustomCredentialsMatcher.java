@@ -1,7 +1,9 @@
 package com.shiro.common.SimpleCredentialsMatcher;
 
+import com.bracket.common.ToolKit.MD5Util;
 import com.shiro.common.token.DeviceType;
 import com.shiro.common.token.jhomeToken;
+import lombok.SneakyThrows;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -27,6 +29,7 @@ public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
      * <p>
      * 返回值：如果返回true代表密码验证成功，如果返回false代表密码比对失败，失败后程序就会出现异常
      */
+    @SneakyThrows
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
 
         //1.向下转型
@@ -34,15 +37,12 @@ public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
         //过滤单点登录
         if (DeviceType.IsSinglepointLoginContainType(jhomeToken.getDeviceType()))
             return true;
-
         //2.获取用户名或密码
         String username = jhomeToken.getUsername();
         //获取密码并使用Md5Hash算法进行加密
-        //String inputPwdEncrypt = Encrypt.md5(new String(upToken.getPassword()), username);
-        String inputPwdEncrypt = "123456";
+        String inputPwdEncrypt = MD5Util.md5(new String(jhomeToken.getPassword()), "jhome");
         //3.获取数据库中的加密的密码
         String dbPwd = info.getCredentials().toString();
-        //return  upToken.getPassword().equals(dbPwd);
         return equals(inputPwdEncrypt, dbPwd);
     }
 }

@@ -27,7 +27,6 @@ import java.util.List;
  * @date : 11:03 2020/5/12 0012
  */
 public class CasRealm extends Pac4jRealm {
-
     private String clientName;
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * //
@@ -50,8 +51,9 @@ public class SysConfigPropertiesImpl extends HttpDaoImpl implements SysConfigPro
     public boolean save(SysConfigProperties sysConfigProperties) {
         try {
 
-            String sql = "INSERT INTO `sys_config_properties`( `paramName`, `key`, `value`, `application`, `isEnable`, `profile`, `label`) VALUES ( ?, ?, ?,?, ?, ?, ?)";
+            String sql = "INSERT INTO `sys_config_properties`(`id`, `paramName`, `key`, `value`, `application`, `isEnable`, `profile`, `label`) VALUES ( ?, ?, ?,?, ?, ?, ?)";
             return jdbcTemplate.update(sql,
+                    UUID.randomUUID().toString(),
                     sysConfigProperties.getParamName(),
                     sysConfigProperties.getKey(),
                     sysConfigProperties.getValue(),
