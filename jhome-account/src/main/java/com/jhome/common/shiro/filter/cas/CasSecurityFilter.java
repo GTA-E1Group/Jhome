@@ -1,6 +1,7 @@
 package com.jhome.common.shiro.filter.cas;
 
 import com.bracket.common.Bus.ResponseJson;
+import com.bracket.common.Identity.UserUtil;
 import com.bracket.common.ToolKit.CookieUtil;
 import com.bracket.common.ToolKit.JSONUtils;
 import com.bracket.common.ToolKit.StringUtil;
@@ -72,7 +73,7 @@ public class CasSecurityFilter extends SecurityFilter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         ResponseJson result = new ResponseJson();
-        String token = this.GetToken(servletRequest, servletResponse);
+        String token = UserUtil.GetToken(servletRequest, servletResponse);
         CommonHelper.assertNotNull("securityLogic", this.securityLogic);
         CommonHelper.assertNotNull("config", this.config);
         HttpServletRequest request = (HttpServletRequest) servletRequest;
@@ -103,19 +104,7 @@ public class CasSecurityFilter extends SecurityFilter {
         }, J2ENopHttpActionAdapter.INSTANCE, this.clients, this.authorizers, this.matchers, this.multiProfile, new Object[0]);
     }
 
-    public String GetToken(ServletRequest request, ServletResponse response) {
-        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("luxToken")) ? WebUtils.toHttp(request).getHeader("luxToken") : httpServletRequest.getParameter("luxToken");
-        if (StringUtil.isBlank(token))
-            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
-        if (StringUtil.isBlank(token)) {
-            Cookie cookie = CookieUtil.get(WebUtils.toHttp(request), "LuxCookie");
-            if (cookie != null) {
-                token = cookie.getValue();
-            }
-        }
-        return token;
-    }
+
 
     @Override
     public SecurityLogic<Object, J2EContext> getSecurityLogic() {

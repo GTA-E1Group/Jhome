@@ -1,5 +1,6 @@
 package com.shiro.common.realm;
 
+import com.bracket.common.Identity.UserUtil;
 import com.bracket.common.ToolKit.CookieUtil;
 import com.bracket.common.ToolKit.StringUtil;
 import org.apache.shiro.session.Session;
@@ -86,7 +87,7 @@ public class ServerDefaultWebSessionManager extends DefaultWebSessionManager {
     @Override
     protected Serializable getSessionId(ServletRequest request, ServletResponse response) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String token = this.GetToken(request, response);
+        String token = UserUtil.GetToken(request, response);
         if (token == null) {
             //token= SessionCons.TOKEN_PREFIX+ UUID.randomUUID().toString();
             return null;
@@ -98,18 +99,5 @@ public class ServerDefaultWebSessionManager extends DefaultWebSessionManager {
         return token;
     }
 
-    public String GetToken(ServletRequest request, ServletResponse response) {
-        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("JhomeToken")) ? httpServletRequest.getHeader("JhomeToken") : httpServletRequest.getParameter("JhomeToken");
-        if (StringUtil.isBlank(token))
-            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
-        if (StringUtil.isBlank(token)) {
-            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeCookie");
-            if (cookie != null) {
-                token = cookie.getValue();
-            }
-        }
-        return token;
-    }
 
 }

@@ -3,6 +3,7 @@ package com.bracket.common.Identity;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bracket.common.ToolKit.CookieUtil;
+import com.bracket.common.ToolKit.MyHttpServletRequestWrapper;
 import com.bracket.common.ToolKit.StringUtil;
 import com.domain.common.UserInfo;
 import com.shiro.common.session.ShiroSession;
@@ -22,6 +23,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +39,7 @@ import java.util.Map;
 
 public class UserUtil extends AuthUtil {
     protected static Logger logger = LoggerFactory.getLogger(UserUtil.class);
+    public final static String HEADER_TOKEN_NAME="jhomeToken";
     public static Subject subject;
 
     /**
@@ -75,6 +79,15 @@ public class UserUtil extends AuthUtil {
      */
     public static Subject getSubject() {
         return SecurityUtils.getSubject();
+    }
+
+    /**
+     * 获取token
+     * @return
+     */
+    public static String  GetSessionId()
+    {
+        return (String) SecurityUtils.getSubject().getSession().getId();
     }
 
     /**
@@ -126,7 +139,7 @@ public class UserUtil extends AuthUtil {
             }
             //remoteService.getSession(sessionPac4jId)
             JSONObject userObj = (JSONObject) JSONObject.parse(userInfoJson);
-            userInfo.setDeviceType(DeviceType.CAS.toString());
+            userInfo.setDeviceType(userObj.getString("deviceType"));
             userInfo.setUserId(userObj.getString("userId"));
             userInfo.setLoginName(userObj.getString("loginName"));
             userInfo.setJhomeToken(userObj.getString("jhomeToken"));
@@ -138,26 +151,6 @@ public class UserUtil extends AuthUtil {
         return null;
     }
 
-    /**
-     * @Description 读取token
-     * @Author daxv
-     * @Date
-     * @Remarks ...
-     */
-
-    public static String GetToken(ServletRequest request, ServletResponse response) {
-        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
-        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("JhomeToken")) ? httpServletRequest.getHeader("JhomeToken") : httpServletRequest.getParameter("JhomeToken");
-        if (StringUtil.isBlank(token))
-            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
-        if (StringUtil.isBlank(token)) {
-            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeCookie");
-            if (cookie != null) {
-                token = cookie.getValue();
-            }
-        }
-        return token;
-    }
 
     /**
      * 获取用户信息2
@@ -193,6 +186,52 @@ public class UserUtil extends AuthUtil {
         return true;
     }
 
+
+    /**
+     * @Description 读取 token
+     * @Author daxv
+     * @Date
+     * @Remarks ...
+     */
+
+    public static String GetToken(ServletRequest request, ServletResponse response) {
+        HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
+        String token = StringUtil.isNotBlank(httpServletRequest.getHeader("JhomeToken")) ? httpServletRequest.getHeader("JhomeToken") : httpServletRequest.getParameter("JhomeToken");
+        if (StringUtil.isBlank(token))
+            token = (String) request.getAttribute("org.apache.shiro.web.servlet.ShiroHttpServletRequest_REQUESTED_SESSION_ID");
+        if (StringUtil.isBlank(token)) {
+            Cookie cookie = CookieUtil.get(httpServletRequest, "JhomeCookie");
+            if (cookie != null) {
+                token = cookie.getValue();
+            }
+        }
+        //以上都没有从请求参数中获取 request 读取只能读取一次，指针就转向末尾，后续无法读取请求体里面的参数
+        if (StringUtil.isBlank(token)) {
+            try {
+//                Map<String, String> map = getJSON(WebUtils.toHttp(request), WebUtils.toHttp(response));
+//                token = map.get(HEADER_TOKEN_NAME);
+            } catch (Exception ex) {
+                return null;
+            }
+        }
+        return token;
+    }
+
+    public static Map<String, String> getJSON(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        MyHttpServletRequestWrapper requestWrapper = new MyHttpServletRequestWrapper((HttpServletRequest) request);
+        request= (HttpServletRequest) requestWrapper.getRequest();
+
+        String str= requestWrapper.getBodyString();
+        BufferedReader streamReader = new BufferedReader(new InputStreamReader(((HttpServletRequest) requestWrapper).getInputStream(), "UTF-8"));
+        StringBuilder responseStrBuilder = new StringBuilder();
+        String inputStr;
+        while ((inputStr = streamReader.readLine()) != null) {
+            responseStrBuilder.append(inputStr);
+        }
+        Map<String, String> params = JSON.parseObject(responseStrBuilder.toString(), Map.class);
+
+        return null;
+    }
     /**
      * 获取 Pac4 回调用户信息
      *

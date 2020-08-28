@@ -1,9 +1,11 @@
 package com.jhome.modules.config;
 
+import com.fasterxml.jackson.datatype.jsr310.ser.YearSerializer;
 import com.jhome.autoconfiguration.SysConfigurationPropertiesBean;
 import com.jhome.common.ClientRealm;
 import com.jhome.common.SysShiroProperties;
 import com.jhome.common.UserRemoteServiceInterface;
+import com.jhome.common.UserUtilExpand;
 import com.shiro.common.session.ClientSessionDAO;
 import com.shiro.common.filter.ClientTokenFormAuthenticationFilter;
 import com.shiro.common.session.ClientWebSessionManager;
@@ -219,5 +221,17 @@ public class ShiroConfig {
         ClientSessionDAO clientSessionDAO = new ClientSessionDAO();
         clientSessionDAO.setRemoteService(remoteService);//手动属性入住 通过分离 bean生命周期，允许springBoot同名覆盖，注入 远程会话对象
         return clientSessionDAO;
+    }
+
+    /**
+     * 用户辅助类
+     * @return
+     */
+    @Bean
+    public UserUtilExpand userUtilExpand()
+    {
+        UserUtilExpand utilExpand=new UserUtilExpand();
+        utilExpand.setClientSessionDAO(clientSessionDAO());
+        return utilExpand;
     }
 }

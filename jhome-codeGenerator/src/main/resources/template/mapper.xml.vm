@@ -3,11 +3,9 @@
 <mapper namespace="${package.Mapper}.${table.mapperName}">
 
     #if(${enableCache})
-        <!-- 开启二级缓存 -->
         <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
     #end
     #if(${baseResultMap})
-        <!-- 通用查询映射结果 -->
         <resultMap id="BaseResultMap" type="${package.Entity}.${entity}">
             #foreach($field in ${table.fields})
                 #if(${field.keyFlag})##生成主键排在第一位
@@ -26,23 +24,27 @@
 
     #end
     #if(${baseColumnList})
-        <!-- 通用查询结果列 -->
         <sql id="commonSql">
-#foreach($field in ${table.commonFields})
-            ${field.columnName},
-#end
-        ${table.fieldNames}
+        #foreach($field in ${table.fields})
+         `${field.name}`
+            #set($fund=($!{foreach.index}+1))
+            #if($!{table.fields.size()}!=$fund)
+            ,
+            #end
+        #end
+
     </sql>
 
     #end
-#if(${baseColumnList})
-    <select id="query${entity}List" resultMap="BaseResultMap" parameterType="${package.Entity}.${entity}Query">
-        Select
-             <include refid="commonSql"></include>
-        From ${table.name}
-        <trim prefix="where" prefixOverrides="and|or">
-            AND 1==1
-        </trim>
-    </select>
-#end
+    #if(${baseColumnList})
+        <!-- 分页查询 -->
+        <select id="query${entity}List" resultMap="BaseResultMap" parameterType="${package.Entity}.${entity}Query">
+            Select
+            <include refid="commonSql"></include>
+            From ${table.name}
+            <trim prefix="where" prefixOverrides="and|or">
+                AND 1=1
+            </trim>
+        </select>
+    #end
 </mapper>

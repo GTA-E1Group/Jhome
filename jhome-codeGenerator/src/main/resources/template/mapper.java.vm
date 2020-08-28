@@ -34,6 +34,6 @@ import org.apache.ibatis.annotations.Param;
 interface ${table.mapperName} : ${superMapperClass}<${entity}>
 #else
 public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
-    IPage<${entity}> query${entity}List(IPage<${entity}> page,@Param("queryObject") ${entity}Query queryObject);
-}
+        IPage<${entity}> query${entity}List(IPage<${entity}> page,@Param("queryObject") ${entity}Query queryObject);
+        }
 #end

@@ -1,6 +1,8 @@
 package com.shiro.common.session;
 
+import com.alibaba.fastjson.JSONObject;
 import com.domain.common.PermissionContext;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,4 +48,15 @@ public interface RemoteBaseInterface {
 
     @RequestMapping(value = "/jhome/RemoteService/getCallbackUrl", method = RequestMethod.POST)
     String getCallbackUrl();
+
+    /**
+     * 对象请求 使用 JSONObject
+     * JSONObject obj=new JSONobject()
+     * obj.put("key","00");
+     * this.getSessionTest(obj)
+     */
+//    @RequestMapping(value = "/jhome/RemoteService/getSession", method = RequestMethod.POST)
+//    String getSessionTest(@RequestBody JSONObject obj);
+
+
 }
