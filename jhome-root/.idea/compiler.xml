@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jhome-account" />
         <module name="jhome-nettyService" />
+        <module name="jhome-fileStore" />
         <module name="jhome-configService" />
         <module name="jhome-web" />
         <module name="jhome-common" />
@@ -39,6 +40,7 @@
       <module name="jhome-common" options="-parameters" />
       <module name="jhome-configService" options="-parameters" />
       <module name="jhome-dataCenter" options="-parameters" />
+      <module name="jhome-fileStore" options="-parameters" />
       <module name="jhome-nettyService" options="-parameters" />
       <module name="jhome-registrationCenter_One" options="-parameters" />
       <module name="jhome-registrationService" options="-parameters" />

@@ -89,7 +89,90 @@ INSERT INTO `cs_registered_config`(`id`, `paramName`, `key`, `value`, `applicati
 INSERT INTO `cs_registered_config`(`id`, `paramName`, `key`, `value`, `application`, `isEnable`, `profile`, `label`, `createTime`, `createBy`, `updateTime`, `updateBy`, `isPublicComponent`) VALUES ('89eb12c8-b8e2-4b17-87c7-f9a6bfc918bz', '数据库配置master-用户名', 'spring.datasource.dynamic.datasource.master.root', 'root', 'bigscreen', 0, 'dev', 'master', '2020-08-22 09:23:11', 'admin', '2020-08-22 09:23:11', 'admin', 0);
 
 
+/*
+ Navicat Premium Data Transfer
 
+ Source Server         : 10.1.241.152
+ Source Server Type    : MySQL
+ Source Server Version : 50717
+ Source Host           : 10.1.241.152:3306
+ Source Schema         : gta_ebd
+
+ Target Server Type    : MySQL
+ Target Server Version : 50717
+ File Encoding         : 65001
+
+ Date: 12/09/2020 15:22:05
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for as_message_information
+-- ----------------------------
+DROP TABLE IF EXISTS `as_message_information`;
+CREATE TABLE `as_message_information`  (
+                                           `Id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+                                           `from_user_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `to_group_Id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `to_user_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `content` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `type` int(11) DEFAULT NULL,
+                                           `file_url` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `file_Size` int(11) DEFAULT NULL,
+                                           `status` int(11) DEFAULT 0,
+                                           `created_by` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `created_time` datetime(0) DEFAULT NULL,
+                                           `tenant_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `school_year_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                           `send_count` int(11) DEFAULT NULL,
+                                           PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for fs_file_directory
+-- ----------------------------
+DROP TABLE IF EXISTS `fs_file_directory`;
+CREATE TABLE `fs_file_directory`  (
+                                      `id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+                                      `fileDirectoryName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文件目录',
+                                      `parentDirectoryId` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '父目录id',
+                                      `createTime` datetime(0) DEFAULT NULL,
+                                      `createBy` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                      `updateTime` datetime(0) DEFAULT NULL,
+                                      `updateBy` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                      `isDelete` bit(1) DEFAULT NULL COMMENT '是否删除：0否 1是',
+                                      `tenantId` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '租户ID',
+                                      PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for fs_file_directory_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `fs_file_directory_detail`;
+CREATE TABLE `fs_file_directory_detail`  (
+                                             `id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+                                             `fileDirectoryId` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件目录',
+                                             `fileType` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件类型',
+                                             `fileName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件名称',
+                                             `fileDownloadCount` int(12) DEFAULT NULL COMMENT '文件下载次数',
+                                             `fileSize` int(12) DEFAULT NULL COMMENT '文件大小',
+                                             `fileUrl` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件地址',
+                                             `fileRemarks` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件备注',
+                                             `createTime` datetime(0) DEFAULT NULL,
+                                             `createBy` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                             `updateTime` datetime(0) DEFAULT NULL,
+                                             `updateBy` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+                                             `isDelete` bit(1) DEFAULT NULL COMMENT '是否删除：0否 1是',
+                                             `tenantId` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '租户ID',
+                                             PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+/*
 truncate cs_registered_config;
 SELECT * from cs_registered_config;
 UPDATE   cs_registered_config set isPublicComponent=1 ,isEnable=0 where   paramName like '%redis%' or  paramName like '%注册中心%' or  paramName like '%消息中心%'or  paramName like '%系统退出-配置%';
@@ -104,3 +187,4 @@ SELECT * from cs_registered_config where  isPublicComponent=0  and application='
 SELECT * from cs_registered_config where  isPublicComponent=0  and application='jhome-account';
 SELECT * from cs_registered_config where  isPublicComponent=0  and application='bigscreen';
 
+*/

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fileStore.modules.fileManagement.dao.FsFileDirectoryDetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.fileStore.modules.fileManagement.model.bo.FsFileDirectoryDetail">
+        <id column="id" property="id"/>
+        <result column="fileDirectoryId" property="fileDirectoryId"/>
+        <result column="fileType" property="fileType"/>
+        <result column="fileName" property="fileName"/>
+        <result column="fileDownloadCount" property="fileDownloadCount"/>
+        <result column="fileSize" property="fileSize"/>
+        <result column="fileUrl" property="fileUrl"/>
+        <result column="fileRemarks" property="fileRemarks"/>
+        <result column="createTime" property="createTime"/>
+        <result column="createBy" property="createBy"/>
+        <result column="updateTime" property="updateTime"/>
+        <result column="updateBy" property="updateBy"/>
+        <result column="isDelete" property="isDelete"/>
+        <result column="tenantId" property="tenantId"/>
+    </resultMap>
+
+    <sql id="commonSql">
+         `id`
+            ,
+         `fileDirectoryId`
+            ,
+         `fileType`
+            ,
+         `fileName`
+            ,
+         `fileDownloadCount`
+            ,
+         `fileSize`
+            ,
+         `fileUrl`
+            ,
+         `fileRemarks`
+            ,
+         `createTime`
+            ,
+         `createBy`
+            ,
+         `updateTime`
+            ,
+         `updateBy`
+            ,
+         `isDelete`
+            ,
+         `tenantId`
+
+    </sql>
+
+    <!-- 分页查询 -->
+    <select id="selectFsFileDirectoryDetailPageList"
+            resultType="com.fileStore.modules.fileManagement.model.vo.FsFileDirectoryDetailView"
+            parameterType="com.fileStore.modules.fileManagement.model.query.FsFileDirectoryDetailQuery">
+        select
+        ffd.id,
+        ffd.fileName,
+        ffd.fileDownloadCount,
+        ffd.fileSize,
+        ffd.fileRemarks
+        from fs_file_directory as ff
+        INNER JOIN fs_file_directory_detail as ffd on ff.id=ffd.fileDirectoryId
+        <trim prefix="where" prefixOverrides="and|or">
+            AND 1=1
+            <if test="queryObject.fileDirectoryId!=null and queryObject.fileDirectoryId!=''">
+                AND ffd.fileDirectoryId=#{queryObject.fileDirectoryId}
+            </if>
+        </trim>
+        ORDER BY ffd.createTime desc
+    </select>
+</mapper>

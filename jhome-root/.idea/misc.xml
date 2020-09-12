@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-configService/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-registrationService/pom.xml" />
+        <option value="$PROJECT_DIR$/../jhome-fileStore/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

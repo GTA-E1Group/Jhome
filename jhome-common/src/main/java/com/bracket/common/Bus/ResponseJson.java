@@ -26,31 +26,37 @@ public class ResponseJson extends HashMap<String, Object> {
     }
 
     public ResponseJson success() {
-        put("msg", SUCCESS_MSG);
-        put("status", SUCCESS_STATUS);
+        put("returnMsg", SUCCESS_MSG);
+        put("returnCode", SUCCESS_STATUS);
         return this;
     }
     public ResponseJson successByMessAge(String messAge) {
-        put("msg", messAge);
-        put("status", SUCCESS_STATUS);
+        put("returnMsg", messAge);
+        put("returnCode", SUCCESS_STATUS);
         return this;
     }
     //后续使用 Shrio框架
     public ResponseJson success(HttpStatus status) {
-        put("msg", SUCCESS_MSG);
-        put("status", SUCCESS_STATUS);
+        put("returnMsg", SUCCESS_MSG);
+        put("returnCode", SUCCESS_STATUS);
         return this;
     }
 
     public ResponseJson success(String msg) {
-        put("msg", msg);
-        put("status", SUCCESS_STATUS);
+        put("returnMsg", msg);
+        put("returnCode", SUCCESS_STATUS);
         return this;
     }
 
     public ResponseJson error(String msg) {
-        put("msg", msg);
-        put("status", ERROR_STATUS);
+        put("returnMsg", msg);
+        put("returnCode", ERROR_STATUS);
+        return this;
+    }
+
+    public ResponseJson error(int status,String msg) {
+        put("returnMsg", msg);
+        put("returnCode", ERROR_STATUS);
         return this;
     }
 
@@ -66,12 +72,12 @@ public class ResponseJson extends HashMap<String, Object> {
     }
 
     public ResponseJson setStatus(int status) {
-        put("status", status);
+        put("returnCode", status);
         return this;
     }
 
     public ResponseJson setMsg(String msg) {
-        put("msg", msg);
+        put("returnMsg", msg);
         return this;
     }
 
