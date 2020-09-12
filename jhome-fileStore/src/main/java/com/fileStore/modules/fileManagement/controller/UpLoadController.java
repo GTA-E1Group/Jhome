@@ -69,7 +69,6 @@ public class UpLoadController {
         String ext = Files.getFileExtension(file.getOriginalFilename());
         if (ext.matches("^[(jpg)|(png)|(gif)]+$")) {
             return new ResponseJson().success().setValue("data",  fileService.uploadThumbnailFile(file));
-
         } else {
             return new ResponseJson().success().setValue("data", new UploadThumbnailRes(fileService.upLoad(null,file)));
 

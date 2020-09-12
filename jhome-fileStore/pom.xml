@@ -115,6 +115,7 @@
             <groupId>org.bytedeco</groupId>
             <artifactId>ffmpeg-platform</artifactId>
             <version>4.2.1-1.5.2</version>
+
         </dependency>
 
         <!-- end -->

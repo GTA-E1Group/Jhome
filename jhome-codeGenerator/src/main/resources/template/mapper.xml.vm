@@ -36,15 +36,15 @@
     </sql>
 
     #end
-    #if(${baseColumnList})
-        <!-- 分页查询 -->
-        <select id="query${entity}List" resultMap="BaseResultMap" parameterType="${package.Entity}.${entity}Query">
-            Select
-            <include refid="commonSql"></include>
-            From ${table.name}
-            <trim prefix="where" prefixOverrides="and|or">
-                AND 1=1
-            </trim>
-        </select>
-    #end
+#if(${baseColumnList})
+    <!-- 分页查询 -->
+    <select id="select${entity}PageList" resultMap="BaseResultMap" parameterType="${package.Entity}.${entity}Query">
+        Select
+             <include refid="commonSql"></include>
+        From ${table.name}
+        <trim prefix="where" prefixOverrides="and|or">
+            AND 1=1
+        </trim>
+    </select>
+#end
 </mapper>

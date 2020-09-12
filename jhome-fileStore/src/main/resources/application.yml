@@ -1,8 +1,8 @@
 
 #====================================================================== 版本-配置 ================#
 # 产品或项目名称、软件开发公司名称
-productName: Lux-JavaHome 开发平台
-companyName: Lux V1.0
+productName: Jhome-JavaHome 开发平台
+companyName: Jhome V1.0
 # 产品版本、版权年份
 productVersion: V1.0
 copyrightYear: 2020
@@ -44,7 +44,7 @@ logging.level.project.user.UserClient: DEBUG
 spring:
   # 应用程序名称
   application:
-    name: Lux-fileStore
+    name: jhome-fileStore
     include: fileStoreService
   servlet:
     multipart:

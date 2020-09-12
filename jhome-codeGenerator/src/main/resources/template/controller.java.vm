@@ -1,22 +1,22 @@
 package ${package.Controller};
 
 
-import com.bracket.common.Bus.AbstractController.BaseController;
-import com.bracket.common.ToolKit.ResponseJson;
+import com.Util.common.Bus.AbstractController.BaseController;
+import com.Util.common.ToolKit.ResponseJson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.annotation.*;
-import com.bracket.common.ToolKit.StringUtil;
-import com.bracket.common.Bus.AbstractModel.PageUtils;
+import com.Util.common.ToolKit.StringUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.bracket.common.ToolKit.BaseUtil;
+import com.Util.common.ToolKit.BaseUtil;
+import com.Util.common.Bus.PageUtils;
 import java.util.List;
 import java.util.Arrays;
-import com.bracket.common.Bus.Status;
+import com.Util.common.Bus.Status;
 import ${package.Service}.*;
 import ${package.Entity}.*;
 #if(${restControllerStyle})
@@ -54,21 +54,21 @@ import ${superControllerClassPackage};
  * @create: ${date}
  **/
 @Api(tags = "${table.comment}")
-    #if(${restControllerStyle})
-    @RestController
-    #else
-    @Controller
-    #end
-    ##@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+##@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
 @RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end")
 #if(${kotlin})
 class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
 
 #else
     #if(${superControllerClass})
-    public class ${table.controllerName} extends ${superControllerClass} {
+public class ${table.controllerName} extends ${superControllerClass} {
     #else
-    public class ${table.controllerName}  extends BaseController {
+public class ${table.controllerName}  extends BaseController {
     @Autowired
     protected  ${table.serviceName} do${entity}Service;
 
@@ -80,129 +80,128 @@ class ${table.controllerName}#if(${superControllerClass}) : ${superControllerCla
             BindingResult result) {
             try {
             if (result.hasErrors())
-            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
             return do${entity}Service.add${entity}(obj);
             } catch (Exception ex) {
-            return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
+                 return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
             }
-            }
+    }
 
     @ResponseBody
-    @PostMapping(value = "/edit${entity}[代码生成器生成]", produces = "application/json;charset=UTF-8")
-    @ApiOperation(value = "编辑$!{table.comment}", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @ApiOperation(value = "编辑$!{table.comment} [代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @PostMapping(value = "/edit${entity}", produces = "application/json;charset=UTF-8")
     public ResponseJson edit${entity}(
-    @Validated @RequestBody ${entity}Query obj,
+            @Validated @RequestBody ${entity}Query obj,
             BindingResult result) {
             if (result.hasErrors())
-            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
             try {
-            return do${entity}Service.edit${entity}(obj);
+                return do${entity}Service.edit${entity}(obj);
             } catch (Exception ex) {
-            return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
+                return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
             }
-            }
+    }
 
     @ResponseBody
-    @PostMapping(value = "/delete${entity}[代码生成器生成]", produces = "application/json;charset=UTF-8")
-    @ApiOperation(value = "删除$!{table.comment}", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @ApiOperation(value = "删除$!{table.comment} [代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @PostMapping(value = "/delete${entity}", produces = "application/json;charset=UTF-8")
     public ResponseJson delete${entity}(
-    @Validated @RequestBody ${entity}Query obj,
+            @Validated @RequestBody ${entity}Query obj,
             BindingResult result) {
             if (result.hasErrors())
-            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+                return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
             try {
-            return do${entity}Service.delete${entity}(obj);
+                return do${entity}Service.delete${entity}(obj);
             } catch (Exception ex) {
-            return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
+                return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
             }
-            }
-
-    @PostMapping(value = "/batchDelete${entity}[代码生成器生成]", produces = "application/json;charset=UTF-8")
-    @ApiOperation(value = "批量删除$!{table.comment}", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    }
+    @ApiOperation(value = "批量删除$!{table.comment} [代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
+    @PostMapping(value = "/batchDelete${entity}", produces = "application/json;charset=UTF-8")
     public ResponseJson batchDelete${entity}(@RequestParam("ids") String ids) {
             try {
-            if(StringUtil.isBlank(ids))
-            return new ResponseJson().error("批量删除 Ids不能为空！");
-            String[] idsArrays=  ids.split(",");
-            return do${entity}Service.batchDelete${entity}(idsArrays);
+                if(StringUtil.isBlank(ids))
+                    return new ResponseJson().error("批量删除 Ids不能为空！");
+                String[] idsArrays=  ids.split(",");
+                return do${entity}Service.batchDelete${entity}(idsArrays);
             } catch (Exception ex) {
-            return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
+                return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
             }
-            }
+    }
 
     @ResponseBody
     @ApiOperation(value = "获取$!{table.comment}列表[分页][代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
-    @PostMapping(value = "/get${entity}List", produces = "application/json;charset=UTF-8")
-    public ResponseJson query${entity}List(@Validated @RequestBody ${entity}Query query, BindingResult result) {
-            if (result.hasErrors())
+    @PostMapping(value = "/select${entity}PageList", produces = "application/json;charset=UTF-8")
+    public ResponseJson select${entity}PageList(@Validated @RequestBody ${entity}Query query, BindingResult result) {
+        if (result.hasErrors())
             return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
-            try {
-            IPage<${entity}> pageInfo = do${entity}Service.query${entity}List(query);
+        try {
+            IPage<${entity}> pageInfo = do${entity}Service.select${entity}PageList(query);
             PageUtils<List<${entity}>> pageUtils = new PageUtils<List<${entity}>>(
             pageInfo.getRecords(),
             pageInfo.getTotal(),
             query.getPageSize());
             return new ResponseJson().success().setValue("data", pageUtils);
-            } catch (Exception ex) {
+        } catch (Exception ex) {
             return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
-            }
-            }
+        }
+    }
 
     @ResponseBody
     @ApiOperation(value = "根据Id获取 单个对象 [代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
     @PostMapping(value = "/select${entity}ById", produces = "application/json;charset=UTF-8")
     public ResponseJson select${entity}ById(String id) {
-            try {
+    try {
             return new ResponseJson().success().setValue("data", do${entity}Service.select${entity}ById(id));
-            } catch (Exception ex) {
+        } catch (Exception ex) {
             return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
-            }
-            }
+        }
+    }
 
     @ResponseBody
     @ApiOperation(value = "根据Ids获取多个${entity}对象[代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
     @PostMapping(value = "/selectBatch${entity}ByIds", produces = "application/json;charset=UTF-8")
-    public ResponseJson selectBatch${entity}ByIds(String ids) {
-            try {
+        public ResponseJson selectBatch${entity}ByIds(String ids) {
+        try {
             List<String>idList= Arrays.asList(ids.split(","));
             return new ResponseJson().success().setValue("data", do${entity}Service.selectBatch${entity}ByIds(idList));
-            } catch (Exception ex) {
+        } catch (Exception ex) {
             return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
-            }
-            }
+        }
+    }
 
     @ResponseBody
     @ApiOperation(value = "根据条件获取${entity}对象[代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
     @PostMapping(value = "/select${entity}One", produces = "application/json;charset=UTF-8")
     public ResponseJson select${entity}One(@Validated @RequestBody ${entity}Query query, BindingResult result)
-            {
-            if (result.hasErrors())
-            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
-            try {
+    {
+        if (result.hasErrors())
+             return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+        try {
         ${entity} targetObj = BaseUtil.copyProperties(query, ${entity}.class);
             QueryWrapper<${entity}> queryWrapper=new QueryWrapper<>(targetObj);
             return new ResponseJson().success().setValue("data", do${entity}Service.select${entity}One(queryWrapper));
-            } catch (Exception ex) {
+        } catch (Exception ex) {
             return new ResponseJson().setValue("data",null).error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
-            }
-            }
+        }
+    }
 
     @ResponseBody
     @ApiOperation(value = "根据自定义条件获取${entity}对象实体集合[代码生成器生成]", notes = "注意：LuxToken默认由前端放到header中,调试模式不提供改参数，从cookies中获取")
     @PostMapping(value = "/select${entity}List", produces = "application/json;charset=UTF-8")
-    public ResponseJson select${entity}List(@Validated @RequestBody ${entity} query, BindingResult result)
-            {
-            if (result.hasErrors())
-            return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
-            try {
+    public ResponseJson select${entity}List(@Validated @RequestBody ${entity}Query query, BindingResult result)
+    {
+        if (result.hasErrors())
+             return new ResponseJson().error(result.getFieldError().getDefaultMessage() + " 错误字段：" + result.getFieldError().getField());
+        try {
         ${entity} targetObj = BaseUtil.copyProperties(query, ${entity}.class);
-            QueryWrapper<${entity}> queryWrapper=new QueryWrapper<>(targetObj);
-            return new ResponseJson().success().setValue("data", do${entity}Service.select${entity}List(queryWrapper));
-            } catch (Exception ex) {
+             QueryWrapper<${entity}> queryWrapper=new QueryWrapper<>(targetObj);
+             return new ResponseJson().success().setValue("data", do${entity}Service.select${entity}List(queryWrapper));
+        } catch (Exception ex) {
             return new ResponseJson().error(Status.SC_INTERNAL_SERVER_ERROR,ex.getMessage());
-            }
-            }
-            }
+        }
+    }
+  }
 
     #end
 #end
