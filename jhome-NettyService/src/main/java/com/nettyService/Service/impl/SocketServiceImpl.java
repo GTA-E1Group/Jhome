@@ -1,6 +1,6 @@
-package com.nettyService.Service.impl;
+package com.nettyService.service.impl;
 
-import com.nettyService.Service.ChatService;
+import com.nettyService.service.ChatService;
 import com.rpc.common.thrift.socketService;
 import org.apache.thrift.TException;
 import org.springframework.beans.factory.annotation.Autowired;

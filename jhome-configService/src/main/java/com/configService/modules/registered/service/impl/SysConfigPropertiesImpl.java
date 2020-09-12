@@ -1,8 +1,8 @@
 package com.configService.modules.registered.service.impl;
 
 import com.configService.modules.registered.dao.SysConfigPropertiesDao;
-import com.configService.modules.registered.model.po.SysConfigProperties;
-import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
+import com.configService.modules.registered.model.bo.SysConfigProperties;
+import com.configService.modules.registered.model.query.SysConfigPropertiesQuery;
 import com.configService.modules.registered.service.SysConfigPropertiesService;
 import com.bracket.common.Bus.ResponseJson;
 import org.slf4j.Logger;
@@ -14,12 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**

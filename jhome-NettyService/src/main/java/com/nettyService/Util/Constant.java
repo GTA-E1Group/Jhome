@@ -1,7 +1,7 @@
-package com.nettyService.Util;
+package com.nettyService.util;
 
-import com.nettyService.Model.GroupInfo;
-import com.nettyService.Model.UserInfo;
+import com.nettyService.model.GroupInfo;
+import com.nettyService.model.UserInfo;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker;
 

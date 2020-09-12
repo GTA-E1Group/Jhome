@@ -1,8 +1,8 @@
 package com.configService.modules.registered.dao.impl;
 
 import com.configService.modules.registered.dao.SysConfigPropertiesDao;
-import com.configService.modules.registered.model.po.SysConfigProperties;
-import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
+import com.configService.modules.registered.model.bo.SysConfigProperties;
+import com.configService.modules.registered.model.query.SysConfigPropertiesQuery;
 import com.bracket.common.Bus.AbstractDaoImpl.HttpDaoImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -5,7 +5,7 @@ companyName: JHome V1.0
 productVersion: V1.0
 copyrightYear: 2020
 
-#================================================================================ com.nettyServer.Server settings  ================#
+#================================================================================ com.nettyServer.server settings  ================#
 server:
   port: 9100
   servlet:

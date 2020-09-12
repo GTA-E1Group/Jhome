@@ -1,14 +1,14 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 10.1.241.152
- Source Server Type    : MySQL
- Source Server Version : 50717
+ Source server         : 10.1.241.152
+ Source server Type    : MySQL
+ Source server Version : 50717
  Source Host           : 10.1.241.152:3306
  Source Schema         : gta_ebd
 
- Target Server Type    : MySQL
- Target Server Version : 50717
+ Target server Type    : MySQL
+ Target server Version : 50717
  File Encoding         : 65001
 
  Date: 22/08/2020 11:31:46
@@ -92,14 +92,14 @@ INSERT INTO `cs_registered_config`(`id`, `paramName`, `key`, `value`, `applicati
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 10.1.241.152
- Source Server Type    : MySQL
- Source Server Version : 50717
+ Source server         : 10.1.241.152
+ Source server Type    : MySQL
+ Source server Version : 50717
  Source Host           : 10.1.241.152:3306
  Source Schema         : gta_ebd
 
- Target Server Type    : MySQL
- Target Server Version : 50717
+ Target server Type    : MySQL
+ Target server Version : 50717
  File Encoding         : 65001
 
  Date: 12/09/2020 15:22:05
@@ -109,10 +109,10 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for as_message_information
+-- Table structure for ns_message_information
 -- ----------------------------
-DROP TABLE IF EXISTS `as_message_information`;
-CREATE TABLE `as_message_information`  (
+DROP TABLE IF EXISTS `ns_message_information`;
+CREATE TABLE `ns_message_information`  (
                                            `Id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                                            `from_user_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
                                            `to_group_Id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,

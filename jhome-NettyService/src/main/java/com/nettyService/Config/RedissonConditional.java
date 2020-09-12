@@ -1,4 +1,4 @@
-package com.nettyService.Config;
+package com.nettyService.config;
 
 
 import org.springframework.context.annotation.Condition;

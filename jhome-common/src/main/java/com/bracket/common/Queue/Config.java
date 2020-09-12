@@ -45,7 +45,7 @@ public class Config {
 
 	@Override
 	public String toString() {
-		return "Config{" +
+		return "config{" +
 				"HostName='" + HostName + '\'' +
 				", UserName='" + UserName + '\'' +
 				", PassWord='" + PassWord + '\'' +

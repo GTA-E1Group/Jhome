@@ -27,7 +27,7 @@ jhome:
       passWord: 13528764027
       #虚拟主机
       virtualHost: dxhost
-#================================================================================ com.nettyServer.Server settings ===========#
+#================================================================================ com.nettyServer.server settings ===========#
 server:
   port: 8111
   servlet:

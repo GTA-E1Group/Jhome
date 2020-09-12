@@ -83,7 +83,7 @@ public class ShiroConfig {
      * 1、shiroFilter 配置---------------------------------------------------------------------------
      **/
     @Bean(name = "shiroFilter")
-    //@DependsOn("Config")
+    //@DependsOn("config")
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager, CustomRealm customRealm) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         try {

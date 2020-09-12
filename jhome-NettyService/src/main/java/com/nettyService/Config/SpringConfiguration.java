@@ -1,4 +1,4 @@
-package com.nettyService.Config;
+package com.nettyService.config;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
         */
 
 @Configuration
-@ComponentScan("com.nettyServer.*")//扫描注解
+@ComponentScan("com.nettyService.*")//扫描注解
 @Import(RpcConfiguration.class)
 public class SpringConfiguration {
 

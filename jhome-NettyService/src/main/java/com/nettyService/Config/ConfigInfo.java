@@ -1,4 +1,4 @@
-package com.nettyService.Config;
+package com.nettyService.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,5 +36,10 @@ public class ConfigInfo {
     private String redisPassword;
     @Value("${redis.timeout}")
     private String redisTimeout;
+
+    @Value("${notificationServer.sendCount}")
+    private int sendCount;
+    @Value("${notificationServer.sendTime}")
+    private int sendTime;
 
 }

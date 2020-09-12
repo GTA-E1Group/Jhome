@@ -1,9 +1,9 @@
-package com.nettyService.Server;
+package com.nettyService.server;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bracket.common.Bus.ResponseJson;
-import com.nettyService.Service.impl.ChatServiceImpl;
-import com.nettyService.Util.Constant;
+import com.nettyService.service.impl.ChatServiceImpl;
+import com.nettyService.util.Constant;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

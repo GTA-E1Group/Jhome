@@ -1,7 +1,7 @@
-package com.nettyService.Server;
+package com.nettyService.server;
 
 import com.bracket.common.Bus.ResponseJson;
-import com.nettyService.Util.Constant;
+import com.nettyService.util.Constant;
 import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;

@@ -1,4 +1,4 @@
-package com.configService.modules.registered.model.po;
+package com.configService.modules.registered.model.bo;
 
 import com.configService.modules.registered.model.validator.IsEnableValidator;
 import com.bracket.common.Bus.AbstractModel.DataEntity;

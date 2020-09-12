@@ -1,4 +1,4 @@
-package com.nettyService.Model;
+package com.nettyService.model;
 
 import java.util.List;
 

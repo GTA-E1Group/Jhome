@@ -1,12 +1,12 @@
-package com.nettyService.Service.impl;
+package com.nettyService.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bracket.common.Bus.ResponseJson;
 import com.bracket.common.ToolKit.JSONUtils;
-import com.nettyService.Model.ChatType;
-import com.nettyService.Model.GroupInfo;
-import com.nettyService.Service.ChatService;
-import com.nettyService.Util.Constant;
+import com.nettyService.model.ChatType;
+import com.nettyService.model.GroupInfo;
+import com.nettyService.service.ChatService;
+import com.nettyService.util.Constant;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.slf4j.Logger;

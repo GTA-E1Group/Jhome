@@ -82,7 +82,7 @@ public class trackOrdersController extends BaseController {
                     }
                 }
             });
-/*            new Bus(new Config(pro.getQueueconfig().getHostName(), pro.getQueueconfig().getUserName(), pro.getQueueconfig().getPassWord(), pro.getQueueconfig().getVirtualHost()), new IBus() {
+/*            new Bus(new config(pro.getQueueconfig().getHostName(), pro.getQueueconfig().getUserName(), pro.getQueueconfig().getPassWord(), pro.getQueueconfig().getVirtualHost()), new IBus() {
                 public void doQueueHandle(QueueHandler queueManager) {
                     try {
                         for (int i = 0; i < 1; i++) {

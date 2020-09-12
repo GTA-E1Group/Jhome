@@ -1,6 +1,6 @@
-package com.nettyService.Server;
+package com.nettyService.server;
 
-import com.nettyService.Config.ConfigInfo;
+import com.nettyService.config.ConfigInfo;
 import org.apache.thrift.server.THsHaServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +18,8 @@ public class AppContext {
     public ConfigInfo configInfo;
     @Autowired
     private WebSocketServer webSocketServer;
+    @Autowired
+    private NotificationServer notificationServer;
     @Autowired
     private THsHaServer tHsHaServer;
     private final Logger logger = LoggerFactory.getLogger(AppContext.class);
@@ -42,8 +44,12 @@ public class AppContext {
                             "" + "Spring 3.0 " +
                             "" +
                             "");
+
+
             Thread.sleep(2000);
-            logger.info("启动WebSocket服务器！...");
+            logger.info("启动消息预警推送服务...");
+            new  Thread(notificationServer).start();
+            logger.info("启动WebSocket服务器...");
             new Thread(webSocketServer.InitWebSocketServer(configInfo.getWebSocketPort())).start();
             logger.info("WebSocket启动完毕...");
             logger.info("启动RPC...");

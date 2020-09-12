@@ -1,7 +1,7 @@
 package com.configService.modules.registered.web;
 
-import com.configService.modules.registered.model.po.SysConfigProperties;
-import com.configService.modules.registered.model.qo.SysConfigPropertiesQuery;
+import com.configService.modules.registered.model.bo.SysConfigProperties;
+import com.configService.modules.registered.model.query.SysConfigPropertiesQuery;
 import com.configService.modules.registered.service.SysConfigPropertiesService;
 import com.bracket.common.Bus.AbstractController.BaseController;
 import com.bracket.common.Bus.ResponseJson;

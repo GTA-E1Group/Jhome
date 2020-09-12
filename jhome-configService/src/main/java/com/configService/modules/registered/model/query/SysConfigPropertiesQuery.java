@@ -1,4 +1,4 @@
-package com.configService.modules.registered.model.qo;
+package com.configService.modules.registered.model.query;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

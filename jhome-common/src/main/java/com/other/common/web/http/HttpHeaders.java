@@ -158,8 +158,8 @@ public final class HttpHeaders {
   public static final String REFRESH = "Refresh";
   /** The HTTP {@code Retry-After} header field name. */
   public static final String RETRY_AFTER = "Retry-After";
-  /** The HTTP {@code com.nettyServer.Server} header field name. */
-  public static final String SERVER = "com.nettyServer.Server";
+  /** The HTTP {@code com.nettyServer.server} header field name. */
+  public static final String SERVER = "com.nettyServer.server";
   /** The HTTP {@code Set-Cookie} header field name. */
   public static final String SET_COOKIE = "Set-Cookie";
   /** The HTTP {@code Set-Cookie2} header field name. */

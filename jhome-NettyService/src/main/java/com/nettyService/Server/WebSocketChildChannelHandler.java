@@ -1,4 +1,4 @@
-package com.nettyService.Server;
+package com.nettyService.server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
