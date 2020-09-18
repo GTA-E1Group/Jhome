@@ -1,7 +1,7 @@
 # Jhome框架
 
 ## 技术概要：
-*  1.Spring全家桶 （SpringBoot Spring SpringCloud ）
+*  1.Spring全家桶 （SpringBoot Spring SpringCloud（eureka+feign+config+zuul+Hystrix） ）
 *  2.Shrio 安全框架
 *  3.pack4j 安全框架
 *  4.NIO（Netty）
@@ -11,15 +11,15 @@
 *  8.redisson（操作Redis缓存数据库框架）
 *  9.rabbitmq（消息队列）
 *  10.mybatis + mybatis-Plush
-
+*  11.Nginx
 ## jhome 架构图 
 ![image](https://github.com/dayuhan/Jhome/blob/master/img-storage/1.jpg) 
-
  
-### 即将升级计划
-*  分段上传
-*  分页组件
-*  Netty 整合 RabbitMQ 形式实现
+## jhome v1.3 框架升级内容  
+### 升级概要：搭建可靠消息服务（JhomeTransactionService）
+### 引入技术： 
+*  RabbitMq 消息队列 实现分布式系统中事务回滚
+
 
 ## jhome v1.2 框架升级内容  
 ### 升级概要：搭建代码生成器服务（jhome-codeGenerator），采velocity模板引擎，一键生成：controller dao mapper model/bo model/vo model/query service service/impl
@@ -90,6 +90,11 @@
 *  单点登陆成功后，在提供服务B端退出，消费A段无法退出
    （正在修复，消费A段退出，先调用A段的退出把Subject 认证状态isAuthenticated
     变成false,在调用服务B段退出设置B段的Subject的isAuthenticated，刷新当前页即可 服务B段退出，A段做做感知判断）
+    
+### 即将升级计划
+*  分段上传
+*  分页组件
+*  Netty 整合 RabbitMQ 形式实现
 
 ### 本人微信号： daxu06661
 
