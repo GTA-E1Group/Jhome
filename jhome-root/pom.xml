@@ -23,6 +23,7 @@
         <module>../jhome-webSpiderService</module>
         <module>../jhome-codeGenerator</module>
         <module>../jhome-fileStore</module>
+        <module>../jhome-transactionService</module>
     </modules>
     <developers>
         <developer>

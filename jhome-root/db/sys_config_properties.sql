@@ -188,3 +188,24 @@ SELECT * from cs_registered_config where  isPublicComponent=0  and application='
 SELECT * from cs_registered_config where  isPublicComponent=0  and application='bigscreen';
 
 */
+
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for transaction_log
+-- ----------------------------
+DROP TABLE IF EXISTS `transaction_log`;
+CREATE TABLE `transaction_log`  (
+  `id` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` int(255) DEFAULT NULL,
+  `status` int(11) DEFAULT 0,
+  `messageBody` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '消息体',
+  `producer` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '生产者回调地址',
+  `consumer` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '消费者回调地址',
+  `createTime` datetime(0) DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+SET FOREIGN_KEY_CHECKS = 1;

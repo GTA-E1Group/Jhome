@@ -11,10 +11,13 @@
         <option value="$PROJECT_DIR$/../jhome-configService/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-registrationService/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-fileStore/pom.xml" />
+        <option value="$PROJECT_DIR$/../Lux-transactionService/Lux-transactionService/pom.xml" />
+        <option value="$PROJECT_DIR$/../jhome-transactionService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/../Lux-transactionService/jhome-transactionService/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-NettyServer/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-Pay/pom.xml" />
         <option value="$PROJECT_DIR$/../jhome-dataCenter/pom.xml" />
