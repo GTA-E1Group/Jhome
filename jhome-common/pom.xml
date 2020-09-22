@@ -482,8 +482,12 @@
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
         </dependency>
-
-
+        <!--   FastDFS Client     -->
+        <dependency>
+            <groupId>net.oschina.zcx7878</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.27.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -81,7 +81,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-transactionService/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jhome-common/src/main/java/com/bracket/common" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16503906" />
     <property name="project.structure.side.proportion" value="0.33256084" />
@@ -92,11 +92,11 @@
       <recent name="com" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EatingTools\XProject\Jhome\jhome-common\src\main\java\com\bracket\common" />
       <recent name="D:\EatingTools\XProject\Jhome\jhome-codeGenerator\src\main\resources\template" />
       <recent name="D:\EatingTools\XProject\Jhome\jhome-root\db" />
       <recent name="D:\EatingTools\XProject\Jhome\jhome-codeGenerator\src\main\resources" />
       <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractModel" />
-      <recent name="D:\XProject\Jhome\jhome-common\src\main\java\com\daxu\common\Bus\AbstractDaoImpl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nettyService.service" />
@@ -340,7 +340,8 @@
       <workItem from="1600240814876" duration="713000" />
       <workItem from="1600415246429" duration="281000" />
       <workItem from="1600415574766" duration="533000" />
-      <workItem from="1600416300630" duration="2395000" />
+      <workItem from="1600416300630" duration="3574000" />
+      <workItem from="1600744655504" duration="995000" />
     </task>
     <servers />
   </component>
@@ -366,10 +367,6 @@
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="313" y="159" key="#SQL_Dialects/0.40.1440.920@0.40.1440.920" timestamp="1599898887756" />
-    <state x="484" y="266" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1592041171265">
-      <screen x="0" y="31" width="1440" height="929" />
-    </state>
-    <state x="484" y="266" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.31.1440.929@0.31.1440.929" timestamp="1592041171265" />
     <state x="176" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599898881220">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
@@ -407,30 +404,30 @@
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="681" y="138" key="FileChooserDialogImpl/0.40.1440.920@0.40.1440.920" timestamp="1600416339938" />
-    <state width="1397" height="221" key="GridCell.Tab.0.bottom" timestamp="1600420995958">
+    <state width="1397" height="168" key="GridCell.Tab.0.bottom" timestamp="1600745733582">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1191" height="142" key="GridCell.Tab.0.bottom/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1397" height="376" key="GridCell.Tab.0.bottom/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="221" key="GridCell.Tab.0.bottom/0.40.1440.920@0.40.1440.920" timestamp="1600420995958" />
-    <state width="1397" height="221" key="GridCell.Tab.0.center" timestamp="1600420995958">
+    <state width="1397" height="168" key="GridCell.Tab.0.bottom/0.40.1440.920@0.40.1440.920" timestamp="1600745733582" />
+    <state width="1397" height="168" key="GridCell.Tab.0.center" timestamp="1600745733582">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1191" height="142" key="GridCell.Tab.0.center/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1397" height="376" key="GridCell.Tab.0.center/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="221" key="GridCell.Tab.0.center/0.40.1440.920@0.40.1440.920" timestamp="1600420995958" />
-    <state width="1397" height="221" key="GridCell.Tab.0.left" timestamp="1600420995958">
+    <state width="1397" height="168" key="GridCell.Tab.0.center/0.40.1440.920@0.40.1440.920" timestamp="1600745733582" />
+    <state width="1397" height="168" key="GridCell.Tab.0.left" timestamp="1600745733582">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1191" height="142" key="GridCell.Tab.0.left/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1397" height="376" key="GridCell.Tab.0.left/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="221" key="GridCell.Tab.0.left/0.40.1440.920@0.40.1440.920" timestamp="1600420995958" />
-    <state width="1397" height="221" key="GridCell.Tab.0.right" timestamp="1600420995958">
+    <state width="1397" height="168" key="GridCell.Tab.0.left/0.40.1440.920@0.40.1440.920" timestamp="1600745733582" />
+    <state width="1397" height="168" key="GridCell.Tab.0.right" timestamp="1600745733582">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state width="1191" height="142" key="GridCell.Tab.0.right/0.30.1234.793@0.30.1234.793" timestamp="1595667413470" />
     <state width="1397" height="376" key="GridCell.Tab.0.right/0.31.1440.929@0.31.1440.929" timestamp="1593959938685" />
-    <state width="1397" height="221" key="GridCell.Tab.0.right/0.40.1440.920@0.40.1440.920" timestamp="1600420995958" />
+    <state width="1397" height="168" key="GridCell.Tab.0.right/0.40.1440.920@0.40.1440.920" timestamp="1600745733582" />
     <state width="1053" height="208" key="GridCell.Tab.1.bottom" timestamp="1596381072628">
       <screen x="0" y="40" width="1440" height="920" />
     </state>
@@ -506,11 +503,12 @@
       <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="447" y="115" width="713" height="569" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.40.1440.920@0.40.1440.920" timestamp="1599883246957" />
-    <state x="323" y="199" key="run.anything.popup" timestamp="1595255629241">
-      <screen x="0" y="30" width="1234" height="793" />
+    <state x="377" y="236" key="run.anything.popup" timestamp="1600744815335">
+      <screen x="0" y="40" width="1440" height="920" />
     </state>
     <state x="323" y="199" key="run.anything.popup/0.30.1234.793@0.30.1234.793" timestamp="1595255629241" />
     <state x="377" y="229" key="run.anything.popup/0.31.1440.929@0.31.1440.929" timestamp="1592410437261" />
+    <state x="377" y="236" key="run.anything.popup/0.40.1440.920@0.40.1440.920" timestamp="1600744815335" />
     <state x="431" y="238" width="785" height="448" key="search.everywhere.popup" timestamp="1599883242480">
       <screen x="0" y="40" width="1440" height="920" />
     </state>

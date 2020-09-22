@@ -1,5 +1,6 @@
 package com.bracket.common.Bus.AbstractController;
 
+import com.bracket.common.FastDFS.FastDFSClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +14,7 @@ public abstract class BaseController {
     protected static final String FORWARD = "forward:";
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
     protected static final String REDIRECT = "redirect:";
+    protected FastDFSClient fastDFSClient=new FastDFSClient();
 
 //    @Value("${jhome.sysproperties.adminPath}")
 //    protected String adminPath;
